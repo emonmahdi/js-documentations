@@ -1,0 +1,7 @@
+some list resources:
+
+1. https://www.javascripttutorial.net/
+2. https://developer.mozilla.org/en-US/docs/Web/JavaScript
+3. https://github.com/anisul-Islam/javascript-documentation
+4. https://www.w3schools.com/js/default.asp
+5. https://academy.vivasoftltd.com/javascript-bootcamp/course-introduction/
