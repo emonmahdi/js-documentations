@@ -184,3 +184,91 @@
 ### Dom Interview Questions
 
 1. Dom Learning source:[https://www.javascripttutorial.net/javascript-dom/document-object-model-in-javascript/]
+
+2. Chatgpt Dom Events:
+
+Certainly! The Document Object Model (DOM) provides various methods to select and manipulate elements in an HTML document. Here are some examples of document selectors in JavaScript:
+
+1. **getElementById:**
+
+   - Selects an element by its unique ID attribute.
+
+   ```javascript
+   var myElement = document.getElementById("myDiv");
+   ```
+
+2. **getElementsByClassName:**
+
+   - Selects elements by their class name.
+
+   ```javascript
+   var elementsByClass = document.getElementsByClassName("myClass");
+   ```
+
+3. **getElementsByTagName:**
+
+   - Selects elements by their tag name.
+
+   ```javascript
+   var elementsByTag = document.getElementsByTagName("p");
+   ```
+
+4. **getElementsByName:**
+
+   - Selects elements by their name attribute.
+
+   ```javascript
+   var elementsByName = document.getElementsByName("myName");
+   ```
+
+5. **querySelector:**
+
+   - Selects the first element that matches a specified CSS selector.
+
+   ```javascript
+   var myElement = document.querySelector("#myDiv");
+   ```
+
+6. **querySelectorAll:**
+
+   - Selects all elements that match a specified CSS selector.
+
+   ```javascript
+   var allParagraphs = document.querySelectorAll("p");
+   ```
+
+7. **parentNode:**
+
+   - Accesses the parent node of an element.
+
+   ```javascript
+   var parentElement = myElement.parentNode;
+   ```
+
+8. **childNodes:**
+
+   - Accesses a collection of child nodes of an element.
+
+   ```javascript
+   var childNodes = myElement.childNodes;
+   ```
+
+9. **firstChild and lastChild:**
+
+   - Accesses the first and last child nodes of an element.
+
+   ```javascript
+   var firstChild = myElement.firstChild;
+   var lastChild = myElement.lastChild;
+   ```
+
+10. **nextSibling and previousSibling:**
+
+    - Accesses the next and previous sibling nodes of an element.
+
+    ```javascript
+    var nextSibling = myElement.nextSibling;
+    var previousSibling = myElement.previousSibling;
+    ```
+
+These are just a few examples of document selectors and methods available in the DOM. Selectors help you target specific elements, and methods allow you to manipulate them or navigate through the document structure.
