@@ -1,0 +1,31 @@
+1. What is the DOM?
+DOM stands for Document Object Model. It is a programming interface that allows us to create, change, or remove elements from the document. We can also add events to these elements to make our page more dynamic.
+
+The DOM views an HTML document as a tree of nodes. A node represents an HTML element.
+
+2. What is the DOM Tree?
+The structural representation created by the DOM is very much like a tree. It has several objects in it known as nodes.
+
+The browser uses the DOM tree representation it builds from an HTML document to determine what to render on a web page.
+
+
+3. With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+
+JavaScript can change all the HTML elements in the page
+JavaScript can change all the HTML attributes in the page
+JavaScript can change all the CSS styles in the page
+JavaScript can remove existing HTML elements and attributes
+JavaScript can add new HTML elements and attributes
+JavaScript can react to all existing HTML events in the page
+JavaScript can create new HTML events in the page
+
+### Dom step by step guid
+1. https://www.javascripttutorial.net/javascript-dom/javascript-getelementbyid/
+
+### Dom Projects Link: https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-restaurant-menu-page
+
+Some Link: 
+1. https://www.freecodecamp.org/news/what-is-the-dom-explained-in-plain-english/
+2. https://eloquentjavascript.net/14_dom.html
+
+Higher Order Function: https://www.freecodecamp.org/news/a-quick-intro-to-higher-order-functions-in-javascript-1a014f89c6b/
