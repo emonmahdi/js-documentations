@@ -170,6 +170,8 @@
 
 ### 16. JavaScript Projects
 
+Project Ideas 40 project- Js, React, Typescript: [https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-restaurant-menu-page]
+
 ### 17. Some useful links JavaScript
 
 1. https://github.com/sudheerj/javascript-interview-questions
