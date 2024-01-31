@@ -22,7 +22,10 @@ JavaScript can create new HTML events in the page
 ### Dom step by step guid
 1. https://www.javascripttutorial.net/javascript-dom/javascript-getelementbyid/
 
-### Dom Projects Link: https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-restaurant-menu-page
+### Dom Projects Link: 
+https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-restaurant-menu-page
+
+https://www.freecodecamp.org/news/what-is-the-dom-document-object-model-meaning-in-javascript/
 
 Some Link: 
 1. https://www.freecodecamp.org/news/what-is-the-dom-explained-in-plain-english/
