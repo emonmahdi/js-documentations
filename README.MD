@@ -185,6 +185,19 @@ while  with
     8. Arrow functions
     9. Rest parameter
     10. Callback functions
+    11. Scope
+    12. Hosting
+    13. Execution Context
+    14. Closures
+    15. Prototype
+    16. Recursion
+    17. Primitive vs Reference Data Types
+    18. Currying
+    19. Intersection Observer
+    20. Memoization
+    21. Event Propagation
+    22. Debounce
+    23. Asynchronous JavaScript - Callbacks, Promises and async-await
 
 ### 9. Promises & Async/Await
 
