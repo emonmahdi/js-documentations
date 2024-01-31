@@ -9,9 +9,6 @@
     1. Variables
     2. Js reserved word
     3. Js Data Types
-    4. Number
-    5. String
-    6. Boolean
     7. Null & undefined
     8. Type conversion
     9. operators
@@ -38,7 +35,7 @@
          5. Worker and Fetch API
     26. JS JSON
 
-#### 1. Variables:
+### 1. Variables:
 
 Variables are used to store and manage data. They are named containers that can hold values of various types, such as numbers, strings, or objects. Variables in JavaScript are declared using the var, let, or const keyword, followed by a unique name (identifier)
 
@@ -100,7 +97,7 @@ console.log(pi); // Output: 3.14
 
 Note: `const is also block-scoped, but unlike let, you cannot reassign values to a variable declared with const once it's been assigned.`
 
-#### 2. Js Reserved Word:
+### 2. Js Reserved Word:
 
 In JavaScript, there are reserved words that have special meanings and cannot be used as identifiers (such as variable names, function names, or labels) in your code. These words are part of the language's syntax and have predefined roles. Here is a list of some reserved words in JavaScript
 
@@ -119,6 +116,97 @@ this  throw  throws  transient  true  try  typeof
 var  void  volatile
 while  with
 
+```
+
+#### 3. Js Data Types
+
+JavaScript has several data types that are used to represent different kinds of values. These data types can be broadly categorized into two main groups: primitive data types and object data types.
+
+#### Primitive Data Types:
+
+#### 1. Number:
+
+```js
+let age = 25; // Represents numeric values.
+```
+
+#### 2. String:
+
+```js
+let name = "John"; // Represents sequences of characters (text).
+```
+
+#### 3. Boolean:
+
+```js
+let isStudent = true; // Represents a logical value, either true or false.
+```
+
+#### 4. Undefined:
+
+```js
+let variable; // Represents the absence of a defined value.
+```
+
+#### 5. Null:
+
+```js
+let data = null; // Represents the absence of any object value.
+```
+
+#### 6. Symbol:
+
+```js
+let id = Symbol("uniqueID"); // Represents a unique identifier.
+```
+
+#### Object Data Types:
+
+#### 6. Object:
+
+```js
+let person = {
+  name: "Alice",
+  age: 30,
+  isStudent: false,
+};
+// Represents a collection of key-value pairs.
+```
+
+#### 7. Array:
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+// Represents an ordered list of values.
+```
+
+#### Special Data Types:
+
+#### 7. Function:
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+// A callable object that executes a block of code.
+```
+
+#### 8. Date:
+
+```js
+let currentDate = new Date();
+// Represents a specific point in time.
+```
+
+#### Non-Primitive Data Types:
+
+#### 9. BigInt:
+
+```js
+let bigNumber = BigInt(9007199254740991);
+// Introduced in ECMAScript 2020.
+// Represents arbitrary-precision integers
 ```
 
 ### 3. Operators
