@@ -19,6 +19,24 @@
     11. Math function
     12. Date Function
     13. Js Comments
+    14. Functions
+    15. Objects
+    16. Arrays
+    17. Events
+    18. Array and String Methods
+    19. Object Methods
+    20. Date
+    21. Conditionals
+    22. Error Handling
+    23. JavaScript OOP
+    24. classes and inheritance and Debugging
+    25. JS Web APIs
+         1. Forms
+         2. History
+         3. Geolocation
+         4. Storage
+         5. Worker and Fetch API
+    26. JS JSON
 
 #### 1. Variables:
 
@@ -81,6 +99,27 @@ console.log(pi); // Output: 3.14
 ```
 
 Note: `const is also block-scoped, but unlike let, you cannot reassign values to a variable declared with const once it's been assigned.`
+
+#### 2. Js Reserved Word:
+
+In JavaScript, there are reserved words that have special meanings and cannot be used as identifiers (such as variable names, function names, or labels) in your code. These words are part of the language's syntax and have predefined roles. Here is a list of some reserved words in JavaScript
+
+```js
+abstract  boolean  break  byte
+case  catch  char  class  const  continue
+debugger  default  delete  do  double
+else  enum  export  extends  false  final  finally  float  for  function
+goto
+if  implements  import  in  instanceof  int  interface
+let  long
+native  new  null
+package  private  protected  public
+return  short  static  super  switch  synchronized
+this  throw  throws  transient  true  try  typeof
+var  void  volatile
+while  with
+
+```
 
 ### 3. Operators
 
