@@ -690,3 +690,99 @@ These are all javascript statements:
 ```js
 foo(if () {return 2}) //js engine mind = blown
 ```
+
+## 8. IIFE, Modules and Namespaces
+
+#### IIFE:
+
+An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+
+IIFE stands for "Immediately Invoked Function Expression." It is a design pattern in JavaScript where a function is defined and executed immediately after its creation. The primary purpose of an IIFE is to create a new scope for the enclosed code, preventing variable declarations from polluting the global scope.
+
+```js
+(function () {
+  // Your code here
+})();
+```
+
+```js
+// Global scope
+var globalVar = "I am global";
+
+(function () {
+  // New function scope
+  var localVar = "I am local";
+  console.log(globalVar); // Access global variable
+  console.log(localVar); // Access local variable
+})();
+
+// Attempting to access localVar outside the IIFE would result in an error
+// console.log(localVar); // This would result in an error
+```
+
+#### Benefits of IIFE:
+
+Encapsulation: Variables declared inside the IIFE are not accessible from outside, avoiding potential naming conflicts in the global scope.
+
+Isolation: The IIFE creates a new scope, preventing pollution of the global scope with temporary or helper variables.
+
+IIFE is often used to create modules, manage variable scope, and avoid unintended interactions with other scripts in a larger codebase. It's less common in modern JavaScript development due to the introduction of block-scoped variables with let and const in ES6. However, it's still a useful pattern in certain situations.
+
+### Modularity
+
+The term Modularity refers to the degree to which a system's components may be separated and recombined, it is also division of a software package into logical units. The advantage of a modular system is that one can reason the parts independently
+
+## 9. Message Queue and Event Loop
+
+## 10. setTimeout, setInterval and requestAnimationFrame
+
+## 11. JavaScript Engines
+
+## 12. Bitwise Operators, Type Arrays and Array Buffers
+
+## 13. DOM and Layout Trees
+
+## 14. Factories and Classes
+
+## 15. this, call, apply and bind
+
+## 16. new, Constructor, instanceof and Instances
+
+## 17. Prototype Inheritance and Prototype Chain
+
+## 18. Object.create and Object.assign
+
+## 19. map, reduce, filter
+
+## 20. Pure Functions, Side Effects, State Mutation and Event Propagation
+
+## 21. Closures
+
+## 22. High Order Functions
+
+## 23. Recursion
+
+## 24. Collections and Generators
+
+## 25. Promises
+
+## 26. async/await
+
+## 27. Data Structures
+
+## 28. Expensive Operation and Big O Notation
+
+## 29. Algorithms
+
+## 30. Inheritance, Polymorphism and Code Reuse
+
+## 31. Design Patterns
+
+## 32. Partial Applications, Currying, Compose and Pipe
+
+## 33. Clean Code
+
+### 33 concepts Reference:
+
+1. [https://github.com/leonardomso/33-js-concepts?tab=readme-ov-file#11-javascript-engines]
+2. [https://dev.to/eludadev/33-javascript-concepts-every-beginner-should-know-with-tutorials-4kao#6-function-scope-block-scope-and-lexical-scope]
