@@ -538,3 +538,19 @@ Reference:
 
 1. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values]
 2. [https://www.geeksforgeeks.org/primitive-and-non-primitive-data-types-in-javascript/]
+
+## 3. Value Types and Reference Types
+
+Variables that are assigned a non-primitive value are given a reference to that value. That reference points to the object’s location in memory. The variables don’t actually contain the value.
+
+`My Note:` javascript e 2 type er variable thke primitive and non-primitive. Primitive type a variable e value assign kore sei value er upor depend kore kono operation hoy but non-primitive a value variable er sthe assign hoy na ei khane assign hoy value er reference. Jemon object and array te er reference er upor depend kore operation hoy.
+
+Reference: [https://gist.github.com/branneman/7fb06d8a74d7e6d4cbcf75c50fec599c]
+
+## 4. Implicit, Explicit, Nominal, Structuring and Duck Typing
+
+Type coercion means that when the operands of an operator are different types, one of them will be converted to an "equivalent" value of the other operand's type.
+
+`My-Note`: Implicit holo jkn default vabe type neye ney. R Explicit holo jkn amra nejera kono kisur type deye dei
+
+Reference: [https://hackernoon.com/javascript-coercion-explained-545c895213d3]
