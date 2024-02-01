@@ -554,3 +554,139 @@ Type coercion means that when the operands of an operator are different types, o
 `My-Note`: Implicit holo jkn default vabe type neye ney. R Explicit holo jkn amra nejera kono kisur type deye dei
 
 Reference: [https://hackernoon.com/javascript-coercion-explained-545c895213d3]
+
+## 5. == vs === vs typeof
+
+#### Triple Equals
+
+When using triple equals === in JavaScript, we are testing for strict equality. This means both the type and the value we are comparing have to be the same.
+
+```js
+77 === "77";
+// false (Number v. String)
+
+"cat" === "dog";
+// false (Both are Strings, but have different values)
+false === 0;
+// false (Different type and different value)
+```
+
+#### Double equals
+
+When using double equals in JavaScript we are testing for loose equality. Double equals also performs type coercion.
+
+```js
+77 == "77";
+// true
+
+false == 0;
+// true
+0 == "";
+// true
+"" == false;
+// true
+```
+
+Reference:
+
+1. [https://medium.com/@louis.shi/what-is-the-difference-between-vs-in-javascript-e38203f91591]
+2. [https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a]
+
+## 6. Function Scope, Block Scope and Lexical Scope
+
+#### Function scope:
+
+It means they are only available inside the function they’re created in, or if not created inside a function, they are ‘globally scoped.
+
+```javascript
+function setWidth(){
+    var width = 100;
+    console.log(width);
+}
+width;
+// Returns:
+Uncaught ReferenceError: width is not defined
+```
+
+#### Block Scope:
+
+A block is a set of opening and closing curly brackets. Variables declared with let and const have block scope.
+Block scope is created by curly braces {} in statements like if, for, while, etc.
+
+```javasctipt
+if (true) {
+  let blockVar = 'I am a block-scoped variable';
+  console.log(blockVar);
+}
+
+// console.log(blockVar); // This would result in an error
+
+```
+
+#### Lexical Scope (Static Scope):
+
+Lexical scope means that the scope of a variable is determined at the time of the code's writing (at compile time), based on its location within the code.
+It is also known as static scope.
+
+```js
+function outerFunction() {
+  var outerVar = "I am an outer variable";
+
+  function innerFunction() {
+    var innerVar = "I am an inner variable";
+    console.log(outerVar); // Can access outerVar
+  }
+
+  innerFunction();
+  // console.log(innerVar); // This would result in an error
+}
+
+outerFunction();
+```
+
+Reference: [https://codeburst.io/javascript-functions-understanding-the-basics-207dbf42ed99]
+
+## 7. Expression vs Statement
+
+#### Expression:
+
+Expressions are Javascript code snippets that result in a single value. Expressions can be as long as you want them to be, but they would always result in a single value.
+
+```js
+2 + (2 * 3) / 2(Math.random() * (100 - 20)) + 20;
+
+functionCall();
+
+window.history ? useHistory() : noHistoryFallback();
+
+1 + 1, 2 + 2, 3 + 3;
+
+declaredVariable;
+
+true && functionCall();
+
+true && declaredVariable;
+```
+
+#### STATEMENTS:
+
+Statements are the headache of functional programming. Basically, statements perform actions, they do things.
+
+In javascript, statements can never be used where a value is expected. So they cannot be used as function arguments, right-hand side of assignments, operators operand, return values…
+
+These are all javascript statements:
+
+- if
+- if-else
+- while
+- do-while
+- for
+- switch
+- for-in
+- with (deprecated)
+- debugger
+- variable declaration
+
+```js
+foo(if () {return 2}) //js engine mind = blown
+```
