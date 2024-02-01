@@ -479,3 +479,62 @@ Certainly! The Document Object Model (DOM) provides various methods to select an
 
 These are just a few examples of document selectors and methods available in the DOM. Selectors help you target specific elements, and methods allow you to manipulate them or navigate through the document structure.
 ````
+
+## 33 JavaScript Concepts Every Developer Should Know
+
+### 1. Call Stack:
+
+A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions — what function is currently being run and what functions are called from within that function, etc.
+
+- When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.
+- Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.
+- When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.
+- If the stack takes up more space than it was assigned, a "stack overflow" error is thrown.
+
+একটি কল স্ট্যাক হল একটি দোভাষীর (যেমন একটি ওয়েব ব্রাউজারে জাভাস্ক্রিপ্ট দোভাষীর) একটি পদ্ধতি যা একটি স্ক্রিপ্টে তার স্থান ট্র্যাক রাখে যা একাধিক ফাংশনকে কল করে — বর্তমানে কোন ফাংশন চালানো হচ্ছে এবং সেই ফাংশনের মধ্যে থেকে কোন ফাংশনগুলিকে কল করা হয় ইত্যাদি .
+
+The call stack is a data structure in JavaScript that stores information about the active functions in a program. It follows the Last In, First Out (LIFO) principle, meaning that the last function called is the first one to be removed. The call stack is crucial for managing the flow of execution in a program, keeping track of function calls, and managing their scope.
+
+Example:
+
+```js
+function greeting() {
+  // [1] Some code here
+  sayHi();
+  // [2] Some code here
+}
+function sayHi() {
+  return "Hi!";
+}
+
+// Invoke the `greeting` function
+greeting();
+
+// [3] Some code here
+```
+
+Reference:
+
+1. [https://developer.mozilla.org/en-US/docs/Glossary/Call_stack]
+2. What Is The Execution Context? What Is The Call Stack? [https://medium.com/@valentinog/javascript-what-is-the-execution-context-what-is-the-call-stack-bd23c78f10d1]
+
+## 2. Primitive data types
+
+Every Variable has a data type that tells what kind of data is being stored in a variable. There are two types of data types in JavaScript.
+
+- Primitive data types
+  - Number
+  - String
+  - Boolean
+  - Null
+  - Undefined
+  - Symbol
+  - BigInt
+- Non-primitive data types
+  - Object
+  - Array
+
+Reference:
+
+1. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values]
+2. [https://www.geeksforgeeks.org/primitive-and-non-primitive-data-types-in-javascript/]
