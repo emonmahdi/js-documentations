@@ -898,3 +898,36 @@ console.log(cart.items);
 const totalCost = cart.calculateTotal();
 console.log("Total cost of items in the cart:", totalCost);
 ```
+
+#### 8. Analyze the below code snippet and advise what will be the output:
+
+```js
+const person = {
+  firstName: "Helen",
+  lastName: "Ryan",
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+console.log(person.getFullName()); // Helen Ryan
+```
+
+#### 9. Find the issue with the below code snippet:
+
+```js
+const timeOutId = setTimeout(function () {
+  console.log("This will be executed after 3 seconds");
+}, 3000);
+console.log(clearTimeout(timeOutId));
+```
+
+#### 10. What issue exists in the below code:
+
+```js
+const testArray = [1, 2, 3];
+testArray = [4, 5, 6]; //
+console.log(testArray);
+```
+
+Note: there is no change because use the `const` keyword. and Array does not change the way
+the way is : `testArray[0] = 4`, `testArray[1] = 5`, `testArray[3] = 6`

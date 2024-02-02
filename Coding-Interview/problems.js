@@ -132,3 +132,45 @@ console.log(cart.items);
 // Calculating the total cost
 const totalCost = cart.calculateTotal();
 console.log("Total cost of items in the cart:", totalCost);
+
+/* 
+Problem 8: Analyze the below code snippet and advise what will be the output
+
+const person = {
+  firstName: "Helen",
+  lastName: "Ryan",
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+console.log(person.getFullName()); // Helen Ryan
+*/
+
+/* 
+Problem 9 - 
+
+const timeOutId = setTimeout(function () {
+  console.log("This will be executed after 3 seconds");
+}, 3000);
+console.log(clearTimeout(timeOutId));
+*/
+
+//  timeoutId stores the ID of the timeout created by setTimeout(). Later, you can use clearTimeout(timeoutId) to cancel the timeout before it executes. If you run clearTimeout() without an argument, it won't have any effect, and the timeout will still execute after 3 seconds.
+
+/* 
+Problem 10: What issue exists in the below code:
+*/
+
+const testArray = [1, 2, 3];
+console.log(testArray); // Output: [1, 2, 3]
+
+// wrong code
+testArray = [4, 5, 6]; //
+console.log(testArray);
+
+// If you want to modify the content of the array, you can do so:
+testArray[0] = 4;
+testArray[1] = 5;
+testArray[2] = 6;
+
+console.log(testArray); // Output: [4, 5, 6]
