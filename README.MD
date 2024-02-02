@@ -788,3 +788,113 @@ The term Modularity refers to the degree to which a system's components may be s
 2. [https://dev.to/eludadev/33-javascript-concepts-every-beginner-should-know-with-tutorials-4kao#6-function-scope-block-scope-and-lexical-scope]
 
 ## 30 JavaScript Coding Interview Questions for Beginner, Mid-Level and Expert Developers
+
+#### 4. Create a JavaScript function that calculates the tip for a given bill amount and tip percentage. Bill amount and tip percentage will be input parameters while output will be calculated tip value.
+
+```js
+function calculateTip(billAmount, tipPercentage) {
+  // Check if the inputs are valid numbers
+  if (typeof billAmount !== "number " && typeof tipPercentage !== "number") {
+    return `Please make sure your input is number`;
+  }
+  // Ensure tipPercentage is a valid percentage (between 0 and 100)
+  if (tipPercentage < 0 || tipPercentage > 100) {
+    return `Please the tipPercentage between 0 and 100`;
+  }
+
+  // Calculate the tip
+  const tip = (billAmount * tipPercentage) / 100;
+  return tip;
+}
+
+// Example usage:
+const billAmount = 50;
+const tipPercentage = 10;
+const tipValue = calculateTip(billAmount, tipPercentage);
+console.log(
+  `For a bill of $${billAmount} and a ${tipPercentage}% tip, the tip amount is $${tipValue}.`
+);
+```
+
+#### 5. What will be the output of below code snippet:
+
+```js
+function greetHello(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greetHello("Brian"));
+```
+
+#### 6. Will the below code return any error? If yes, identify the error.
+
+```js
+function fetchData(callback) {
+  fetch("https://api.example.com/data")
+    .then((response) => response.json())
+    .then((data) => callback(null, data))
+    .catch((error) => callback(error));
+}
+fetchData(function (error, data) {
+  if (error) {
+    console.log("Error:", error);
+  } else {
+    console.log("Data:", data);
+  }
+});
+
+//  I added .json() after response to ensure that the response is processed as JSON. This ensures that the subsequent .then(data => callback(null, data)) receives the parsed JSON data. Without .json(), you might encounter unexpected results or errors when trying to access the data.
+```
+
+#### 7. Implement a simple shopping cart system with features to add items, remove items and calculate the total price. Use objects to represent items, including properties for the item name, price and quantity. Implement features to add items to the cart, remove items and calculate the total cost.
+
+```js
+// Define the Item constructor
+function Item(name, price, quantity) {
+  this.name = name;
+  this.price = price;
+  this.quantity = quantity;
+}
+
+// Define the ShoppingCart constructor
+function shoppingCart() {
+  this.items = [];
+
+  // Method to add an item to the cart
+  this.addItem = function (item) {
+    this.items.push(item);
+  };
+
+  // Method to remove an item from the cart
+  this.removeItem = function (ItemName) {
+    this.items = this.items.filter((item) => item.name !== ItemName);
+  };
+
+  // Method to calculate the total cost of items in the cart
+  this.calculateTotal = function () {
+    let total = 0;
+    this.items.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  };
+}
+
+// Example cart
+const cart = new shoppingCart();
+
+// Adding the items
+const item1 = new Item("Laptop", 20000, 2);
+const item2 = new Item("Mobile", 12000, 3);
+cart.addItem(item1);
+cart.addItem(item2);
+
+// console.log(cart.items);
+
+// Removing an item from the cart
+cart.removeItem("Laptop");
+console.log(cart.items);
+
+// Calculating the total cost
+const totalCost = cart.calculateTotal();
+console.log("Total cost of items in the cart:", totalCost);
+```
