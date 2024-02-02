@@ -786,3 +786,5 @@ The term Modularity refers to the degree to which a system's components may be s
 
 1. [https://github.com/leonardomso/33-js-concepts?tab=readme-ov-file#11-javascript-engines]
 2. [https://dev.to/eludadev/33-javascript-concepts-every-beginner-should-know-with-tutorials-4kao#6-function-scope-block-scope-and-lexical-scope]
+
+## 30 JavaScript Coding Interview Questions for Beginner, Mid-Level and Expert Developers
