@@ -1106,6 +1106,124 @@ console.log(object1.prop2.prop3);
 // output: newValue3
 ```
 
+#### 17. Will the below code return any error? If yes, what will be the error?
+
+```js
+class Bird {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+class Crow extends Bird {
+  speak() {
+    super.speak();
+    console.log(`${this.name} sings.`);
+  }
+}
+const crow = new Crow("Tim");
+crow.speak();
+```
+
+#### Note:
+
+The provided code will not return an error. It's a valid use of classes and inheritance in JavaScript.
+
+Here's what the code does:
+
+It defines a Bird class with a constructor that sets the name property and a speak method that logs a message to the console.
+
+It defines a Crow class that extends the Bird class. The speak method of Crow uses super.speak() to call the speak method of the parent class (Bird) and then adds an additional log statement.
+
+It creates an instance of the Crow class with the name "Tim" (const crow = new Crow("Tim");).
+
+It calls the speak method on the crow instance (crow.speak();).
+
+The output of the code will be:
+
+- Tim makes a noise.
+- Tim sings.
+
+#### 18. Develop a function that throttles another function, allowing it to be called at most once every specified interval (e.g., 300ms). The throttling function will have two input parameters. One will be the function to be throttled and the second will be the interval in milliseconds. The throttled function should be called with the same arguments as the original function.
+
+#### 19. What is wrong with the below code:
+
+#### Problem:
+
+```js
+const arr = [1, 2, 3, 4, 5];
+const sum = arr.reduce((total, num) => total + num);
+console.log(sum / arr.length);
+```
+
+#### Solution:
+
+```js
+const arr = [1, 2, 3, 4, 5];
+
+if (arr.length > 0) {
+  const sum = arr.reduce((total, num) => total + num);
+  console.log(sum / arr.length);
+} else {
+  console.log("Cannot calculate average for an empty array.");
+}
+```
+
+#### 20. Develop a function that throttles another function, allowing it to be called at most once every specified interval (e.g., 300ms). The throttling function will have two input parameters. One will be the function to be throttled and the second will be the interval in milliseconds. The throttled function should be called with the same arguments as the original function.
+
+#### Solution:
+
+```js
+function findMeetingSlot(person1BusySlots, person2BusySlots, meetingDuration) {
+  // Combine and sort busy slots from both persons
+  const busySlots = [...person1BusySlots, ...person2BusySlots].sort(
+    (a, b) => a[0] - b[0]
+  );
+
+  // Iterate through busy slots to find the first available time slot for the meeting
+  for (let i = 1; i < busySlots.length; i++) {
+    const startTime = busySlots[i - 1][1]; // End time of the previous busy slot
+    const endTime = busySlots[i][0]; // Start time of the current busy slot
+
+    const availableDuration = endTime - startTime;
+    if (availableDuration >= meetingDuration) {
+      return [startTime, startTime + meetingDuration];
+    }
+  }
+
+  return null; // No available time slot found
+}
+
+// Example Usage
+const person1BusySlots = [
+  [9, 10],
+  [12, 14],
+  [16, 18],
+];
+const person2BusySlots = [
+  [8, 11],
+  [13, 15],
+  [17, 19],
+];
+const meetingDuration = 2;
+
+const meetingSlot = findMeetingSlot(
+  person1BusySlots,
+  person2BusySlots,
+  meetingDuration
+);
+
+if (meetingSlot) {
+  console.log(
+    `Meeting can be scheduled from ${meetingSlot[0]} to ${meetingSlot[1]}`
+  );
+} else {
+  console.log("No available time slot for the meeting.");
+}
+```
+
 #### React Interview Questions:
 
 1. [https://dev.to/m_midas/44-react-frontend-interview-questions-2o63]

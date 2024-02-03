@@ -256,7 +256,7 @@ console.log("Original URL:", originalUrl);
 Problem 14: 
 */
 
-function autocomplete(input, wordsArray, maxSuggestions = 7) {
+/* function autocomplete(input, wordsArray, maxSuggestions = 7) {
   const inputLowerCase = input.toLowerCase();
   const suggestions = [];
 
@@ -292,4 +292,62 @@ const words = [
 const input = "pe";
 const suggestions = autocomplete(input, words);
 
-console.log("Suggestions for", input + ":", suggestions);
+console.log("Suggestions for", input + ":", suggestions); */
+
+/* const arr = [1, 2, 3, 4, 5];
+
+if (arr.length > 0) {
+  const sum = arr.reduce((total, num) => total + num);
+  // console.log("sum numbers: ", sum);
+  console.log(sum / arr.length);
+} else {
+  console.log("Cannot calculate average for an empty array.");
+}
+ */
+
+function findMeetingSlot(person1BusySlots, person2BusySlots, meetingDuration) {
+  // Combine and sort busy slots from both persons
+  const busySlots = [...person1BusySlots, ...person2BusySlots].sort(
+    (a, b) => a[0] - b[0]
+  );
+
+  // Iterate through busy slots to find the first available time slot for the meeting
+  for (let i = 1; i < busySlots.length; i++) {
+    const startTime = busySlots[i - 1][1]; // End time of the previous busy slot
+    const endTime = busySlots[i][0]; // Start time of the current busy slot
+
+    const availableDuration = endTime - startTime;
+    if (availableDuration >= meetingDuration) {
+      return [startTime, startTime + meetingDuration];
+    }
+  }
+
+  return null; // No available time slot found
+}
+
+// Example Usage
+const person1BusySlots = [
+  [9, 10],
+  [12, 14],
+  [16, 18],
+];
+const person2BusySlots = [
+  [8, 11],
+  [13, 15],
+  [17, 19],
+];
+const meetingDuration = 2;
+
+const meetingSlot = findMeetingSlot(
+  person1BusySlots,
+  person2BusySlots,
+  meetingDuration
+);
+
+if (meetingSlot) {
+  console.log(
+    `Meeting can be scheduled from ${meetingSlot[0]} to ${meetingSlot[1]}`
+  );
+} else {
+  console.log("No available time slot for the meeting.");
+}
