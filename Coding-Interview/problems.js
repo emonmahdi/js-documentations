@@ -174,10 +174,11 @@ testArray[1] = 5;
 testArray[2] = 6;
 
 console.log(testArray); // Output: [4, 5, 6] */
+
 /* 
 Problem 11 - What is the issue in the below code:
  */
-const fetchData = async () => {
+/* const fetchData = async () => {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
 
@@ -192,3 +193,103 @@ const fetchData = async () => {
   }
 };
 fetchData();
+ */
+
+/* 
+Problem - 12 -What will be the output of the below code:
+*/
+
+/* const promise1 = Promise.resolve("One");
+const promise2 = new Promise((resolve) =>
+  setTimeout(() => resolve("Two"), 1000)
+);
+const promise3 = Promise.reject("Three");
+Promise.allSettled([promise1, promise2, promise3]).then((results) =>
+  console.log(results)
+);
+ */
+/* Problem 13: Develop a simple URL shortener service using JavaScript. Implement a function that takes a long URL as an input parameter and the output will be a shortened URL. Create a reverse function as well. The reverse function takes the shortened URL and returns the original long URL. You can use simple in-memory objects to store the mapping between long and short URLs. */
+
+// URL Shortener Service
+/* class UrlShortener {
+  constructor() {
+    this.urlMapping = {};
+    this.shortUrlPrefix = "https://short.url/";
+  }
+
+  // Function to shorten a long URL
+  shortenUrl(longUrl) {
+    const shortKey = this.generateShortKey();
+    const shortUrl = this.shortUrlPrefix + shortKey;
+    this.urlMapping[shortKey] = longUrl;
+    return shortUrl;
+  }
+
+  // Function to reverse and get the original long URL
+  getOriginalUrl(shortUrl) {
+    const shortKey = shortUrl.replace(this.shortUrlPrefix, "");
+    const longUrl = this.urlMapping[shortKey];
+    return longUrl || "Original URL not found";
+  }
+
+  // Helper function to generate a unique short key
+  generateShortKey() {
+    // In a real-world scenario, you might want to use a more robust method to generate short keys
+    return Math.random().toString(36).substring(2, 8);
+  }
+}
+
+// Example Usage
+const urlShortener = new UrlShortener();
+
+// Shorten a URL
+const longUrl = "https://www.example.com/very-long-url";
+const shortUrl = urlShortener.shortenUrl(longUrl);
+console.log("Shortened URL:", shortUrl);
+
+// Reverse and get the original URL
+const originalUrl = urlShortener.getOriginalUrl(shortUrl);
+console.log("Original URL:", originalUrl);
+ */
+
+/* 
+Problem 14: 
+*/
+
+function autocomplete(input, wordsArray, maxSuggestions = 7) {
+  const inputLowerCase = input.toLowerCase();
+  const suggestions = [];
+
+  for (const word of wordsArray) {
+    const wordLowerCase = word.toLowerCase();
+
+    if (wordLowerCase.startsWith(inputLowerCase)) {
+      suggestions.push(word);
+
+      if (suggestions.length === maxSuggestions) {
+        break;
+      }
+    }
+  }
+
+  return suggestions;
+}
+
+// Example Usage
+const words = [
+  "apple",
+  "banana",
+  "cherry",
+  "date",
+  "grape",
+  "kiwi",
+  "lemon",
+  "orange",
+  "peach",
+  "pear",
+];
+
+const input = "pe";
+const suggestions = autocomplete(input, words);
+
+console.log("Suggestions for", input + ":", suggestions);

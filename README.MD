@@ -967,6 +967,145 @@ const fetchData = async () => {
 fetchData();
 ```
 
+#### 13: Problem 13: Develop a simple URL shortener service using JavaScript. Implement a function that takes a long URL as an input parameter and the output will be a shortened URL. Create a reverse function as well. The reverse function takes the shortened URL and returns the original long URL. You can use simple in-memory objects to store the mapping between long and short URLs.
+
+Solution:
+
+```js
+class UrlShortener {
+  constructor() {
+    this.urlMapping = {};
+    this.shortUrlPrefix = "https://short.url/";
+  }
+
+  // Function to shorten a long URL
+  shortenUrl(longUrl) {
+    const shortKey = this.generateShortKey();
+    const shortUrl = this.shortUrlPrefix + shortKey;
+    this.urlMapping[shortKey] = longUrl;
+    return shortUrl;
+  }
+
+  // Function to reverse and get the original long URL
+  getOriginalUrl(shortUrl) {
+    const shortKey = shortUrl.replace(this.shortUrlPrefix, "");
+    const longUrl = this.urlMapping[shortKey];
+    return longUrl || "Original URL not found";
+  }
+
+  // Helper function to generate a unique short key
+  generateShortKey() {
+    // In a real-world scenario, you might want to use a more robust method to generate short keys
+    return Math.random().toString(36).substring(2, 8);
+  }
+}
+
+// Example Usage
+const urlShortener = new UrlShortener();
+
+// Shorten a URL
+const longUrl = "https://www.example.com/very-long-url";
+const shortUrl = urlShortener.shortenUrl(longUrl);
+console.log("Shortened URL:", shortUrl);
+
+// Reverse and get the original URL
+const originalUrl = urlShortener.getOriginalUrl(shortUrl);
+console.log("Original URL:", originalUrl);
+```
+
+#### 14. Implement an autocomplete feature for a search input field. Given an array of words, write a function that suggests words based on the current input. The output of the function will be an array of suggested words that start with the input characters, limiting the number of suggestions (e.g., a maximum of 7 suggestions).
+
+#### Solution:
+
+```js
+function autocomplete(input, wordsArray, maxSuggestions = 7) {
+  const inputLowerCase = input.toLowerCase();
+  const suggestions = [];
+
+  for (const word of wordsArray) {
+    const wordLowerCase = word.toLowerCase();
+
+    if (wordLowerCase.startsWith(inputLowerCase)) {
+      suggestions.push(word);
+
+      if (suggestions.length === maxSuggestions) {
+        break;
+      }
+    }
+  }
+
+  return suggestions;
+}
+
+// Example Usage
+const words = [
+  "apple",
+  "banana",
+  "cherry",
+  "date",
+  "grape",
+  "kiwi",
+  "lemon",
+  "orange",
+  "peach",
+  "pear",
+];
+
+const input = "ap";
+const suggestions = autocomplete(input, words);
+
+console.log("Suggestions for", input + ":", suggestions);
+```
+
+#### 15. What is the issue in the below code:
+
+#### Problem:
+
+```js
+const obj = {
+  name: "Conner",
+  age: 27,
+  greet: () => {
+    console.log(`Hey, my name is ${this.name}`);
+  },
+};
+obj.greet();
+```
+
+#### Solution:
+
+```js
+const obj = {
+  name: "Conner",
+  age: 27,
+  greet: function () {
+    console.log(`Hey, my name is ${this.name}`);
+  },
+};
+obj.greet();
+```
+
+#### Note:
+
+The issue in the provided code is related to the use of an arrow function for the greet method inside the object. Arrow functions do not have their own this context; instead, they inherit the this value from the surrounding scope (lexical scoping).
+
+In this case, within the arrow function of greet, this refers to the this value of the surrounding context where the arrow function is defined. However, arrow functions are not suitable for methods that rely on the object's own properties, such as name in this case.
+
+#### 16. What will be the output of below code snippet:
+
+```js
+const object1 = {
+  prop1: "value1",
+  prop2: {
+    prop3: "value3",
+  },
+};
+const newObj = { ...obj };
+newObj.prop2.prop3 = "newValue3";
+console.log(object1.prop2.prop3);
+// output: newValue3
+```
+
 #### React Interview Questions:
 
 1. [https://dev.to/m_midas/44-react-frontend-interview-questions-2o63]
