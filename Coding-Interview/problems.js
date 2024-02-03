@@ -161,7 +161,7 @@ console.log(clearTimeout(timeOutId));
 Problem 10: What issue exists in the below code:
 */
 
-const testArray = [1, 2, 3];
+/* const testArray = [1, 2, 3];
 console.log(testArray); // Output: [1, 2, 3]
 
 // wrong code
@@ -173,4 +173,22 @@ testArray[0] = 4;
 testArray[1] = 5;
 testArray[2] = 6;
 
-console.log(testArray); // Output: [4, 5, 6]
+console.log(testArray); // Output: [4, 5, 6] */
+/* 
+Problem 11 - What is the issue in the below code:
+ */
+const fetchData = async () => {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    if (!response.ok) {
+      throw new Error(`HTTP status error ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+fetchData();

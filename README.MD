@@ -931,3 +931,43 @@ console.log(testArray);
 
 Note: there is no change because use the `const` keyword. and Array does not change the way
 the way is : `testArray[0] = 4`, `testArray[1] = 5`, `testArray[3] = 6`
+
+#### 11. Problem 11 - What is the issue in the below code:
+
+Problem:
+
+```js
+const fetchData = async () => {
+  const response = await fetch("https://api.samplewebsite.com/data");
+  const data = await response.json();
+  console.log(data);
+};
+fetchData();
+```
+
+Solution:
+
+Error Handling: It's a good practice to include error handling to catch any potential issues with the API request.
+
+```js
+const fetchData = async () => {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    if (!response.ok) {
+      throw new Error(`HTTP status error ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+fetchData();
+```
+
+#### React Interview Questions:
+
+1. [https://dev.to/m_midas/44-react-frontend-interview-questions-2o63]
+2. [https://www.ambitionbox.com/profiles/react-developer/interview-questions]
