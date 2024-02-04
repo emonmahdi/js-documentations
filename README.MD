@@ -320,7 +320,9 @@ let bigNumber = BigInt(9007199254740991);
 18. Calculate Factorial in a Recursive function:
 19. Create a Fibonacci Series using a for loop
 20. Search the target products name in array of objects
-21. javascript sorting using an aray
+21. javascript sorting using an array
+
+### Reference Problem Solving Resources: [Basic Problems Javascript](https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php)
 
 #### Resources:
 
@@ -877,11 +879,93 @@ It is a program that converts Javascript code into lower level or machine code t
 
 একটি গুরুত্বপূর্ন বিষয় যেটি আমাদের জানা প্রয়োজন সেটি হলো আগের জাভাস্ক্রিপ্ট ইঞ্জিনগুলোর ভেতরে শুধুমাত্র ইন্টারপ্রেটার ব্যবহৃত হতো। ইন্টারপ্রেটার লাইন ধরে ধরে কোড এক্সিকিউট করে। ডিবাগিং এর জন্য এটা ভালো হলেও পুরো প্রোগ্রামটি রান করতে অনেক সময় লেগে যেত। এই প্রক্রিয়াটি আরো দ্রুত করার জন্য জাস্ট ইন টাইম কম্পাইলার বা JIT (Just In Time) এর ধারনাটি জাভাস্ক্রিপ্ট ইঞ্জিনে নিয়ে আসা হয়েছে। JIT আসলে ইন্টারপ্রেটার এবং কম্পাইলার এই দুইটির-ই ভালো দিকগুলো একসাথে নিয়ে কাজ করে। ইন্টারপ্রেটার আগের মতোই স্বাভাবিকভাবে তার কাজ করে যায়। শুধুমাত্র কম অপটিমাইজড এবং বেশি বার এক্সিকিউট হওয়া কোডগুলো নিয়ে কম্পাইলার আরো বেশি অপটিমাইজড কোডে রুপান্তর করে। একারনেই এখনকার V8 ইঞ্জিন এত বেশি দক্ষ এবং জনপ্রিয়। একটি জাভাস্ক্রিপ্ট প্রোগ্রাম প্রথমে পার্সারের কাছে গেলে সেখান থেকে পার্সার টোকেনাইজেশন শেষে টোকেনগুলো দিয়ে একেকটি নোড তৈরি করে। এই নোডগুলো থেকেই এরপর AST তৈরি হয় যেটিকে আমাদের ইন্টারপ্রেটার বাইটকোডে রূপান্তর করে। V8 ইঞ্জিনের ইন্টারপ্রেটারটি ইগনিশন (Ignition) নামে পরিচিত। ইন্টারপ্রেটারের ভেতরে কিন্তু বাইটকোড এক্সিকিউট করার জন্য মেমরি হিসেবে রেজিস্টার ব্যবহার করা হয়। ইগনিশন এখানে প্রত্যেকটা অবজেক্ট এর জন্য একেকটা ‘শেইপ’ তৈরি করে যেটা আসলে অবজেক্ট-এর একটা গঠন ছাড়া আর কিছুই না। এই শেইপ তৈরি করে রাখার কারনে পরবর্তীতে ‘ইনলাইন ক্যাশিং’ ও অন্যান্য অপটিমাইজেশন করতে V8 ইঞ্জিনের সুবিধা হয়। উপরের এই কাজগুলো হতে হতে আমাদের ‘প্রোফাইলার’ কিন্তু বসে নেই। সে তার কাজ করে যাচ্ছে এবং কোডের ‘হট’ পার্টগুলোকে বের করে ‘টার্বোফ্যান’ কম্পাইলারের কাছে পাঠিয়ে দিচ্ছে। ‘টার্বোফ্যান’ কম্পাইলারটি হলো V8 ইঞ্জিনের ক্ষেত্রে আমাদের JIT কম্পাইলার। যার দায়িত্ব আমাদের ‘হট কোড’ এর অপটিমাইজেশন। প্রোফাইলার থেকে বাইটকোড পেয়ে টার্বোফ্যান সেগুলোকে মেশিন কোডে রুপান্তর করে যাতে কোডের ওই অংশটা অনেক দ্রুত রান করে। এই মেশিন কোড কিন্তু আর্কিটেকচার অনুযায়ী ভিন্ন ভিন্ন হয় যাতে করে ওই নির্দিষ্ট মেশিনে সেটা অবশ্যই ভালো পারফর্ম করে।
 
+Reference: [JavaScript Engine by VivaSoft](https://academy.vivasoftltd.com/javascript-bootcamp/fundamentals/js-engine/)
+
 ## 12. Bitwise Operators, Type Arrays and Array Buffers
+
+Bitwise operators perform an operation on the bitwise (0,1) representation of their arguments, rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number eight has a binary representation of 1000. Bitwise operators do their operations on such binary representation (for example 1000) but they return standard JavaScript numerical values.
+
+`&` - (Bitwise AND): Returns a 1 in each bit position where both operands have a 1. <br />
+`|` - (Bitwise OR): Returns a 1 in each bit position where at least one operand has a 1.<br />
+`^` - (Bitwise XOR): Returns a 1 in each bit position where only one operand has a 1. <br />
+`~` - (Bitwise NOT): Inverts the bits of its operand. <br />
+`<<` - (Left Shift): Shifts the bits of the first operand to the left by the number of positions specified by the second operand. <br />
+`>>` - (Right Shift): Shifts the bits of the first operand to the right by the number of positions specified by the second operand. <br />
+`>>>` - (Unsigned Right Shift): Shifts the bits to the right, filling with zeros.<br />
+
+```js
+let a = 5; // Binary: 0101
+let b = 3; // Binary: 0011
+
+console.log(a & b); // Result: 1 (Binary: 0001)
+console.log(a | b); // Result: 7 (Binary: 0111)
+console.log(a ^ b); // Result: 6 (Binary: 0110)
+console.log(~a); // Result: -6 (Binary: 11111111111111111111111111111010 in 32-bit signed integer)
+console.log(a << 1); // Result: 10 (Binary: 1010)
+console.log(a >> 1); // Result: 2 (Binary: 0010)
+console.log(a >>> 1); // Result: 2 (Binary: 0010)
+```
+
+##### Array Buffers:
+
+An ArrayBuffer is a generic fixed-length container for binary data.
+It cannot be directly manipulated, but you can create views (Typed Arrays) on it to interact with the data.
+
+```js
+// Create an ArrayBuffer with a size of 16 bytes
+let buffer = new ArrayBuffer(16);
+
+// Create a Typed Array (Int32Array) view on the buffer
+let intArray = new Int32Array(buffer);
+
+// Manipulate the data through the Typed Array view
+intArray[0] = 42;
+console.log(intArray[0]); // Result: 42
+```
+
+##### Typed Arrays:
+
+Typed Arrays provide a way to view and manipulate binary data with specific numeric types (e.g., Int8, Uint8, Float32, etc.).
+They are used to represent structured data.
+
+```js
+// Create a Typed Array (Uint8Array) with a length of 4
+let uint8Array = new Uint8Array([1, 2, 3, 4]);
+
+// Access and manipulate data in the Typed Array
+console.log(uint8Array[0]); // Result: 1
+console.log(uint8Array.length); // Result: 4
+
+// Modify data in the Typed Array
+uint8Array[1] = 5;
+console.log(uint8Array); // Result: Uint8Array [ 1, 5, 3, 4 ]
+```
+
+Typed Arrays are especially useful when dealing with binary data such as image pixels, networking, or WebGL applications. They offer efficient ways to work with raw memory.
 
 ## 13. DOM and Layout Trees
 
+The Document Object Model, usually referred to as the DOM, is an essential part of making websites interactive. It is an interface that allows a programming language to manipulate the content, structure, and style of a website. JavaScript is the client-side scripting language that connects to the DOM in an internet browser.
+
+The DOM (Document Object Model) is an interface that represents how your HTML and XML documents are read by the browser. It allows a language (JavaScript) to manipulate, structure, and style your website. After the browser reads your HTML document, it creates a representational tree called the Document Object Model and defines how that tree can be accessed.
+
+- Dom Tree
+  ![Dom Tree](/images/dom.jpg)
+
+- The representational tree that the browser create after it read your document.
+  ![Dom Tree](/images/dom-tree.jpg)
+
+Reference: [Dom Tree](https://www.freecodecamp.org/news/whats-the-document-object-model-and-why-you-should-know-how-to-use-it-1a2d0bc5429d)
+
 ## 14. Factories and Classes
+
+JavaScript is a prototype-based language, meaning object properties and methods can be shared through generalized objects that have the ability to be cloned and extended. This is known as prototypical inheritance and differs from class inheritance.
+
+Reference:
+
+1. [Class and Prototype](https://medium.com/tech-tajawal/javascript-classes-under-the-hood-6b26d2667677)
+
+2. [Prototype and Inheritance](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
 
 ## 15. this, call, apply and bind
 
