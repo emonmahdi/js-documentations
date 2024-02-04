@@ -370,6 +370,8 @@ let bigNumber = BigInt(9007199254740991);
 
 ### 15. Best Practices
 
+Link: [https://github.com/ryanmcdermott/clean-code-javascript?tab=readme-ov-file#error-handling]
+
 ### 16. JavaScript Projects
 
 Project Ideas 40 project- Js, React, Typescript: [https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-restaurant-menu-page]
@@ -734,9 +736,146 @@ The term Modularity refers to the degree to which a system's components may be s
 
 ## 9. Message Queue and Event Loop
 
+The event loop is the secret behind JavaScript’s asynchronous programming.
+An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
+The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is single-threaded.
+
+Reference:
+[https://www.educative.io/answers/what-is-an-event-loop-in-javascript]
+[https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4]
+Video: [https://www.youtube.com/watch?v=8zKuNo4ay8E]
+
+Callback Queue (Event Queue):
+The Callback Queue is a mechanism used by the JavaScript runtime to handle asynchronous tasks. It is a FIFO data structure that holds callback functions waiting to be executed.
+
+The Event Loop monitors the Call Stack and the Callback Queue, ensuring that callback functions are executed once the Call Stack is empty.
+
+Reference: [https://itnext.io/javascript-runtime-js-engine-event-loop-call-stack-execution-contexts-heap-and-queues-4826d064ad76]
+
 ## 10. setTimeout, setInterval and requestAnimationFrame
 
+`setTimeout`: allows us to run a function once after the interval of time.
+
+The setTimeout function is used to execute a function or code snippet after a specified delay (in milliseconds). It takes two arguments: the function to be executed and the delay in milliseconds.
+
+example:
+
+```js
+let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)
+```
+
+```js
+function sayHi() {
+  alert("Hello");
+}
+
+setTimeout(sayHi, 1000);
+```
+
+With arguments:
+
+```js
+function sayHi(phrase, who) {
+  alert(phrase + ", " + who);
+}
+
+setTimeout(sayHi, 1000, "Hello", "John"); // Hello, John
+
+// wrong!
+setTimeout(sayHi(), 1000);
+```
+
+With Recommended:
+
+```js
+setTimeout(() => alert("Hello"), 1000);
+```
+
+```js
+function delayedFunction() {
+  console.log("This will be executed after 2000 milliseconds.");
+}
+
+setTimeout(delayedFunction, 2000);
+```
+
+Clear interval:
+
+```js
+let timerId = setTimeout(() => alert("never happens"), 1000);
+alert(timerId); // timer identifier
+clearTimeout(timerId);
+```
+
+`setInterval`: allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+
+The setInterval function is used to repeatedly execute a function or code snippet at a specified interval. It also takes two arguments: the function to be executed and the interval in milliseconds.
+
+Example:
+
+```js
+let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
+```
+
+```js
+let i = 1;
+setInterval(function () {
+  func(i++);
+}, 100);
+```
+
+```js
+let i = 1;
+setTimeout(function run() {
+  func(i++);
+  setTimeout(run, 100);
+}, 100);
+```
+
+```js
+function repeatedFunction() {
+  console.log("This will be executed every 1000 milliseconds.");
+}
+
+setInterval(repeatedFunction, 1000);
+```
+
+`requestAnimationFrame`:
+requestAnimationFrame is often used for smoother animations and is specifically designed for running animations in the browser. It takes a callback function as its argument, and the browser automatically schedules the callback before the next repaint.
+
+Example:
+
+```js
+function animate() {
+  // Perform animation logic here
+  console.log("Animating...");
+
+  // Request the next animation frame
+  requestAnimationFrame(animate);
+}
+
+// Start the animation loop
+requestAnimationFrame(animate);
+```
+
 ## 11. JavaScript Engines
+
+It is a program that converts Javascript code into lower level or machine code that microprocessors can understand.
+
+জাভাস্ক্রিপ্ট ল্যাংগুয়েজটি আসলে কম্পিউটারের কাছে বোধগম্য নয়। এই ল্যাংগুয়েজ দিয়ে কাজ করার জন্য আমাদের দরকার এমন একটি প্রোগ্রাম যেটা জাভাস্ক্রিপ্টকে কম্পিউটারের জন্য বোধগম্য ভাষায় রূপান্তর করতে পারে। জাভাস্ক্রিপ্ট ইঞ্জিন বলতে আমরা আসলে এই প্রোগ্রামটিকেই বোঝাচ্ছি।
+
+জাভাস্ক্রিপ্ট ইঞ্জিনগুলোর নাম নিচে দেয়া হলোঃ
+গুগল ক্রোম – V8 ইঞ্জিন.
+মজিলা ফায়ারফক্স – স্পাইডার মাঙ্কি.
+সাফারি – জাভাস্ক্রিপ্ট কোর.
+নোড জেএস – V8 ইঞ্জিন.
+মাইক্রোসফট এজ – চাকরা.
+
+![Javascript Engine](/images/js-engine.jpg)
+
+এই ইঞ্জিনগুলোর মধ্যে V8 কে বর্তমানে সবচেয়ে জনপ্রিয় এবং দক্ষ হিসেবে ধরা হয়। আমাদের এই লেখায় সবগুলো ইঞ্জিন নিয়ে আলোচনা করা সম্ভব নয়। তাই আমরা এখানে চেষ্টা করবো শুধুমাত্র V8 ইঞ্জিন নিয়ে কথা বলতে। এই ইঞ্জিনটার কর্মপদ্ধতি বুঝতে পারলে আশা করছি বাকি ইঞ্জিনগুলো বোঝা খুব বেশি কঠিন হবে না আপনাদের জন্য। V8 ইঞ্জিন কিভাবে কাজ করে এটা বোঝার জন্য আগে কিছু বিষয়ে ধারনা নেয়া দরকার। ১) পার্সার (Parser): পার্সারের কাজ হলো আমাদের জাভাস্ক্রিপ্ট কোডকে টোকেনে ভাগ করা। এখন প্রশ্ন আসতে পারে যে এই টোকেনে ভাগ করার কি প্রয়োজন? টোকেনাইজেশন এর কাজ শেষে এই টোকেনগুলো থেকেই এবস্ট্রাক্ট সিনট্যাক্স ট্রি (Abstract Syntax Tree) তৈরি হবে। ২) এবস্ট্রাক্ট সিনট্যাক্স ট্রি (Abstract Syntax Tree): AST বা Abstract Syntax Tree হলো আমাদের জাভাস্ক্রিপ্ট প্রোগ্রামের একটি ট্রি-এর মত কাঠামো যেটা টোকেন লিস্ট থেকে তৈরি হয়। একটি ইন্টারপ্রেটারকে AST দিয়ে দিলে পরবর্তীতে সেটি থেকে বাইটকোড পাওয়া যায়। ৩) ইন্টারপ্রেটারঃ জাভাস্ক্রিপ্ট হলো একটি ইন্টারপ্রেটার ল্যাঙ্গুয়েজ। AST (Abstract Syntax Tree) কে বাইট কোডে রূপান্তর করাই মূলত ইন্টারপ্রেটারের কাজ। ইন্টারপ্রেটার থেকে পাওয়া বাইট কোডকে আরো অপটিমাইজ করার জন্য কম্পাইলার ব্যবহার করা হয়। ৪) প্রোফাইলারঃ আমাদের কোডে সবসময় এমন কিছু অংশ থাকে যেটা বিভিন্ন যায়গায় বারবার ব্যবহৃত হয়। এগুলোকে ‘হট কোড’ (Hot Code) বলা হয়। প্রোফাইলারের কাজ হলো এই হট কোড কে খুঁজে বের করা।এই কোডগুলো যেহেতু অনেক বেশি সংখ্যক বার এক্সিকিউট হচ্ছে, কোডের এই অংশগুলো কতটা অপটিমাইজড সেটার উপর সম্পূর্ন প্রোগ্রামটির পারফরম্যান্স নির্ভর করছে। ৫) কম্পাইলারঃ আমরা আগেই বলেছি যে জাভাস্ক্রিপ্ট একটি ইন্টারপ্রেটার ল্যাঙ্গুয়েজ। কিন্তু তাহলে এখানে কম্পাইলার এর কথা আসছে কেন? জাভাস্ক্রিপ্ট ইঞ্জিনে কম্পাইলারের ভূমিকা আসলে অপটিমাইজেশনে। ইন্টারপ্রেটার হতে পাওয়া বাইটকোড ব্যবহার করেও প্রোগ্রাম ব্রাউজারে রান করানো যায় কিন্তু আরো ভালো হতো যদি আমরা আমাদের কোডের ‘হট’ পার্টগুলোকে অপটিমাইজড কোডে রূপান্তর করে ফেলতে পারতাম। এই কাজটি করার জন্যই কম্পাইলারের প্রয়োজন। V8 ইঞ্জিনের ক্ষেত্রে এই কম্পাইলারটির নাম ‘টার্বোফ্যান’। এখন আমরা V8 ইঞ্জিন কিভাবে কাজ করে এটি বোঝার জন্য প্রয়োজনীয় ধারনাগুলো পেয়ে গেছি। এবারে এই জিনিসগুলো একসাথে কিভাবে কাজ করছে সেটি দেখি। নিচের ছবিটা দেখে আপনারা একটা ভালো ধারনা পেতে পারেন।
+
+একটি গুরুত্বপূর্ন বিষয় যেটি আমাদের জানা প্রয়োজন সেটি হলো আগের জাভাস্ক্রিপ্ট ইঞ্জিনগুলোর ভেতরে শুধুমাত্র ইন্টারপ্রেটার ব্যবহৃত হতো। ইন্টারপ্রেটার লাইন ধরে ধরে কোড এক্সিকিউট করে। ডিবাগিং এর জন্য এটা ভালো হলেও পুরো প্রোগ্রামটি রান করতে অনেক সময় লেগে যেত। এই প্রক্রিয়াটি আরো দ্রুত করার জন্য জাস্ট ইন টাইম কম্পাইলার বা JIT (Just In Time) এর ধারনাটি জাভাস্ক্রিপ্ট ইঞ্জিনে নিয়ে আসা হয়েছে। JIT আসলে ইন্টারপ্রেটার এবং কম্পাইলার এই দুইটির-ই ভালো দিকগুলো একসাথে নিয়ে কাজ করে। ইন্টারপ্রেটার আগের মতোই স্বাভাবিকভাবে তার কাজ করে যায়। শুধুমাত্র কম অপটিমাইজড এবং বেশি বার এক্সিকিউট হওয়া কোডগুলো নিয়ে কম্পাইলার আরো বেশি অপটিমাইজড কোডে রুপান্তর করে। একারনেই এখনকার V8 ইঞ্জিন এত বেশি দক্ষ এবং জনপ্রিয়। একটি জাভাস্ক্রিপ্ট প্রোগ্রাম প্রথমে পার্সারের কাছে গেলে সেখান থেকে পার্সার টোকেনাইজেশন শেষে টোকেনগুলো দিয়ে একেকটি নোড তৈরি করে। এই নোডগুলো থেকেই এরপর AST তৈরি হয় যেটিকে আমাদের ইন্টারপ্রেটার বাইটকোডে রূপান্তর করে। V8 ইঞ্জিনের ইন্টারপ্রেটারটি ইগনিশন (Ignition) নামে পরিচিত। ইন্টারপ্রেটারের ভেতরে কিন্তু বাইটকোড এক্সিকিউট করার জন্য মেমরি হিসেবে রেজিস্টার ব্যবহার করা হয়। ইগনিশন এখানে প্রত্যেকটা অবজেক্ট এর জন্য একেকটা ‘শেইপ’ তৈরি করে যেটা আসলে অবজেক্ট-এর একটা গঠন ছাড়া আর কিছুই না। এই শেইপ তৈরি করে রাখার কারনে পরবর্তীতে ‘ইনলাইন ক্যাশিং’ ও অন্যান্য অপটিমাইজেশন করতে V8 ইঞ্জিনের সুবিধা হয়। উপরের এই কাজগুলো হতে হতে আমাদের ‘প্রোফাইলার’ কিন্তু বসে নেই। সে তার কাজ করে যাচ্ছে এবং কোডের ‘হট’ পার্টগুলোকে বের করে ‘টার্বোফ্যান’ কম্পাইলারের কাছে পাঠিয়ে দিচ্ছে। ‘টার্বোফ্যান’ কম্পাইলারটি হলো V8 ইঞ্জিনের ক্ষেত্রে আমাদের JIT কম্পাইলার। যার দায়িত্ব আমাদের ‘হট কোড’ এর অপটিমাইজেশন। প্রোফাইলার থেকে বাইটকোড পেয়ে টার্বোফ্যান সেগুলোকে মেশিন কোডে রুপান্তর করে যাতে কোডের ওই অংশটা অনেক দ্রুত রান করে। এই মেশিন কোড কিন্তু আর্কিটেকচার অনুযায়ী ভিন্ন ভিন্ন হয় যাতে করে ওই নির্দিষ্ট মেশিনে সেটা অবশ্যই ভালো পারফর্ম করে।
 
 ## 12. Bitwise Operators, Type Arrays and Array Buffers
 
