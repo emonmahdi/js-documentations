@@ -1334,6 +1334,33 @@ modifyArray ফাংশনটিতে আর্গুমেন্ট হিস
 
 #### 3. কমপ্লেক্স এক্সপ্রেশন বা লজিক প্রোগ্রামিং এ ব্যবহার: হাইয়ার অর্ডার ফাংশন ব্যবহার করে একটি ফাংশন অন্য ফাংশনের মধ্যে পাঠানো যায়, যা কমপ্লেক্স লজিক এবং এক্সপ্রেশন বা ইভেন্ট হ্যান্ডলিং এ উপকারী হতে পারে।
 
+#### কলব্যাক ফাংশন কি?
+
+সহজ কথায়, কলব্যাক ফাংশন হচ্ছে এমন একটি ফাংশন যেটি অন্য একটি ফাংশনে আর্গুমেন্ট হিসাবে পাস করা ফাংশন, যেটি কোন কাজ সম্পন্ন করার জন্যে আউটার ফাংশনের ভিতরে ইনভোক হয়।
+
+#### কলব্যাক কি হাইয়ার অর্ডার ফাংশন?
+
+কলব্যাক (Callback) হলো একটি হাইয়ার অর্ডার ফাংশনের একটি ধরণ। এটি হাইয়ার অর্ডার হওয়ার কারণে, এটি একটি ফাংশন নেয় এবং তার কাজ শেষ হলে অন্য একটি ফাংশনকে কল করতে হয়।
+
+এটি মূলত একটি ফাংশন যা আরও একটি ফাংশনকে প্রদান করে, এবং সেই ফাংশনটি কোনো ইভেন্ট বা কাজ শেষ হলে কল হয়। এটি মোটামুটি কলব্যাক ফাংশনের উদাহরণ হিসেবে ব্যবহার হয়, যেমন:
+
+```js
+function first_function(data, callback):
+     // কিছু কাজ করুন
+    result = perform_some_task(data)
+
+    // কলব্যাক ফাংশনকে কল করুন
+    callback(result)
+
+function callback_function(result):
+    //কলব্যাক ফাংশনে আসা ডেটা দিয়ে কিছু কাজ করুন
+    print("Callback function called with result:", result)
+
+// প্রথম ফাংশনকে কল করতে হয়, এবং কলব্যাক ফাংশন পাঠাতে হয়
+first_function(data, callback_function)
+
+```
+
 ## 23. Recursion
 
 ## 24. Collections and Generators
@@ -1797,6 +1824,98 @@ if (meetingSlot) {
   console.log("No available time slot for the meeting.");
 }
 ```
+
+### 21. Is there any security vulnerability in the below code? If yes, identify it:
+
+```js
+const username = document.getElementById("username").value;
+const password = document.getElementById("password").value;
+fetch("https://api.examplewebsite.com/login", {
+  method: "POST",
+  body: JSON.stringify({ username, password }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+### 22. Identify the output of the below code.
+
+```js
+const testArray = [1, 2, 3, 4, 5];
+const res = testArray.reduce((acc, curr) => {
+  if (curr % 2 === 0) {
+    return acc + curr;
+  }
+  return acc;
+}, 0);
+console.log(res);
+```
+
+### 23. What is the possible performance issue in the below code?
+
+```js
+const arr = [];
+for (let i = 0; i < 1000000; i++) {
+  arr.push(Math.floor(Math.random() * 1000));
+}
+```
+
+### 24. Suggest the output of the below code:
+
+```js
+const arr = [1, 2, 3];
+const object1 = { x: 1, y: 2, z: 3 };
+console.log([...arr, ...object1]);
+```
+
+### 25. Design a social media platform that contains features like sign up, creating a profile and posting status updates. Users should be able to follow other users and view their posts on a newsfeed.
+
+### 26. What is wrong with the below call to the API?
+
+```js
+fetch("https://api.example.com/data")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+### 27. What will be the output of below code snippet?
+
+```js
+const promise1 = Promise.resolve(One);
+const promise2 = Promise.resolve(Two);
+Promise.all([promise1, promise2]).then(([result1, result2]) =>
+  console.log(result1 + " " + result2)
+);
+```
+
+### 28. Design an online code editor where users can write, save and run JavaScript code. The editor should include features like syntax highlighting, auto-completion and error checking.
+
+### 29. The below code snippet uses closures to implement a counter. How will you optimize it to minimize memory usage:
+
+```js
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+const increment = counter();
+increment(); // 1
+increment(); // 2
+increment(); // 3
+```
+
+### 30. Develop a fitness tracker application where users can enter their daily exercise routines and track their progress over time. The application should allow users to set goals, view their progress and receive reminders.
+
+#### JavaScript Coding Interview Preparation: [https://codeinterview.io/blog/javascript-coding-interview-questions/]
 
 #### React Interview Questions:
 
