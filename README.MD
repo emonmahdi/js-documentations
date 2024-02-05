@@ -961,11 +961,36 @@ Reference: [Dom Tree](https://www.freecodecamp.org/news/whats-the-document-objec
 
 JavaScript is a prototype-based language, meaning object properties and methods can be shared through generalized objects that have the ability to be cloned and extended. This is known as prototypical inheritance and differs from class inheritance.
 
+ক্লাস হলো এমন একটি টেম্পলেট যা ভ্যারিয়েবল এবং ফাংশনের সমন্বয়ে তৈরি। শুনতে তো অবজেক্ট এর মতোই হয়ে গেল তাইনা? আরেকটু ভালোভাবে ভাবে বলতে গেলে, ক্লাস হলো একধরণের blueprint যা থেকে সুনির্দিষ্ট অবজেক্ট তৈরি করা হয়। ক্লাসের মধ্যেও Attributes এবং Function থাকে যাদেরকে Method বলা হয়
+
+##### Example:
+
+```js
+class Car {
+constructor(color, brand, model){
+this.color = color;
+this.brand = brand;
+this.model = model;
+}
+repaint(){
+this.color = “Red”;
+}
+}
+
+const myCar = new Car(“Black”, “Doge”, “Charger”);
+const helensCar = new Car(“Blue”, “Nissan”, “Ultima”);
+```
+
+আমরা একটা Car নামে ক্লাস তৈরি করেছি। তার মধ্যে properties হিসেবে color, brand এবং model দিয়েছি। এবং তার মধ্যে repaint নামে একটি মেথড দিলাম যা গাড়ির রং পরিবর্তন করে। তারপর এই ক্লাস থেকে আমরা দুইটি ‘Car’ টাইপের অবজেক্ট myCar এবং helensCar তৈরি করেছি।এখন আমরা চাইলে এই ক্লাস থেকে হাজারটা অবজেক্টও তৈরি করতে পারব এবং প্রত্যেকটা অবজেক্টেরই ইউনিক প্রোপার্টি থাকবে।
+
+ক্লাসের কোড তো দেখলাম। এখন আমাদের মনে প্রশ্ন জাগতে পারে যে Car ক্লাসের মধ্যে constructor জিনিসটা আবার কি? constructor একটি স্পেশাল ধরণের ফাংশন যার সাহায্যে অবজেক্ট কে ইনিশিয়ালাইজ করা যায়। আরেকটু সহজ করে বলতে গেলে, এটি এমন একধরনের ফাংশন যা নিজেকে নিজেই কল করে। আমরা যখন ‘new’ keyword ব্যবহার করে কোনো ক্লাসের অবজেক্ট তৈরি করি, তখনই সাথে সাথেই constructor ফাংশনটি কল হয় এবং অবজেক্টের মধ্যে কোন ভ্যালু সেট করে দিলে constructor এর মধ্যে সেগুলো এসাইন হয়ে যায়। ‘new’ keyword এর ব্যবহার নিয়ে আমরা পরবর্তীতে বিস্তারিত আলোচনা করব। constructor এর কাজই হচ্ছে অবজেক্ট তৈরি করা এবং অবজেক্টের কোনো প্রোপার্টি থাকলে তাদের ভ্যালু সেট করা। এটা অবজেক্ট তৈরি করার খুবই সহজ পদ্ধতি কারণ আমাদের কষ্ট করে অবজেক্ট রিটার্ন করতে হয়না। জাভাস্ক্রিপ্টে কোনো ক্লাস তৈরি করার সময় অটোম্যাটিক constructor তৈরি হয়ে যায়, কোনো প্যারামিটার ছাড়াই।
+
 Reference:
 
-1. [Class and Prototype](https://medium.com/tech-tajawal/javascript-classes-under-the-hood-6b26d2667677)
+1. [Class and Factories by VivaSoft](https://academy.vivasoftltd.com/javascript-bootcamp/introduction-to-oop/what-is-class/)
+2. [Class and Prototype](https://medium.com/tech-tajawal/javascript-classes-under-the-hood-6b26d2667677)
 
-2. [Prototype and Inheritance](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
+3. [Prototype and Inheritance](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
 
 ## 15. this, call, apply and bind
 
