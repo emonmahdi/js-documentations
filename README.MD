@@ -1223,7 +1223,9 @@ console.log(boundInfo(99));
 
 ## 20. Pure Functions, Side Effects, State Mutation and Event Propagation
 
-## 21. Closures
+## 21. Closures:
+
+![Clouser](/images/clouser.png)
 
 A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
@@ -1286,7 +1288,51 @@ for (var i = 1; i <= 5; i++) {
 }
 ```
 
+Reference: [Clouser by vivasoft](https://academy.vivasoftltd.com/javascript-bootcamp/fundamentals/js-closures/)
+
 ## 22. High Order Functions
+
+যে ফাংশনে অন্য কোন ফাংশনকে আর্গুমেন্ট হিসাবে পাস করা হয় বা কোন ফাংশন অন্য কোন ফাংশনকে রিটার্ন করে তাকে হাইয়ার অর্ডার ফাংশন বলা হয়।
+
+হাইয়ার অর্ডার ফাংশন হলো একটি প্রোগ্রামিং প্যারাডাইম, যেখানে একটি ফাংশনের মধ্যে অন্য একটি ফাংশন পাঠানো হয়। এটি ফাংশন পাঠানোর সময়ে তার প্রথম আর্গুমেন্ট হিসেবে অন্য একটি ফাংশন নেয় এবং সেটির ফলাফল হিসেবে একটি অবজেক্ট বা ফাংশন প্রদান করে।
+
+#### Example:
+
+```js
+function modifyArray(arr, callback) {
+  let output = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    output.push(callback(arr[i]));
+  }
+
+  return output;
+}
+
+function addBy2(elem) {
+  return elem + 2;
+}
+
+function multifyBy2(elem) {
+  return elem * 2;
+}
+
+const additionArr = modifyArray([1, 2, 3, 4, 5, 6], addBy2);
+const multiArr = modifyArray([1, 2, 3, 4, 5, 6], multifyBy2);
+
+console.log(additionArr); // [3, 4, 5, 6, 7, 8]
+console.log(multiArr); // [2, 4, 6, 8, 10, 12]
+```
+
+modifyArray ফাংশনটিতে আর্গুমেন্ট হিসাবে যে ফাংশনটিকে পাস করতেছি ওই ফাংশনটিই হচ্ছে একটি কলব্যাক ফাংশন এবং modifyArray ফাংশনটি হচ্ছে একটি হাইয়ার অর্ডার ফাংশন।
+
+#### আমি কখন হাইয়ার অর্ডার ফাংশন ব্যবহার করব?
+
+#### 1. ফাংশন গুলি প্রথম-শ্রেণী নাগাদ অবজেক্ট হিসেবে ব্যবহৃত হয়: এটি হয়তো অবজেক্ট-অরিয়েন্টেড প্রোগ্রামিং এ বা ফাংশনাল প্রোগ্রামিং এ ব্যবহার করা হয়।
+
+#### 2. কোড রিডেবিলিটি এবং কমপ্লেক্সিটি নিয়ন্ত্রণের জন্য: হাইয়ার অর্ডার ফাংশন ব্যবহার করলে কোড সহজে বুঝা যায় এবং এর সাথে কমপ্লেক্সিটি নিয়ন্ত্রণ থাকে।
+
+#### 3. কমপ্লেক্স এক্সপ্রেশন বা লজিক প্রোগ্রামিং এ ব্যবহার: হাইয়ার অর্ডার ফাংশন ব্যবহার করে একটি ফাংশন অন্য ফাংশনের মধ্যে পাঠানো যায়, যা কমপ্লেক্স লজিক এবং এক্সপ্রেশন বা ইভেন্ট হ্যান্ডলিং এ উপকারী হতে পারে।
 
 ## 23. Recursion
 
