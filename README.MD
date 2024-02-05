@@ -985,6 +985,52 @@ const helensCar = new Car(“Blue”, “Nissan”, “Ultima”);
 
 ক্লাসের কোড তো দেখলাম। এখন আমাদের মনে প্রশ্ন জাগতে পারে যে Car ক্লাসের মধ্যে constructor জিনিসটা আবার কি? constructor একটি স্পেশাল ধরণের ফাংশন যার সাহায্যে অবজেক্ট কে ইনিশিয়ালাইজ করা যায়। আরেকটু সহজ করে বলতে গেলে, এটি এমন একধরনের ফাংশন যা নিজেকে নিজেই কল করে। আমরা যখন ‘new’ keyword ব্যবহার করে কোনো ক্লাসের অবজেক্ট তৈরি করি, তখনই সাথে সাথেই constructor ফাংশনটি কল হয় এবং অবজেক্টের মধ্যে কোন ভ্যালু সেট করে দিলে constructor এর মধ্যে সেগুলো এসাইন হয়ে যায়। ‘new’ keyword এর ব্যবহার নিয়ে আমরা পরবর্তীতে বিস্তারিত আলোচনা করব। constructor এর কাজই হচ্ছে অবজেক্ট তৈরি করা এবং অবজেক্টের কোনো প্রোপার্টি থাকলে তাদের ভ্যালু সেট করা। এটা অবজেক্ট তৈরি করার খুবই সহজ পদ্ধতি কারণ আমাদের কষ্ট করে অবজেক্ট রিটার্ন করতে হয়না। জাভাস্ক্রিপ্টে কোনো ক্লাস তৈরি করার সময় অটোম্যাটিক constructor তৈরি হয়ে যায়, কোনো প্যারামিটার ছাড়াই।
 
+##### Factory Pattern:
+
+```js
+class Car {
+constructor(options) {
+this.wheels = options.wheels;
+this.doors = options.doors;
+this.color = options.color;
+}
+}
+class Truck {
+constructor(options) {
+this.wheels = options.wheels;
+this.doors = options.doors;
+this.color = options.color;
+}
+}
+class Factory {
+constructor(type) {
+this.type = type;
+}
+ create = (options) => {
+ let vehicleType = this.type;
+ let vehicle;
+if (vehicleType === “car”) {
+ vehicle = new Car(options);
+} else if (vehicleType === “truck”) {
+ vehicle = new Truck(options);
+}
+ vehicle.vehicleType = vehicleType;
+ vehicle.startEngine = ()=> console.log(`Reving ${vehicleType} engine`);
+ vehicle.driveVehicle = ()=> console.log(`Driving ${vehicleType}…`);
+ vehicle.stopEngine = ()=> console.log(`Stop ${vehicleType} engine`);
+return vehicle;
+}
+};
+const TruckFactory = new Factory(“truck”);
+const truck = TruckFactory.create({
+ wheels: 12,
+ doors: 2,
+ color: “yellow”
+})
+console.log(truck)
+truck.startEngine();
+```
+
 Reference:
 
 1. [Class and Factories by VivaSoft](https://academy.vivasoftltd.com/javascript-bootcamp/introduction-to-oop/what-is-class/)
@@ -993,6 +1039,179 @@ Reference:
 3. [Prototype and Inheritance](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
 
 ## 15. this, call, apply and bind
+
+##### this:
+
+```js
+function myFunc() {
+  console.log(this);
+}
+
+myFunc();
+```
+
+“this” এর ভ্যালু কি হবে সেটা নির্ভর করে কোথায় এবং কিভাবে কল হচ্ছে তার উপর ভিত্তি করে। উপরের কোডে myFunc() কে কল করতেছে window অবজেক্ট। কারণ ব্রাউজারে সব কিছু বাই ডিফল্ট window অবজেক্টের আন্ডারে রান হয়। তার মানে হচ্ছে, যে যার মাধ্যমে কল হবে “this” তাকে দেখাবে আউটপুট হিসাবে।
+
+যেহেতু myFunc() কে window কল করতেছে তাই myFunc() এর ভিতরে থাকা “this” – window এর সব ভ্যালুকে আউটপুট হিসাবে দেখাচ্ছে।
+
+##### Call() মেথডঃ:
+
+Call() মেথড ফাংশনকে ইমিডিয়েটলি ইনভোক করে . Call() মেথড প্রথম প্যারামিটার হিসাবে “this” এর ভ্যালু সেট করে। তারপর যে প্যারামিটারগুলো থাকবে সেগুলো হবে ফাংশনের প্যারামিটার। Call() মেথড ইনডিভিজুয়াল প্যারামিটার নেয়।
+
+##### Example 1:
+
+```js
+let person = {
+  name: "Saroar Hossain Shahan",
+};
+
+let getInfo = function (id) {
+  return `Welcome ${this.name}, Your roll number is ${id}.`;
+};
+
+console.log(getInfo.call(person, 99)); // Welcome Saroar Hossain Shahan, Your roll number is 99.
+```
+
+উপরের কোডে আমরা দেখতে পাচ্ছি যে, getInfo() এর সাথে Call() মেথড ব্যবহার করা হয়েছে এবং Call() মেথড তার প্রথম প্যারামিটার হিসাবে “this” ভ্যালু সেট করে, যেটি হচ্ছে person অবজেক্ট। তারপরের প্যারামিটারগুলো হচ্ছে যে ফাংশনের সাথে কল হচ্ছে তার আর্গুমেন্টস। চলুন আরেকটি উদাহরণ দেখি যেটি আপনাদের রিয়েল লাইফ প্রজেক্টে কাজে দিতে পারে।
+
+##### Example 2:
+
+```js
+function Person(fName, lName, age) {
+  this._firstName = fName;
+  this._lastName = lName;
+  this._age = age;
+}
+
+function Student(fName, lName, age, roll, section) {
+  Person.call(this, fName, lName, age, roll, section);
+  this._roll = roll;
+  this._section = section;
+}
+
+let std1 = new Student("Saroar Hossain", "Shahan", 25, 99, "B");
+
+console.log(std1);
+
+/**
+ * output:
+ * _age: 25
+ * _firstName: Saroar Hossain
+ * _lastName: Shahan
+ * _roll: 99
+ * _section: 'B'
+ * */
+```
+
+##### Apply() মেথডঃ
+
+Apply() মেথড এবং Call() মেথডের মাঝে বিশেষ কোন পার্থক্য নেই। দুটাই ফাংশনকে ইমিডিয়েটলি ইনভোক করে এবং Apply() মেথড আর্গুমেন্টস হিসাবে একটা Array নেয়।
+
+##### Example 1:
+
+```js
+let person = {
+  name: "Saroar Hossain Shahan",
+};
+
+let getInfo = function (id) {
+  return `Welcome ${this.name}, Your roll number is ${id}.`;
+};
+
+console.log(getInfo.call(person, [99])); // Welcome Saroar Hossain Shahan, Your roll number is 99.
+```
+
+শুধু মাত্র কোড ছাড়া আউটপুটে কোন পার্থক্য নেই।
+
+##### Example 2:
+
+```js
+function Person(fName, lName, age) {
+  this._firstName = fName;
+  this._lastName = lName;
+  this._age = age;
+}
+
+function Student(fName, lName, age, roll, section) {
+  Person.apply(this, [fName, lName, age, roll, section]);
+  this._roll = roll;
+  this._section = section;
+}
+
+let std1 = new Student("Saroar Hossain", "Shahan", 25, 99, "B");
+
+console.log(std1);
+
+/**
+ * output:
+ * _age: 25
+ * _firstName: Saroar Hossain
+ * _lastName: Shahan
+ * _roll: 99
+ * _section: 'B'
+ * */
+```
+
+এখন ধরেন আপনার Student ক্লসে কয়টা প্যারামিটার হতে পারে তা আপনার জানা নেই। ঐ সমস্যার সমাধান কিভাবে করবেন? খুব সহজ একটা সমাধান আছে। আমরা জানি যে, জাভাস্ক্রিপ্টে arguments নামে একটা বিল্ড-ইন অবজেক্ট আছে। এইটা অবজেক্ট হলেও আসলে কাজ করে Array এর মত করে এবং Apply মেথড যেহেতু Array নিয়ে কাজ করে, তাহলে তো আমরা arguments অবজেক্ট দিয়েই এই কাজটি করে ফেলতে পারি খুব সহজে।
+
+##### Example 3:
+
+```js
+function Person(fName, lName, age) {
+  this._firstName = fName;
+  this._lastName = lName;
+  this._age = age;
+}
+
+function Student(fName, lName, age, roll, section) {
+  Person.apply(this, arguments);
+  this._roll = roll;
+  this._section = section;
+}
+
+let std1 = new Student("Saroar Hossain", "Shahan", 25, 99, "B");
+
+console.log(std1);
+
+/**
+ * output:
+ * _age: 25
+ * _firstName: Saroar Hossain
+ * _lastName: Shahan
+ * _roll: 99
+ * _section: 'B'
+ * */
+```
+
+##### Bind() মেথডঃ
+
+Bind() মেথড হচ্ছে Call() এবং Apply() মেথডের বিপরীত। কারণ Call () এবং Apply() মেথড ইমিডিয়েটলি ইনভোক করে ফেলে। কিন্তু Bind() মেথড সেটা না করে সে একটা ফাংশন ডেফিনেশন রিটার্ন করে। যা আপনি পরবর্তীতে যেকোন সময়, যেকোন জায়গায় আপনার ইচ্ছা মত ব্যবহার করতে পারবেন।
+
+##### Example:
+
+```js
+let person = {
+  name: "Saroar Hossain Shahan",
+};
+
+let getInfo = function (id) {
+  return `Welcome ${this.name}, Your roll number is ${id}.`;
+};
+
+let boundInfo = getInfo.bind(person);
+
+console.log(boundInfo);
+console.log(boundInfo(99));
+
+/**
+ * output:
+ * f (id) {
+ * return `Welcome ${this.name}, Your roll number is ${id}.`;
+ * }
+ * */
+```
+
+আউটপুটে দেখেন boundInfo ফাংশন একটি ফাংশন ডেফিনেশন রিটার্ন করছে। এখন যদি আমরা ফাংশনটিকে তার আর্গুমেন্টস দিয়ে ইনভোক করি তাহলে আমাদের প্রত্যাশিত আউটপুট আমরা দেখতে পারবো।
 
 ## 16. new, Constructor, instanceof and Instances
 
