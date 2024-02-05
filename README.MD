@@ -1225,6 +1225,67 @@ console.log(boundInfo(99));
 
 ## 21. Closures
 
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+Closure কোন ফাংশন না আবার ফাংশনও কোন closure না। Closure হচ্ছে ফাংশনের এমন একটা বৈশিষ্ট্য যে বৈশিষ্ট্যের কারণে ফাংশন এক্সিকিউশন শেষ হয়ে যাবার পরেও তার lexical scope এ অবস্থিত সকল variable কে মনে রাখতে পারে। উদাহরণস্বরূপ বলা যেতে পারে যে ডম থেকে কিছু অ্যাক্সেস করার জন্যে আমরা যে ইভেন্ট ফাইয়ার করি সেটাও একটা closure।
+
+Closure ফাংশন এর মধ্যে যখন অন্য ফাংশন রিটার্ন করা হয় তখন সেটাকে ক্লোজার ফাংশন বলে। এর parent function এর মধ্যে Js Engine e store kore rakhe and child seta use korte pare.
+
+#### Example:
+
+```js
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+
+let addTen = add(10);
+let addSeven = addTen(7);
+
+console.log(addSeven); // 17
+```
+
+১। যখন add ফাংশনটি কল হয় এটি আরেকটি ফাংশনকে return করে।
+২। ঐ ফাংশনটির এক্সিকিউশন শেষ হয়ে যায় এবং মনে রাখে ঐ সময় তার প্যারামিটার a এর ভ্যালু কি ছিল।
+৩। যখন addTen ভেরিয়েবলে add ফাংশনকে এসাইন করা হয়। এটি সব সময় মনে রাখবে a এর ভ্যালু কি ছিল যখন এটিকে ইনিশিয়ালি কল করা হয়েছিল।
+৪। উপরের addTen ভেরিয়েবল একটি ফাংশনকে বোঝায় যেটি সব সময় ভ্যালু ১০ যোগ করবে যা পাঠানো হয়েছিল।
+৫। তার মানে হল যখন addTen কে কল করা হয় ৭ ভ্যালু দিয়ে, এটি ১০ এর সাথে ৭ যোগ করবে এবং ১৭ রিটার্ন করবে।
+
+কিভাবে আমরা লুপের ভিতরে ক্লোজার চালাতে পারি। এটি ইন্টার্ভিউ বোর্ডের একটা কমন প্রশ্ন। নিচের কোডটা দেখেন এবং একটু মনে মনে চিন্তা করেন এটার আউটপুট কত হবে।
+
+```js
+for (var i = 1; i <= 5; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+
+// কাঙ্ক্ষিত আউটপুটঃ -
+// 1
+// 2
+// 3
+// 4
+// 5
+
+// কিন্তু আসছে অনাকাঙ্ক্ষিত আউটপুটঃ-
+// 6
+// 6
+// 6
+// 6
+// 6
+```
+
+আসলে এই আউটপুট আসার অনেক কারণ আছে। লুপের মাঝে ভ্যারিয়েবল i হচ্ছে একটি গ্লোবাল ভ্যারিয়েবল। যখন setTimeout রান হয় তার আগেই লুপ শেষ হয়ে যায় এবং তাই i ভ্যালু 6 হয়ে যায়। সেজন্যে প্রতি এক সেকন্ড পর পর পাঁচবার 6 দেখাচ্ছে। যদি বিশ্বাস না হয় তাহলে কোডটা রান করার পর আপনার গ্লোবাল window অবজেক্টটা একবার দেখেন সেখানে i নামে একটা ভ্যারিয়েবল দেখতে পারবেন এবং তার ভ্যালু 6 হয়ে আছে।
+
+এই সমস্যার সমাধান আমরা IIFE বা Immediately Invoked Function Expression ব্যবহার করে করতে পারি। নিচে উদাহরণ দেওয়া হলঃ-
+
+```js
+for (var i = 1; i <= 5; i++) {
+  (function (val) {
+    setTimeout(() => console.log(val), 1000);
+  })(i);
+}
+```
+
 ## 22. High Order Functions
 
 ## 23. Recursion
