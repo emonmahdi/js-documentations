@@ -333,42 +333,204 @@ let bigNumber = BigInt(9007199254740991);
 
 ### 14. JavaScript Most asked interview Questions and answer
 
-1. জাভাস্ক্রিপ্ট সিংগেল থ্রেটেড না মাল্টিথ্রেটেড?
-2. জাভাস্ক্রিপ্ট এর সাথে ব্যাকেন্ডে কেন নোড ইউস করব, অন্যগুলা কেন নয়?
-3. Difference between cluster and child process model
-4. Call, bind, apply সম্পর্কে বলো
-5. This বলতে কি বুজি, কাজ কি এটার
-6. Callback and return এর পার্থক্য কি, দুইটা কাজ এক না আলাদা।
-7. Higher order Function কী
-8. Event loop and Event queue different কি?
-9. What is Data Type in javaScript
-10. Undefine and Define variable কি?
-11. Default parameters কি কেন ব্যাবহার করা হয়
-12. “==” এবং “===” মধ্যে পার্থক্য আছে কিনা
-13. Javascript scope, Block scope and global scope, Lexical scope এর পার্থক্য
-14. Var let const মধ্যে সম্পর্ক এবং পার্থক্য কি?
-15. Is Javascript Synchronous or asynchronous? How does it work?
-16. Ref. Type and preemptive type diff.
-17. Es6 advance topic বলো, কোনগুলা ব্যাবহার করছো?
-18. Prototype chain বলতে কি বুজো
-19. Pseudocode Method chaining নিয়ে কাজ করা হয় না।
-20. How many arguments does call apply bind take
-21. Event bubbling in js
-22. Call by value vs call by reference
-23. Js hosting, How many hosting in js
-24. Function and recursive function কাকে বলে
-25. How Spread operator work
-26. Closure, How closure work
-27. Inheritance of javascript
-28. একটা ফাংশনকে কখন রিটার্ন করতে হয়?
-29. Have any idea of Object orientate?
-30. After writing a js code how it will run in the browser step by step procedure
-31. How to work push and pop method.
-32. array vs link list সম্পর্কে ধারনা আছে কিনা? দুটার মধ্য সম্পর্ক বা পার্থক্য কি?
-33. class vs object মধ্যে সম্পর্ক কি?
-34. object oriented programming vs functional programming, principles of object-oriented programming
-35. Why JavaScript faster even single thread
-36. Explain Method chaining.
+#### 1. জাভাস্ক্রিপ্ট সিংগেল থ্রেটেড না মাল্টিথ্রেটেড?
+
+JavaScript is single-threaded. This means it executes one operation at a time in a single sequence. The reason for this is to maintain simplicity and avoid potential issues related to concurrency, such as race conditions and deadlocks.
+
+#### 2. জাভাস্ক্রিপ্ট এর সাথে ব্যাকেন্ডে কেন নোড ইউস করব, অন্যগুলা কেন নয়?
+
+নোড.জেএস (Node.js) একটি সার্ভার সাইড জাভাস্ক্রিপ্ট রানটাইম, যা জাভাস্ক্রিপ্ট কোডকে সার্ভার সাইডে চালাতে সাহায্য করে। জাভাস্ক্রিপ্ট প্রায়ই ওয়েব ব্রাউজারে ক্লায়েন্ট সাইডে ব্যবহার হয়, কিন্তু নোড.জেএস এর মাধ্যমে এটি সার্ভার সাইডে ব্যবহারও হয়।
+
+#### নোড.জেএস কেন ব্যবহার করা হয়
+
+- সিঙ্গল থ্রেডে
+
+- আসয়্ক্রনাস প্রোগ্রামিং: এটি ক্লায়েন্ট এবং সার্ভার সাইড উভয়েই এসিঙ্ক্রোনাস #### 3. প্রোগ্রামিং সহজ করে তুলতে সাহায্য করে, এটি I/O অপারেশনের সময়ে ব্লক হওয়ার দরকার নেই।
+
+- একক ভাষা
+
+- প্যাকেজ ম্যানেজমেন্ট
+
+#### 3. Difference between cluster and child process model?
+
+The cluster model involves multiple computers working together, often connected over a network, to achieve a common goal. Clusters can be used for various purposes, including parallel processing, load balancing, and fault tolerance.
+
+On the other hand, the child process model involves the creation of independent processes within a single computing system. The two concepts are used in different scenarios and address different aspects of parallelism and distributed computing.
+
+#### 4. Call, bind, apply সম্পর্কে বলো?
+
+call, bind, এবং apply JavaScript-এ তিনটি মেথড, যা ফাংশন ম্যানিপুলেশনে ব্যবহৃত হয়। এই মেথডগুলি ফাংশনগুলির কনটেক্স্ট এবং এরগুলির প্যারামিটারগুলি কন্ট্রোল করতে সাহায্য করে।
+
+Call and apply same jokn kono function k instant call korar dorker hoy tkn call and apply use hoy. Bind korle data future er jonno store kore rakha hoy instant call hoy na. Call e data comma deye lekha hoy , bind e array er modhe lekha hoy
+
+#### 5. This বলতে কি বুজি, কাজ কি এটার?
+
+সাধারণভাবে, this এর মাধ্যমে একটি ফাংশন কোথাও কোন অবজেক্টের কনটেক্স্টে কাজ করতে পারে। এটি প্রোগ্রাম রানটাইমে নির্ধারণ করা হয় এবং ফাংশনটি যেখানে কল হয়েছে সেখানের কনটেক্স্টের উপর নির্ভর করে।
+
+#### 6. Callback and return এর পার্থক্য কি, দুইটা কাজ এক না আলাদা।
+
+"return" ফাংশন থেকে মান রিটার্ন করতে ব্যবহৃত হয় এবং একবার কল হলে ফাংশনের কাজ শেষ হয়ে যায়, আর "callback" হলো একটি ফাংশন বা অপারেশন, যা অন্য কোডের একটি অংশে কল হতে পারে এবং তার সম্পন্ন হওয়া প্রতীক্ষা করতে পারে।
+
+#### 7. Higher order Function কী
+
+যে ফাংশনে অন্য কোন ফাংশনকে আর্গুমেন্ট হিসাবে পাস করা হয় বা কোন ফাংশন অন্য কোন ফাংশনকে রিটার্ন করে তাকে হাইয়ার অর্ডার ফাংশন বলা হয়।
+
+হাইয়ার অর্ডার ফাংশন হলো একটি প্রোগ্রামিং প্যারাডাইম, যেখানে একটি ফাংশনের মধ্যে অন্য একটি ফাংশন পাঠানো হয়। এটি ফাংশন পাঠানোর সময়ে তার প্রথম আর্গুমেন্ট হিসেবে অন্য একটি ফাংশন নেয় এবং সেটির ফলাফল হিসেবে একটি অবজেক্ট বা ফাংশন প্রদান করে।
+
+#### 8. Event loop and Event queue different কি?
+
+#### 9. What is Data Type in javaScript?
+
+Data types in JavaScript define the data type that a variable can store. JavaScript includes primitive and non-primitive data types. The primitive data types in JavaScript include string, number, boolean, undefined, null, and symbol. The non-primitive data type includes the object
+
+#### 10. Undefine and Define variable কি?
+
+Undefined Variable:
+An undefined variable is a variable that has been declared but not assigned a value.
+
+Defined Variable:
+A defined variable is a variable that has been declared and assigned a value.
+
+#### 11. Default parameters কি কেন ব্যাবহার করা হয়?
+
+The default parameter is a way to set default values for function parameters a value is no passed in (ie. it is undefined).
+
+#### 12. “==” এবং “===” মধ্যে পার্থক্য আছে কিনা
+
+== in JavaScript is used for comparing two variables, but it ignores the datatype of variable.
+
+=== is used for comparing two variables, but this operator also checks datatype and compares two values.
+
+#### 13. Javascript scope, Block scope and global scope, Lexical scope এর পার্থক্য?
+
+It refers to where a variable can be accessed in a program. In some cases a variable can be accessed from anywhere (global scope), while others have more restricted context ( function scope or block scope).
+
+Ekta variable ba function kthy kthy visible setai bujay.
+
+##### Global Scope:
+
+If a variable or function is not defined within a block or function, we can say that variable or function belongs to global scope, and it can be accessed from anywhere in a program.
+
+##### Local Scope:
+
+Variables are defined within a block or a function, and they can only be accessed where they were defined. Here there are two types of local scope, Block Scope and Function Scope.
+
+##### Function Scope:
+
+variables defined inside the function and are accessible within the entire function.
+the type “var” always has function scope.
+
+##### Block Scope:
+
+variables are defined within curly braces “{}” , those variables will be accessed inside the block where they were defined.
+types “let” and “const” will always have block scope
+
+##### Lexical Scope:
+
+Is the ability for a function scope to access variables placed in a parent scope. In other words, a child function is lexically bound to its parent function.
+
+#### 14. Var let const মধ্যে সম্পর্ক এবং পার্থক্য কি?
+
+##### Var:
+
+The scope of a var variable is functional scope.
+It can be updated and re-declared into the scope.
+It can be declared without initialization.
+Hoisting is allowed
+Var variable are reassign value
+
+##### Let:
+
+The scope of a let variable is block scope.
+It can be updated but cannot be re-declared into the scope.
+It can be declared without initialization.
+Hoisting is not allowed
+Let variable are not reassign value
+
+##### Const:
+
+The scope of a const variable is block scope.
+It cannot be updated or re-declared into the scope.
+It cannot be declared without initialization.
+Hoisting is not allowed
+Const variable are not reassign value
+
+#### 15. Is Javascript Synchronous or asynchronous? How does it work?
+
+JavaScript is synchronous, blocking, and single-threaded. This means that the JavaScript engine executes our program sequentially, one line at a time from top to bottom in the exact order of the statements.
+
+Javascript is Synchronous, It is a synchronous, single-threaded language. Because it has a single thread that’s why it can only execute one command at a time and the other commands need to wait for executing before the running command executes. And the term synchronous means one at a time. So after these conversions, we get to know that javascript only executes one command or a single block of code at a time that means it is blocking.
+
+But What if I say Javascript has asynchronous behaviour also. Yes, I am not totally wrong because we can manipulate the behaviour of javascript by using asynchronous operations like promises, callbacks etc.
+
+#### 16. Ref. Type and preemptive type diff.
+
+They are the primitive and reference data types.
+
+In a JavaScript engine, primitive and reference data types are stored in different types of memory. Primitive data types are stored in the stack memory and the reference data types are stored in the heap memory.
+
+##### Primitive data types:
+
+1. String, Number, Boolean, Null, Undefined, Symbol, and BigInt are primitive data types.
+2. Primitive data types have fixed sizes. So, the runtime can allocate a fixed amount of memory and store them in the stack.
+
+##### Reference data types:
+
+1. Objects, arrays, dates, etc. are reference data types in JavaScript.
+2. Unlike primitive data types, reference data types don't have fixed sizes. So, the runtime can't allocate a fixed memory and store them in the heap.
+
+#### 17. Es6 advance topic বলো, কোনগুলা ব্যাবহার করছো?
+
+ES6 comes with significant changes to the JavaScript language. It brought several new features like, let and const keyword, rest and spread operators, template literals, classes, modules and many other enhancements to make JavaScript programming easier and more fun.
+
+- let and const Keywords
+- Arrow Functions
+- Multi-line Strings
+- Default Parameters
+- Template Literals
+- Destructuring Assignment
+- Enhanced Object Literals
+- Promises
+- Classes
+- Modules
+
+#### 18. Prototype chain বলতে কি বুজো
+
+#### 19. Pseudocode Method chaining নিয়ে কাজ করা হয় না।
+
+#### 20. How many arguments does call apply bind take
+
+#### 21. Event bubbling in js
+
+#### 22. Call by value vs call by reference
+
+#### 23. Js hosting, How many hosting in js
+
+#### 24. Function and recursive function কাকে বলে
+
+#### 25. How Spread operator work
+
+#### 26. Closure, How closure work
+
+#### 27. Inheritance of javascript
+
+#### 28. একটা ফাংশনকে কখন রিটার্ন করতে হয়?
+
+#### 29. Have any idea of Object orientate?
+
+#### 30. After writing a js code how it will run in the browser step by step procedure
+
+#### 31. How to work push and pop method.
+
+#### 32. array vs link list সম্পর্কে ধারনা আছে কিনা? দুটার মধ্য সম্পর্ক বা পার্থক্য কি?
+
+#### 33. class vs object মধ্যে সম্পর্ক কি?
+
+#### 34. object oriented programming vs functional programming, principles of object-oriented programming
+
+#### 35. Why JavaScript faster even single thread
+
+#### 36. Explain Method chaining.
 
 ### 15. Best Practices
 
@@ -1825,7 +1987,7 @@ if (meetingSlot) {
 }
 ```
 
-### 21. Is there any security vulnerability in the below code? If yes, identify it:
+#### 21. Is there any security vulnerability in the below code? If yes, identify it:
 
 ```js
 const username = document.getElementById("username").value;
@@ -1839,7 +2001,7 @@ fetch("https://api.examplewebsite.com/login", {
   .catch((error) => console.log(error));
 ```
 
-### 22. Identify the output of the below code.
+#### 22. Identify the output of the below code.
 
 ```js
 const testArray = [1, 2, 3, 4, 5];
@@ -1852,7 +2014,7 @@ const res = testArray.reduce((acc, curr) => {
 console.log(res);
 ```
 
-### 23. What is the possible performance issue in the below code?
+#### 23. What is the possible performance issue in the below code?
 
 ```js
 const arr = [];
@@ -1861,7 +2023,7 @@ for (let i = 0; i < 1000000; i++) {
 }
 ```
 
-### 24. Suggest the output of the below code:
+#### 24. Suggest the output of the below code:
 
 ```js
 const arr = [1, 2, 3];
@@ -1869,9 +2031,9 @@ const object1 = { x: 1, y: 2, z: 3 };
 console.log([...arr, ...object1]);
 ```
 
-### 25. Design a social media platform that contains features like sign up, creating a profile and posting status updates. Users should be able to follow other users and view their posts on a newsfeed.
+#### 25. Design a social media platform that contains features like sign up, creating a profile and posting status updates. Users should be able to follow other users and view their posts on a newsfeed.
 
-### 26. What is wrong with the below call to the API?
+#### 26. What is wrong with the below call to the API?
 
 ```js
 fetch("https://api.example.com/data")
@@ -1885,7 +2047,7 @@ fetch("https://api.example.com/data")
   .catch((error) => console.log(error));
 ```
 
-### 27. What will be the output of below code snippet?
+#### 27. What will be the output of below code snippet?
 
 ```js
 const promise1 = Promise.resolve(One);
@@ -1895,9 +2057,9 @@ Promise.all([promise1, promise2]).then(([result1, result2]) =>
 );
 ```
 
-### 28. Design an online code editor where users can write, save and run JavaScript code. The editor should include features like syntax highlighting, auto-completion and error checking.
+#### 28. Design an online code editor where users can write, save and run JavaScript code. The editor should include features like syntax highlighting, auto-completion and error checking.
 
-### 29. The below code snippet uses closures to implement a counter. How will you optimize it to minimize memory usage:
+#### 29. The below code snippet uses closures to implement a counter. How will you optimize it to minimize memory usage:
 
 ```js
 function counter() {
@@ -1913,7 +2075,7 @@ increment(); // 2
 increment(); // 3
 ```
 
-### 30. Develop a fitness tracker application where users can enter their daily exercise routines and track their progress over time. The application should allow users to set goals, view their progress and receive reminders.
+#### 30. Develop a fitness tracker application where users can enter their daily exercise routines and track their progress over time. The application should allow users to set goals, view their progress and receive reminders.
 
 #### JavaScript Coding Interview Preparation: [https://codeinterview.io/blog/javascript-coding-interview-questions/]
 
