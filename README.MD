@@ -1567,11 +1567,16 @@ So, "return from Promise" usually refers to the value that is passed to the reso
 Reference:
 
 1. [All about Promises](https://www.freecodecamp.org/news/guide-to-javascript-promises/#:~:text=In%20JavaScript%2C%20a%20Promise%20is,of%20promises%20in%20real%20life.)
+
 2. [Promise Bangla Expalin vivasoft](https://academy.vivasoftltd.com/javascript-bootcamp/es6-to-es10/promises-and-async-await/)
+
+3. [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ## 26. async/await
 
 `async/await` eliminates the chaining that is common with the promises syntax, and ends up making asynchronous code look a lot more synchronous.
+
+Promises are an excellent way to avoid the previously discussed ‘Callback Pyramid of Doom’, but async/await takes asynchronous code further. With async/await, code is easier to follow and maintain. It came about as a way to improve code readability for asynchronous operations. It is the modern way of using promises.
 
 async এবং await প্রমিস লিখতে খুবই সহজ করে। async একটি ফাংশন দিয়ে প্রমিস রিটার্ন করে এবং await একটি ফাংশনকে প্রমিসের জন্য অপেক্ষা করায়। একটা প্রমিস হ্যান্ডেল করার পর এটার ভিতরে কলব্যাক ফাংশন কল করতে হয়। আবার সেই কলব্যাক ফাংশনের ভিতরে প্রমিস থেকে আসা ডাটাগুলো অ্যাক্সেস করতে হয়। এভাবে একটার পর একটার ভিতরে গিয়ে গিয়ে এভাবে আমাদের অপারেশনগুলো চালাতে হয় শুধুমাত্র জাভাস্ক্রিপ্ট এর অ্যাসিনক্রোনাস আচরণের কারণে।
 
@@ -1590,9 +1595,37 @@ const promiseHandle = async () => {
 
 ## 27. Data Structures
 
+A data structure is defined as a particular way of storing and organizing data in our devices to use the data efficiently and effectively. The main idea behind using data structures is to minimize the time and space complexities. An efficient data structure takes minimum memory space and requires minimum time to execute the data
+
+##### 9 COMMON DATA STRUCTURES IN JAVASCRIPT
+
+- Stack
+- Queue
+- Linked List
+- Set
+- Map
+- Hash Table
+- Tree
+- Trie
+- Graph
+
+Reference:
+
+1. [Learn Data Structures with Javascript | DSA using JavaScript Tutorial](https://www.geeksforgeeks.org/learn-data-structures-with-javascript-dsa-tutorial/)
+
+2. [Data Structures in JavaScript – With Code Examples](https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/)
+
 ## 28. Expensive Operation and Big O Notation
 
 ## 29. Algorithms
+
+The algorithm is defined as a process or set of well-defined instructions that are typically used to solve a particular set of problems or perform a specific type of calculation. To explain it in simpler terms, it is a set of operations performed step-by-step to execute a task.
+
+Reference:
+
+1. [CodeVolution video ](https://www.youtube.com/playlist?list=PLC3y8-rFHvwiRYB4-HHKHblh3_bQNJTMa)
+
+1. [Learn Algorithms with Javascript | DSA using JavaScript Tutorial ](https://www.geeksforgeeks.org/learn-algorithms-with-javascript-tutorial/)
 
 ## 30. Inheritance, Polymorphism and Code Reuse
 
