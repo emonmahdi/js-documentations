@@ -1529,7 +1529,64 @@ first_function(data, callback_function)
 
 ## 25. Promises
 
+প্রমিসের কাজ হচ্ছে এ ধরনের অ্যাসিনক্রোনাস অপারেশনকে হ্যান্ডল করা। এখন আমরা রিমোট একটা সার্ভারের উপর অপারেশন চালাচ্ছি, কিন্তু ডাটা না আসা পর্যন্ত কিন্তু আমরা বলতে পারি না সে অপারেশন সফল হবে না বিফলে যাবে। আর মূলত এইসব হ্যান্ডল করার জন্যেই প্রমিস কাজ করে।
+
+এখন প্রমিস অবজেক্ট আবার ৩ ধরণের হতে পারে, যেমনঃ
+
+- Pending
+- Fulfilled
+- Rejected
+
+Pending অবস্থায় ফলাফল undefined, Fulfilled অবস্থায় ফলাফল একটি ভ্যালু, এবং Rejected অবস্থায় ফলাফল একটি error অবজেক্ট।
+
+Example:
+
+```js
+const myPromise = new Promise((resolve, reject) => {
+  // Asynchronous operation here
+  const success = true;
+
+  if (success) {
+    resolve("Operation completed successfully!"); // Resolve with a value
+  } else {
+    reject("Operation failed!"); // Reject with a reason
+  }
+});
+
+myPromise
+  .then((result) => {
+    console.log("Fulfilled:", result);
+  })
+  .catch((error) => {
+    console.error("Rejected:", error);
+  });
+```
+
+So, "return from Promise" usually refers to the value that is passed to the resolve or reject function, and you access it using then for fulfilled Promises or catch for rejected Promises.
+
+Reference:
+
+1. [All about Promises](https://www.freecodecamp.org/news/guide-to-javascript-promises/#:~:text=In%20JavaScript%2C%20a%20Promise%20is,of%20promises%20in%20real%20life.)
+2. [Promise Bangla Expalin vivasoft](https://academy.vivasoftltd.com/javascript-bootcamp/es6-to-es10/promises-and-async-await/)
+
 ## 26. async/await
+
+`async/await` eliminates the chaining that is common with the promises syntax, and ends up making asynchronous code look a lot more synchronous.
+
+async এবং await প্রমিস লিখতে খুবই সহজ করে। async একটি ফাংশন দিয়ে প্রমিস রিটার্ন করে এবং await একটি ফাংশনকে প্রমিসের জন্য অপেক্ষা করায়। একটা প্রমিস হ্যান্ডেল করার পর এটার ভিতরে কলব্যাক ফাংশন কল করতে হয়। আবার সেই কলব্যাক ফাংশনের ভিতরে প্রমিস থেকে আসা ডাটাগুলো অ্যাক্সেস করতে হয়। এভাবে একটার পর একটার ভিতরে গিয়ে গিয়ে এভাবে আমাদের অপারেশনগুলো চালাতে হয় শুধুমাত্র জাভাস্ক্রিপ্ট এর অ্যাসিনক্রোনাস আচরণের কারণে।
+
+জাভস্ক্রিপ্ট-এ মূলত প্রমিস হ্যান্ডেলের জন্যই async আর await এর পরিচয় করিয়ে দেওয়া হয়েছে। যেখানেই আপনি এরকম অ্যাসিনক্রোনাস কোডকে সিনক্রোনাস আচরণ করাতে চান সেখানেই এগুলো ব্যবহার করতে পারবেন। তবে এখানে কিছু নিয়ম কানুন আছে। আপনাকে async এই কীওয়ার্ডটা ব্যবহার করতে হবে ফাংশনের সাথে। আপনি যে কোডগুলোকে সিনক্রোনাস আচরণ করাতে চাচ্ছেন সেগুলো সবগুলো একটা ফাংশনের ভিতরে ঢুকিয়ে সেই ফাংশনের নামের আগে জাস্ট এভাবে async কীওয়ার্ডটা লাগিয়ে দিবেনঃ
+
+```js
+const promiseHandle = async () => {
+  const data = await myPromise;
+  console.log(data);
+};
+```
+
+এখানে দেখুন লক্ষ্য করে আমি ঠিক এর পরের লাইনেই আমাদের প্রমিস থেকে আসা ডাটা প্রিন্ট করে দিয়েছি। হ্যা এখানেই async আর await এর ম্যাজিক। এটা আমাদের অ্যাসিনক্রোনাস কোডকে সিনক্রোনাস আচরণ করতে সাহায্য করে যাতে আমাদের আর কলব্যাকে হেলে পড়তে না হয়। আমরা একদম লাইন বাই লাইন ইন্সট্রাকশন দিয়েই ডাটা উদ্ধার করতে পারবো।
+
+এখন যদি প্রমিস রিজেক্টেড হয় তাহলে? হ্যা তাহলে আমরা try catch ব্লক দিয়েই আমরা আমাদের এই এরর হ্যান্ডল করতে পারবো।
 
 ## 27. Data Structures
 
