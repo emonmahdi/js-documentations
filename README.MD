@@ -584,6 +584,30 @@ console.log(inchesToFeet(inches));
 ```
 
 11. Conversion - celcius to Farhnheight + farhnheight to celcius.
+
+```js
+// Celsius to Fahrenheit conversion
+function celsiusToFahrenheit(celsius) {
+  const fahrenheit = (celsius * 9) / 5 + 32;
+  return fahrenheit;
+}
+
+const celsius = 26;
+const result = celsiusToFahrenheit(celsius);
+console.log(`${celsius}°C is equal to ${result}°F`);
+
+// Fahrenheit to Celsius conversion
+function fahrenheitToCelsius(fahrenheit) {
+  const celsius = ((fahrenheit - 32) * 5) / 9;
+  return celsius;
+}
+
+const fahrenheit = 100;
+const resultFahrenheit = fahrenheitToCelsius(fahrenheit);
+console.log(`${fahrenheit}°F is equal to ${resultFahrenheit}°C`);
+
+```
+
 12. Conversion - Centimeter to Meter + Meter to Centimeter.
 13. PageReguirments - 3 book parameter and per book page 100, 200, 300 - output set parameter number of quantity book then output the page count by books.
 14. Find the largest string of array using function and loop.
