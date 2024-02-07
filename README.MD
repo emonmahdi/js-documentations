@@ -564,6 +564,25 @@ numberLoop(7, 19);
 ```
 
 10. Conversion - feet to inche + inche to feet.
+
+```js
+function feetToInches(feet) {
+  const inches = feet * 12;
+  return inches;
+}
+function inchesToFeet(inches) {
+  return inches / 12;
+}
+
+const feet = 10;
+const result = feetToInches(feet);
+console.log(result);
+
+const inches = 540;
+console.log(inchesToFeet(inches));
+
+```
+
 11. Conversion - celcius to Farhnheight + farhnheight to celcius.
 12. Conversion - Centimeter to Meter + Meter to Centimeter.
 13. PageReguirments - 3 book parameter and per book page 100, 200, 300 - output set parameter number of quantity book then output the page count by books.
