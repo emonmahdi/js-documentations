@@ -1625,11 +1625,71 @@ Reference:
 
 1. [CodeVolution video ](https://www.youtube.com/playlist?list=PLC3y8-rFHvwiRYB4-HHKHblh3_bQNJTMa)
 
-1. [Learn Algorithms with Javascript | DSA using JavaScript Tutorial ](https://www.geeksforgeeks.org/learn-algorithms-with-javascript-tutorial/)
+2. [Learn Algorithms with Javascript | DSA using JavaScript Tutorial ](https://www.geeksforgeeks.org/learn-algorithms-with-javascript-tutorial/)
+
+3. [Learn Algorithms with Javascript](https://builtin.com/software-engineering-perspectives/javascript-algorithms-and-data-structures)
 
 ## 30. Inheritance, Polymorphism and Code Reuse
 
 ## 31. Design Patterns
+
+A design pattern is a term used in software engineering for a general, reusable solution to a commonly occurring problem in software design.
+
+##### What are JavaScript Design Patterns?
+
+There are many different JavaScript design patterns, but some of the most common include:
+
+- Creational patterns: These patterns deal with creating objects. They can be used to create objects in a consistent way, to create objects that are easy to test, or to create objects that are easy to reuse. Some commonly used creational patterns in JavaScript include:
+
+  - Singleton
+  - Factory
+  - Constructor
+  - Prototype
+  - Builder
+  - Module
+
+- Structural patterns: These patterns deal with the relationships between objects. They can be used to make code more modular, to make code more reusable, or to make code more efficient. Some commonly used structural patterns in JavaScript include:
+
+  - Decorator Pattern
+  - Facade Pattern
+  - Adapter
+  - Bridge
+  - Composite
+
+- Behavioral patterns: These patterns deal with the communication between objects. They can be used to make code more robust, to make code more flexible, or to make code more maintainable. The following are types of behavioral patterns.
+
+  - Observer Pattern
+  - Strategy Pattern
+  - Command Pattern
+  - Iterator Pattern
+  - Mediator Pattern
+
+#### Why use JavaScript Design Patterns?
+
+There are many reasons why you might want to use JavaScript design patterns. These include:
+
+- They can help you to write better code. Design patterns can help you to write code that is more efficient, more reusable, and more maintainable.
+- They can help you to solve common problems. Design patterns provide proven solutions to common problems, which can save you time and effort.
+- They can help you to communicate with other developers. Design patterns are a common language that developers can use to communicate about their code.
+
+#### The main benefits we get from design patterns are the following:
+
+- They are proven solutions: Because design patterns are often used by many developers, you can be certain that they work. And not only that, you can be certain that they were revised multiple times and optimizations were probably implemented.
+- They are easily reusable: Design patterns document a reusable solution which can be modified to solve multiple particular problems, as they are not tied to a specific problem.
+- They are expressive: Design patterns can explain a large solution quite elegantly.
+  They ease communication: When developers are familiar with design patterns, they can more easily communicate with one another about potential solutions to a given problem.
+
+- They prevent the need for refactoring code: If an application is written with design patterns in mind, it is often the case that you won’t need to refactor the code later on because applying the correct design pattern to a given problem is already an optimal solution.
+
+- They lower the size of the codebase: Because design patterns are usually elegant and optimal solutions, they usually require less code than other solutions.
+
+Reference:
+
+1. [Javascript Design Pattern by medium](https://medium.com/@devdo/javascript-design-patterns-a-comprehensive-guide-a8f5019c4f04)
+
+2. [Javascript Design Pattern by toptal](https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns)
+
+3. [Javascript Design Pattern devto](https://dev.to/topefasasi/js-design-patterns-a-comprehensive-guide-h3m)
 
 ## 32. Partial Applications, Currying, Compose and Pipe
 
