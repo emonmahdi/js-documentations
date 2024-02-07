@@ -298,19 +298,274 @@ let bigNumber = BigInt(9007199254740991);
 ### 13. JavaScript Basic Problem Solving
 
 1. find array largest number
+
+```js
+function findLargestNumber(arr) {
+  if (arr.length == 0) {
+    return "Array is empty";
+  }
+
+  let largest = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number" && !isNaN(arr[i])) {
+      if (arr[i] > largest) {
+        largest = arr[i];
+      }
+    } else {
+      return "Please give a number not string";
+    }
+  }
+
+  return largest;
+}
+
+const numbers = [23, 4, 5, 2, 45, 6, 7, 5, 43, 3, 12, 34];
+const result = findLargestNumber(numbers);
+console.log(result);
+```
+
+Another solution:
+
+```js
+function findLargestNumber(arr) {
+  if (arr.length === 0) {
+    return "Array is empty";
+  }
+
+  return Math.max(...arr);
+}
+
+// Example usage:
+const numbers = [10, 5, 8, 20, 3];
+const result = findLargestNumber(numbers);
+console.log("The largest number is:", result);
+```
+
 2. find an array smallest number
+
+```js
+function findSmallestNumber(arr) {
+  if (arr.length == 0) {
+    return "Array id Empty";
+  }
+
+  let smallest = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number" && !isNaN(arr[i])) {
+      if (arr[i] < smallest) {
+        smallest = arr[i];
+      }
+    } else {
+      return "Please give a number! string are not allow";
+    }
+  }
+  return smallest;
+}
+
+const numbers = [23, 5, 3, 5, 23, 5, -6, 77, 8, 54, 2, 342, 34, 5, 6];
+const result = findSmallestNumber(numbers);
+console.log(result);
+```
+
 3. sum of array all items
+
+```js
+function arrayOfSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+const arrays = [1, 2, 3, 4, 5, 10];
+const result = arrayOfSum(arrays);
+console.log(result);
+```
+
+Another:
+
+```js
+function arrSum(arr) {
+  return arr.reduce((num, sum) => num + sum, 0);
+}
+
+const arrays = [1, 2, 3, 4, 5, 10];
+const result = arrSum(arrays);
+console.log(result);
+```
+
 4. find tha grater than number of three input parameter
+
+```js
+function findGreatestNumber(a, b, c) {
+  if (
+    typeof a !== "number" ||
+    (typeof b !== "number") | (typeof c !== "number")
+  ) {
+    return `Please input must number`;
+  }
+  if (a >= b && a >= c) {
+    return `${a} is greater than ${b} & ${c}`;
+  } else if (b >= a && b >= c) {
+    return `${b} is greater than ${a} & ${c}`;
+  } else {
+    return `${c} is greater than ${a} & ${b}`;
+  }
+}
+
+const result = findGreatestNumber(10, 5, 11);
+console.log(result);
+```
+
 5. find the less than number of three input parameter.
-6. Remove duplicate item from an array
+
+```js
+function findSmallestNumber(a, b, c) {
+  if (
+    typeof a !== "number" ||
+    (typeof b !== "number") | (typeof c !== "number")
+  ) {
+    return `Please input must number`;
+  }
+  if (a <= b && a <= c) {
+    return `${a} is less than ${b} & ${c}`;
+  } else if (b <= a && b <= c) {
+    return `${b} is less than ${a} & ${c}`;
+  } else {
+    return `${c} is less than ${a} & ${b}`;
+  }
+}
+
+const result = findSmallestNumber(10, 5, 11);
+console.log(result);
+```
+
+6. Remove duplicate item from an array.
+
+```js
+function removeDuplicates(arr) {
+  let unique = [];
+
+  for (const item of arr) {
+    if (!unique.includes(item)) {
+      unique.push(item);
+    }
+  }
+  return unique;
+}
+
+const myArr = [
+  1, 2, 3, 4, 5, 6, 7, 8, 5, 2, 2, 3, 4, 5, 22, 3, 4, 5, 66, 4, 3, 11, 22, 33,
+  45, 51, 2, 3, 4,
+];
+
+const names = ["rahim", "karim", "rahim", "karim", "nasir", "habib", "nasir"];
+
+const result = removeDuplicates(myArr);
+console.log(result);
+
+const result2 = removeDuplicates(names);
+console.log(result2);
+```
+
 7. find even numbers from an array.
+
+```js
+const findEvenNumber = (arr) => {
+  let even = [];
+
+  for (const element of arr) {
+    if (element % 2 == 0) {
+      even.push(element);
+    }
+  }
+  return even;
+};
+
+const numbers = [2, 2, 4, 5, 6, 78, 9, 76, 4, 2, 3, 4, 52, 3, 45, 5];
+const result = findEvenNumber(numbers);
+console.log(result);
+```
+
 8. Find odd numbers from an array.
-9. Find an array of obejct chepest price product result.
-   10.find even/odd number in an array using function
-   11.While loop to display 7 to 19 all numbers.
-10. Conversion - feet to inche + inche to feet
-11. Conversion - celcius to Farhnheight + farhnheight to celcius
-12. Conversion - Centimeter to Meter + Meter to Centimeter
+
+```js
+const findEvenNumber = (arr) => {
+  let odd = [];
+
+  for (const element of arr) {
+    if (element % 2 == 1) {
+      odd.push(element);
+    }
+  }
+  return odd;
+};
+
+const numbers = [2, 2, 4, 5, 6, 78, 9, 76, 4, 2, 3, 4, 52, 3, 45, 5];
+const result = findEvenNumber(numbers);
+console.log(result);
+```
+
+9. Find an array of object cheapest price product result.
+
+```js
+const findCheapestProduct = (products) => {
+  if (products.length == 0) {
+    return "No products found!";
+  }
+
+  let cheapestProduct = products[0];
+
+  products.forEach((product) => {
+    if (product.price < cheapestProduct.price) {
+      cheapestProduct = product;
+    }
+  });
+
+  return cheapestProduct;
+};
+
+const products = [
+  { name: "Product A", price: 1032 },
+  { name: "Product B", price: 543 },
+  { name: "Product C", price: 80 },
+  { name: "Product D", price: 23 },
+];
+
+const cheapestProduct = findCheapestProduct(products);
+console.log(cheapestProduct);
+```
+
+9.1. While loop to display 7 to 19 all numbers.
+
+```js
+let number = 7;
+
+while (number <= 19) {
+  console.log(number);
+  number++;
+}
+```
+
+Another Solution:
+
+```js
+function numberLoop(start, end) {
+  let number = start;
+  while (number <= end) {
+    console.log(number);
+    number++;
+  }
+}
+
+numberLoop(7, 19);
+```
+
+10. Conversion - feet to inche + inche to feet.
+11. Conversion - celcius to Farhnheight + farhnheight to celcius.
+12. Conversion - Centimeter to Meter + Meter to Centimeter.
 13. PageReguirments - 3 book parameter and per book page 100, 200, 300 - output set parameter number of quantity book then output the page count by books.
 14. Find the largest string of array using function and loop.
 15. will stop the loop if the array has any negative number and return all the positive numbers before the negative numbers.
