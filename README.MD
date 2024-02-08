@@ -766,12 +766,98 @@ function factorial(n) {
 const number = 6;
 const result = factorial(number);
 console.log("Factorial is recursion using: ", result);
-
 ```
 
 19. Create a Fibonacci Series using a for loop
+
+```js
+function generateFibonacciSeries(n) {
+  if (n <= 0) {
+    return "Invalid input. Please provide a positive integer greater than 0.";
+  }
+
+  let fibo = [0, 1];
+
+  for (let i = 2; i < n; i++) {
+    let fibonacci = fibo[i - 1] + fibo[i - 2];
+    fibo.push(fibonacci);
+  }
+
+  return fibo;
+}
+
+const result = generateFibonacciSeries(0);
+console.log(result);
+```
+
 20. Search the target products name in array of objects
+
+```js
+// Sample array of objects (products)
+var products = [
+  { id: 1, name: "Laptop", price: 999.99 },
+  { id: 2, name: "Smartphone", price: 399.99 },
+  { id: 3, name: "Headphones", price: 49.99 },
+  // Add more objects as needed
+];
+
+// Function to search for a product by name
+function searchProductByName(targetName, productList) {
+  for (var i = 0; i < productList.length; i++) {
+    if (productList[i].name.toLowerCase() === targetName.toLowerCase()) {
+      return productList[i];
+    }
+  }
+  return null; // Return null if the product is not found
+}
+
+// Example usage
+var targetProductName = "Smartphone";
+var foundProduct = searchProductByName(targetProductName, products);
+
+if (foundProduct) {
+  console.log("Product found:", foundProduct);
+} else {
+  console.log("Product not found.");
+}
+```
+
 21. javascript sorting using an array
+
+```js
+// Example array of numbers
+var numbers = [5, 2, 8, 1, 3];
+
+// Sorting the array of numbers
+numbers.sort(function (a, b) {
+  return a - b;
+});
+
+// Displaying the sorted array
+console.log("Sorted Numbers:", numbers);
+```
+
+Another:
+
+```js
+// Example array of strings
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+// Sorting the array of strings
+fruits.sort();
+
+// Displaying the sorted array
+console.log("Sorted Fruits:", fruits);
+```
+
+Another 2:
+```js
+var originalArray = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+var sortedArray = [...originalArray].sort((a, b) => a - b);
+
+console.log("Original Array:", originalArray);
+console.log("Sorted Array:", sortedArray);
+```
 
 ### Reference Problem Solving Resources: [Basic Problems Javascript](https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php)
 
