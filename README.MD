@@ -737,8 +737,38 @@ const result = calculateFactorial(5);
 console.log(result);
 ```
 
-17. Find Factorial of a number using a while loop:
-18. Calculate Factorial in a Recursive function:
+17. Find Factorial of a number using a while loop
+
+```js
+function calculateFactorial(number) {
+  let factorial = 1;
+
+  let i = 1;
+  while (i <= number) {
+    factorial *= i;
+    i++;
+  }
+  return factorial;
+}
+console.log(calculateFactorial(4));
+```
+
+18. Calculate Factorial in a Recursive function
+
+```js
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+const number = 6;
+const result = factorial(number);
+console.log("Factorial is recursion using: ", result);
+
+```
+
 19. Create a Fibonacci Series using a for loop
 20. Search the target products name in array of objects
 21. javascript sorting using an array
