@@ -580,7 +580,6 @@ console.log(result);
 
 const inches = 540;
 console.log(inchesToFeet(inches));
-
 ```
 
 11. Conversion - celcius to Farhnheight + farhnheight to celcius.
@@ -605,7 +604,6 @@ function fahrenheitToCelsius(fahrenheit) {
 const fahrenheit = 100;
 const resultFahrenheit = fahrenheitToCelsius(fahrenheit);
 console.log(`${fahrenheit}°F is equal to ${resultFahrenheit}°C`);
-
 ```
 
 12. Conversion - Centimeter to Meter + Meter to Centimeter.
@@ -628,14 +626,117 @@ const metersToCentimeters = (meter) => {
 // Example Output
 const toCentimeter = metersToCentimeters(2);
 console.log(toCentimeter);
-
 ```
 
-13. PageReguirments - 3 book parameter and per book page 100, 200, 300 - output set parameter number of quantity book then output the page count by books.
+13. PageRequirments - 3 book parameter and per book page 100, 200, 300 - output set parameter number of quantity book then output the page count by books.
+
+```js
+const calculateTotalPages = (bookOneQ, bookTwoQ, bookThreeQ) => {
+  const bookOnePages = 100;
+  const bookTwoPages = 200;
+  const bookThreePages = 300;
+
+  // total pages by single book
+  const totalBookOnePage = bookOneQ * bookOnePages;
+  const totalBookTwoPage = bookTwoQ * bookTwoPages;
+  const totalBookThreePage = bookThreeQ * bookThreePages;
+
+  // total number of books Pages
+  const totalOverallBookPages =
+    totalBookOnePage + totalBookTwoPage + totalBookThreePage;
+
+  console.log(` Total pages for Book 1: ${totalBookOnePage} pages `);
+  console.log(` Total pages for Book 2: ${totalBookTwoPage} pages `);
+  console.log(` Total pages for Book 3: ${totalBookThreePage} pages `);
+  console.log(` Total pages for All Book : ${totalOverallBookPages} pages `);
+};
+
+calculateTotalPages(3, 2, 1);
+```
+
 14. Find the largest string of array using function and loop.
+
+```js
+function findLargestString(stringArray) {
+  if (stringArray.length < 0) {
+    return "Array is Empty";
+  }
+
+  let largestString = [];
+
+  for (let i = 1; i < stringArray.length; i++) {
+    if (stringArray[i].length > largestString.length) {
+      largestString = stringArray[i];
+    }
+  }
+
+  return largestString;
+}
+
+const arrayOfString = [
+  "apple",
+  "banana",
+  "flower",
+  "Rahim",
+  "Karim",
+  "internetOfThings",
+];
+const result = findLargestString(arrayOfString);
+console.log(result);
+```
+
 15. will stop the loop if the array has any negative number and return all the positive numbers before the negative numbers.
-    17.2. will continue the loop if the array has any negative number and return all the positive numbers before the negative numbers.
-16. Find Factorial of a number using for loop:
+
+```js
+function getPositiveNumbersBeforeNegative(numArray) {
+  if (numArray.length === 0) {
+    return "Array if empty";
+  }
+
+  let positiveNumber = [];
+
+  for (let i = 0; i < numArray.length; i++) {
+    if (numArray[i] < 0) {
+      break;
+    }
+
+    positiveNumber.push(numArray[i]);
+  }
+
+  return positiveNumber;
+}
+
+const arrayNums = [12, 4, 16, -6, 3, 5, 6, 7, 88];
+const result = getPositiveNumbersBeforeNegative(arrayNums);
+console.log(result);
+```
+
+16. Find Factorial of a number using for loop
+
+```js
+// 2! = 1 * 2
+// 3! = 1 * 2 * 3
+// 4! = 1 * 2 * 3 * 4
+// 5! = 1 * 2 * 3 * 4 * 5
+
+function calculateFactorial(number) {
+  if (number.length === 0) {
+    return "Number is empty";
+  }
+
+  let factorial = 1;
+
+  for (let i = 1; i <= number; i++) {
+    factorial *= i;
+  }
+
+  return factorial;
+}
+
+const result = calculateFactorial(5);
+console.log(result);
+```
+
 17. Find Factorial of a number using a while loop:
 18. Calculate Factorial in a Recursive function:
 19. Create a Fibonacci Series using a for loop
