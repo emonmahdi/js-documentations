@@ -609,6 +609,28 @@ console.log(`${fahrenheit}°F is equal to ${resultFahrenheit}°C`);
 ```
 
 12. Conversion - Centimeter to Meter + Meter to Centimeter.
+
+```js
+const centimetersToMeters = (centimeter) => {
+  const meter = centimeter / 100; // 1 meter = 100 centimeter
+  return meter;
+};
+
+// Example Output
+const toMeter = centimetersToMeters(250);
+console.log(toMeter);
+
+const metersToCentimeters = (meter) => {
+  const centimeter = meter * 100;
+  return centimeter;
+};
+
+// Example Output
+const toCentimeter = metersToCentimeters(2);
+console.log(toCentimeter);
+
+```
+
 13. PageReguirments - 3 book parameter and per book page 100, 200, 300 - output set parameter number of quantity book then output the page count by books.
 14. Find the largest string of array using function and loop.
 15. will stop the loop if the array has any negative number and return all the positive numbers before the negative numbers.
