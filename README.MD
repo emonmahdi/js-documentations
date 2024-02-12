@@ -1110,167 +1110,169 @@ Event delegation is a technique in which a single event handler is attached to a
 
 #### 10. What is the purpose of the “this” keyword in JavaScript?
 
-    The “this” keyword refers to the object that owns the current code being executed. Its value is determined by how a function is called or how an object is constructed.
+The “this” keyword refers to the object that owns the current code being executed. Its value is determined by how a function is called or how an object is constructed.
 
 #### 11. What are the different ways to create objects in JavaScript?
 
-    Objects in JavaScript can be created using object literals, constructor functions, the “new” keyword, and the Object.create() method.
+Objects in JavaScript can be created using object literals, constructor functions, the “new” keyword, and the Object.create() method.
 
 #### 12. Explain the concept of callback functions in JavaScript.
 
-    A callback function is a function passed as an argument to another function, which is then invoked inside the outer function. It allows for asynchronous programming and handling of events.
+A callback function is a function passed as an argument to another function, which is then invoked inside the outer function. It allows for asynchronous programming and handling of events.
 
 #### 13. What is event bubbling and event capturing in JavaScript?
 
-    Event bubbling is the default behavior where an event triggered on a child element will also trigger on its parent elements. Event capturing is the opposite, where the event is captured on the parent element first and then propagated to the child elements.
+Event bubbling is the default behavior where an event triggered on a child element will also trigger on its parent elements. Event capturing is the opposite, where the event is captured on the parent element first and then propagated to the child elements.
 
 #### 14. What is the purpose of the “bind” method in JavaScript?
 
-    The “bind” method is used to create a new function with a specific context (the value of “this”) and, optionally, pre-set arguments. It is commonly used for event handling and creating function aliases.
+The “bind” method is used to create a new function with a specific context (the value of “this”) and, optionally, pre-set arguments. It is commonly used for event handling and creating function aliases.
 
 #### 15. Explain the concept of AJAX in JavaScript.
 
-    AJAX (Asynchronous JavaScript and XML) is a technique used to make asynchronous HTTP requests from the client-side to the server-side without reloading the entire page. It allows for dynamic updates and better user experience.
+AJAX (Asynchronous JavaScript and XML) is a technique used to make asynchronous HTTP requests from the client-side to the server-side without reloading the entire page. It allows for dynamic updates and better user experience.
 
 #### 16. What is the “typeof” operator used for?
 
-    The “typeof” operator is used to determine the data type of a value or variable in JavaScript. It returns a string indicating the type, such as “string,” “number,” “object,” etc.
+The “typeof” operator is used to determine the data type of a value or variable in JavaScript. It returns a string indicating the type, such as “string,” “number,” “object,” etc.
 
 #### 17. How does JavaScript handle errors and exceptions?
 
-    JavaScript provides a try-catch-finally statement for handling errors and exceptions. The “try” block contains the code that might throw an exception, the “catch” block handles the exception, and the “finally” block is executed regardless of whether an exception occurs or not.
+JavaScript provides a try-catch-finally statement for handling errors and exceptions. The “try” block contains the code that might throw an exception, the “catch” block handles the exception, and the “finally” block is executed regardless of whether an exception occurs or not.
 
 #### 18. Explain the concept of event-driven programming in JavaScript.
 
-    Event-driven programming is a paradigm where the flow of the program is determined by events such as user actions, timer events, or system events. JavaScript is particularly suited for event-driven programming due to its ability to handle events and callbacks.
+Event-driven programming is a paradigm where the flow of the program is determined by events such as user actions, timer events, or system events. JavaScript is particularly suited for event-driven programming due to its ability to handle events and callbacks.
 
 #### 19. What is the purpose of the “async” and “await” keywords in JavaScript?
 
-    The “async” keyword is used to declare an asynchronous function, which allows the use of the “await” keyword inside it. “await” is used to pause the execution of an async function until a Promise is resolved, simplifying asynchronous code and avoiding callback hell.
+The “async” keyword is used to declare an asynchronous function, which allows the use of the “await” keyword inside it. “await” is used to pause the execution of an async function until a Promise is resolved, simplifying asynchronous code and avoiding callback hell.
 
 #### 20. What is the difference between a deep copy and a shallow copy in JavaScript?
 
-    A shallow copy creates a new object that references the original object’s properties, while a deep copy creates a new object with completely independent copies of all the original object’s properties.
+A shallow copy creates a new object that references the original object’s properties, while a deep copy creates a new object with completely independent copies of all the original object’s properties.
 
 #### 21. How does JavaScript handle memory management?
 
-    JavaScript uses automatic memory management called “garbage collection.” Objects that are no longer referenced are automatically marked for garbage collection and their memory is reclaimed.
+JavaScript uses automatic memory management called “garbage collection.” Objects that are no longer referenced are automatically marked for garbage collection and their memory is reclaimed.
 
 #### 22. Explain the concept of event loop in JavaScript.
 
-    The event loop is a mechanism that JavaScript uses to handle asynchronous operations. It continuously checks the call stack and the task queue, moving functions from the queue to the stack when the stack is empty, ensuring that JavaScript is single-threaded and non-blocking.
+The event loop is a mechanism that JavaScript uses to handle asynchronous operations. It continuously checks the call stack and the task queue, moving functions from the queue to the stack when the stack is empty, ensuring that JavaScript is single-threaded and non-blocking.
 
 #### 23. What is the purpose of the “map” method in JavaScript?
 
-    The “map” method is used to create a new array by iterating over an existing array and applying a transformation function to each element. It returns a new array with the transformed values.
+The “map” method is used to create a new array by iterating over an existing array and applying a transformation function to each element. It returns a new array with the transformed values.
 
 #### 24. What is a promise in JavaScript?
 
-    A promise is an object representing the eventual completion or failure of an asynchronous operation. It allows you to write asynchronous code in a more readable and manageable way.
+A promise is an object representing the eventual completion or failure of an asynchronous operation. It allows you to write asynchronous code in a more readable and manageable way.
 
 #### 25. How do you handle errors in promises?
 
-    Errors in promises can be handled using the “catch” method, which is called when a promise is rejected. Additionally, each promise has a “finally” method that is called regardless of whether the promise is resolved or rejected.
+Errors in promises can be handled using the “catch” method, which is called when a promise is rejected. Additionally, each promise has a “finally” method that is called regardless of whether the promise is resolved or rejected.
 
 #### 26. Explain the concept of currying in JavaScript.
 
-    Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument. It allows for partial function application and the creation of reusable function templates.
+Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument. It allows for partial function application and the creation of reusable function templates.
 
 #### 27. What is the purpose of the “reduce” method in JavaScript?
 
-    The “reduce” method is used to reduce an array to a single value by repeatedly applying a callback function on each element. It accumulates the results of the callback function into a single value.
+The “reduce” method is used to reduce an array to a single value by repeatedly applying a callback function on each element. It accumulates the results of the callback function into a single value.
 
 #### 28. What is the difference between “null” and “undefined” in JavaScript?
 
-    “null” is an intentional absence of any object value, while “undefined” means that a variable has been declared but has not been assigned a value. “null” is an assigned value, while “undefined” is an unassigned value.
+“null” is an intentional absence of any object value, while “undefined” means that a variable has been declared but has not been assigned a value. “null” is an assigned value, while “undefined” is an unassigned value.
 
 #### 29. What are the different types of loops in JavaScript?
 
-    JavaScript has several loop constructs, including the “for” loop, “while” loop, “do-while” loop, and “for-of” loop introduced in ES6.
+JavaScript has several loop constructs, including the “for” loop, “while” loop, “do-while” loop, and “for-of” loop introduced in ES6.
 
 #### 30. What is the difference between “let,” “const,” and “var” in JavaScript?
 
-    “let” and “const” are block-scoped variables introduced in ES6, while “var” is function-scoped. “let” allows reassigning values, “const” is a constant that cannot be reassigned, and “var” has some hoisting behavior.
+“let” and “const” are block-scoped variables introduced in ES6, while “var” is function-scoped. “let” allows reassigning values, “const” is a constant that cannot be reassigned, and “var” has some hoisting behavior.
 
 #### 31. Explain the concept of event propagatio in JavaScript.
 
-    Event propagation refers to the order in which events are handled when an event occurs on a DOM element. It consists of two phases: capturing (downward from the document root) and bubbling (upward from the target element).
+Event propagation refers to the order in which events are handled when an event occurs on a DOM element. It consists of two phases: capturing (downward from the document root) and bubbling (upward from the target element).
 
 #### 32. What are the different ways to manipulate the DOM in JavaScript?
 
-    JavaScript provides various methods to manipulate the Document Object Model (DOM), including methods like getElementById(), querySelector(), createElement(), appendChild(), removeChild(), etc.
+JavaScript provides various methods to manipulate the Document Object Model (DOM), including methods like getElementById(), querySelector(), createElement(), appendChild(), removeChild(), etc.
 
 #### 33. What is the purpose of the “localStorage” and “sessionStorage” objects?
 
-    The “localStorage” and “sessionStorage” objects provide web developers with a way to store key-value pairs locally on a user’s browser. The “localStorage” data persists across sessions, while the “sessionStorage” data is cleared when the session ends.
+The “localStorage” and “sessionStorage” objects provide web developers with a way to store key-value pairs locally on a user’s browser. The “localStorage” data persists across sessions, while the “sessionStorage” data is cleared when the session ends.
 
 #### 34. How do you handle asynchronous operations in JavaScript?
 
-    Asynchronous operations in JavaScript are typically handled using callbacks, promises, or the newer async/await syntax. Callbacks were the traditional approach, while promises and async/await provide more structured and readable code.
+Asynchronous operations in JavaScript are typically handled using callbacks, promises, or the newer async/await syntax. Callbacks were the traditional approach, while promises and async/await provide more structured and readable code.
 
 #### 35. What is the purpose of the “forEach” method in JavaScript?
 
-    The “forEach” method is used to iterate over an array and execute a callback function on each element. It is a convenient way to perform an operation on each item without using a traditional for loop.
+The “forEach” method is used to iterate over an array and execute a callback function on each element. It is a convenient way to perform an operation on each item without using a traditional for loop.
 
 #### 36. What are the differences between “let” and “var” in JavaScript?
 
-    The main difference is scoping. Variables declared with “let” have block scope, meaning they are only accessible within the block where they are defined. Variables declared with “var” have function scope and are accessible throughout the entire function.
+The main difference is scoping. Variables declared with “let” have block scope, meaning they are only accessible within the block where they are defined. Variables declared with “var” have function scope and are accessible throughout the entire function.
 
 #### 37. Explain the concept of memoization in JavaScript.
 
-    Memoization is a technique used to optimize function performance by caching the results of expensive function calls and returning the cached result when the same inputs occur again. It improves efficiency by avoiding unnecessary calculations.
+Memoization is a technique used to optimize function performance by caching the results of expensive function calls and returning the cached result when the same inputs occur again. It improves efficiency by avoiding unnecessary calculations.
 
 #### 38. What is the purpose of the “splice” method in JavaScript arrays?
 
-    The “splice” method is used to change the contents of an array by removing, replacing, or adding elements at a specific position. It modifies the original array and returns an array containing the removed elements.
+The “splice” method is used to change the contents of an array by removing, replacing, or adding elements at a specific position. It modifies the original array and returns an array containing the removed elements.
 
 #### 39. What is a generator function in JavaScript?
 
-    A generator function is a special type of function that can be paused and resumed during its execution. It allows you to generate a series of values over time, providing a simpler syntax compared to traditional iterators.
+A generator function is a special type of function that can be paused and resumed during its execution. It allows you to generate a series of values over time, providing a simpler syntax compared to traditional iterators.
 
 #### 40. How does JavaScript handle variable scoping?
 
-    JavaScript uses lexical scoping, meaning variable scope is determined by the position of the variable declaration in the source code. Variables declared inside a function are local to that function, while variables declared outside any function are global.
+JavaScript uses lexical scoping, meaning variable scope is determined by the position of the variable declaration in the source code. Variables declared inside a function are local to that function, while variables declared outside any function are global.
 
 #### 41. What is the purpose of the “split” method in JavaScript?
 
-    The “split” method is used to split a string into an array of substrings based on a specified separator. It is commonly used to parse strings or extract specific parts of a string.
+The “split” method is used to split a string into an array of substrings based on a specified separator. It is commonly used to parse strings or extract specific parts of a string.
 
 #### 42. What is the difference between a deep clone and a shallow clone of an object?
 
-    A deep clone creates a new object with completely independent copies of all the properties and nested objects of the original object. A shallow clone creates a new object with references to the same properties and nested objects as the original object.
+A deep clone creates a new object with completely independent copies of all the properties and nested objects of the original object. A shallow clone creates a new object with references to the same properties and nested objects as the original object.
 
 #### 43. Explain the concept of the event delegation pattern.
 
-    The event delegation pattern is a technique where a single event listener is attached to a parent element instead of attaching individual listeners to multiple child elements. The parent element handles the events of its children by leveraging event bubbling.
+The event delegation pattern is a technique where a single event listener is attached to a parent element instead of attaching individual listeners to multiple child elements. The parent element handles the events of its children by leveraging event bubbling.
 
 #### 44. What are the differences between JavaScript’s “null” and “undefined”?
 
-    “null” represents the deliberate absence of an object value, while “undefined” indicates an uninitialized variable or a variable that lacks a value. “null” is an assigned value, while “undefined” is a type in JavaScript.
+“null” represents the deliberate absence of an object value, while “undefined” indicates an uninitialized variable or a variable that lacks a value. “null” is an assigned value, while “undefined” is a type in JavaScript.
 
 #### 45. What is the purpose of the “arguments” object in JavaScript?
 
-    The “arguments” object is an array-like object that contains the parameters passed to a function. It allows you to access the arguments dynamically, even if the function signature does not explicitly define them.
+The “arguments” object is an array-like object that contains the parameters passed to a function. It allows you to access the arguments dynamically, even if the function signature does not explicitly define them.
 
 #### 46. What are the different ways to define methods in JavaScript objects?
 
-    JavaScript objects can have methods defined using regular function syntax, method shorthand syntax, or using arrow functions. Methods defined within an object can access other properties and methods using the “this” keyword.
+JavaScript objects can have methods defined using regular function syntax, method shorthand syntax, or using arrow functions. Methods defined within an object can access other properties and methods using the “this” keyword.
 
 #### 47. Explain the concept of memoization and its benefits.
 
-    Memoization is a technique used to optimize expensive function calls by caching their results. When the same inputs occur again, the cached result is returned instead of re-computing the function. Memoization improves performance by reducing redundant calculations.
+Memoization is a technique used to optimize expensive function calls by caching their results. When the same inputs occur again, the cached result is returned instead of re-computing the function. Memoization improves performance by reducing redundant calculations.
 
 #### 48. What is the difference between “slice” and “splice” in JavaScript arrays?
 
-    The “slice” method returns a shallow copy of a portion of an array without modifying the original array. The “splice” method changes the contents of an array by removing or replacing existing elements or adding new elements at a specific position.
+The “slice” method returns a shallow copy of a portion of an array without modifying the original array. The “splice” method changes the contents of an array by removing or replacing existing elements or adding new elements at a specific position.
 
 #### 49. What is the purpose of the “apply” and “call” methods in JavaScript?
 
-    Both “apply” and “call” are used to invoke a function with a specified context (the value of “this”). The “apply” method accepts arguments as an array, while the “call” method accepts arguments individually.
+Both “apply” and “call” are used to invoke a function with a specified context (the value of “this”). The “apply” method accepts arguments as an array, while the “call” method accepts arguments individually.
 
 #### 50. Explain the concept of the event loop in JavaScript and how it handles asynchronous operations.
 
 The event loop is a mechanism in JavaScript that handles asynchronous operations by continuously checking the call stack and the task queue. It ensures that only one function runs at a time and processes pending events or functions in the queue, allowing non-blocking execution of code.
+
+Reference Link: [50 important interview questions with answers for JavaScript](https://medium.com/@code.origin/45-javascript-interview-question-with-answers-b0b56aea7107)
 
 ### 15. Best Practices
 
@@ -1280,11 +1282,12 @@ Link: [https://github.com/ryanmcdermott/clean-code-javascript?tab=readme-ov-file
 
 Project Ideas 40 project- Js, React, Typescript: [https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-restaurant-menu-page]
 
-### 17. Some useful links JavaScript
+### 17. Some useful links JavaScript & Interview Questions
 
 1. https://github.com/sudheerj/javascript-interview-questions
 2. https://javascript.plainenglish.io/top-10-javascript-interview-question-a1bf5dae41f5
 3. https://www.interviewbit.com/javascript-interview-questions/
+4. https://javascript.plainenglish.io/top-10-javascript-interview-question-a1bf5dae41f5
 
 ### 18. React Interview questions and answer
 
