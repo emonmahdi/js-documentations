@@ -859,6 +859,15 @@ var sortedArray = [...originalArray].sort((a, b) => a - b);
 console.log("Original Array:", originalArray);
 console.log("Sorted Array:", sortedArray);
 ```
+##### 22. Get Random Number 
+```js
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * max - min + 1) + min;
+}
+
+const result = getRandomNumber(0, 10);
+console.log(result);
+```
 
 ### Reference Problem Solving Resources: [Basic Problems Javascript](https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php)
 
