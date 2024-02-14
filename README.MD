@@ -859,13 +859,36 @@ var sortedArray = [...originalArray].sort((a, b) => a - b);
 console.log("Original Array:", originalArray);
 console.log("Sorted Array:", sortedArray);
 ```
-##### 22. Get Random Number 
+
+##### 22. Get Random Number
+
 ```js
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * max - min + 1) + min;
 }
 
 const result = getRandomNumber(0, 10);
+console.log(result);
+```
+
+##### 23. Resized Array
+
+```js
+function resizeArray(arr, newSize) {
+  let newArr = new Array(newSize);
+  //   console.log(newArr);
+  const length = Math.min(arr.length, newSize);
+  //   console.log(length);
+  for (let i = 0; i < length; i++) {
+    newArr[i] = arr[i];
+  }
+
+  return newArr;
+}
+
+const array = [1, 2, 3, 4, 5];
+array[5] = 6;
+const result = resizeArray(array, 8);
 console.log(result);
 ```
 
