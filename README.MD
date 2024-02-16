@@ -3004,6 +3004,10 @@ increment(); // 3
 
 #### JavaScript Coding Interview Preparation: [https://codeinterview.io/blog/javascript-coding-interview-questions/]
 
+### Some useful links:
+
+#### 1. [Top 30 JavaScript Interview Questions and Answers for 2024](https://medium.com/@javascriptcentric/top-30-javascript-interview-questions-and-answers-for-2024-7f1e2d1d0638)
+
 #### React Interview Questions:
 
 1. [https://dev.to/m_midas/44-react-frontend-interview-questions-2o63]
