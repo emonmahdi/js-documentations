@@ -1,0 +1,228 @@
+Great! Since you’re serious about learning DOM like a Junior Developer under the guidance of a Senior Developer, I’ll give you a **step-by-step DOM Mastery Plan**. This plan includes:
+
+1. **Core Concepts**
+2. **Hands-on Practice**
+3. **Mini Tasks**
+4. **Small Projects**
+5. **Interview Prep**
+
+---
+
+# 🧭 DOM Mastery Roadmap (7 Days Plan)
+
+---
+
+## ✅ **Day 1: DOM Basics & Tree Structure**
+
+### 📚 Learn:
+
+* What is the DOM?
+* How the browser turns HTML into the DOM tree
+* Nodes, Elements, and Attributes
+
+### 🛠 Task:
+
+* Open any webpage → Right-click → Inspect → Elements tab → Explore the structure
+* Try selecting elements using `document.getElementById()`, `document.querySelector()`
+
+### 💻 Practice:
+
+```js
+console.log(document.title);
+console.log(document.body);
+console.log(document.getElementById("main"));
+```
+
+---
+
+## ✅ **Day 2: DOM Element Selection**
+
+### 📚 Learn:
+
+* DOM selection methods:
+
+  * `getElementById`
+  * `getElementsByClassName`
+  * `getElementsByTagName`
+  * `querySelector`
+  * `querySelectorAll`
+
+### 🛠 Task:
+
+Create an HTML file and use all the selection methods to select elements.
+
+### 💻 Mini Task:
+
+```html
+<p id="para">Hello</p>
+<p class="info">World</p>
+<p class="info">Again</p>
+
+<script>
+  const a = document.getElementById("para");
+  const b = document.getElementsByClassName("info");
+  const c = document.querySelector(".info");
+  console.log(a.textContent, b.length, c.textContent);
+</script>
+```
+
+---
+
+## ✅ **Day 3: DOM Content & Attribute Manipulation**
+
+### 📚 Learn:
+
+* `.textContent`, `.innerText`, `.innerHTML`
+* `setAttribute()`, `getAttribute()`, `removeAttribute()`
+* `.className`, `.classList`
+
+### 🛠 Task:
+
+* Change content and attributes using JS.
+
+### 💻 Mini Task:
+
+```html
+<p id="demo">Original Text</p>
+<button onclick="changeText()">Change</button>
+
+<script>
+  function changeText() {
+    const demo = document.getElementById("demo");
+    demo.textContent = "Text Changed!";
+    demo.setAttribute("style", "color: red");
+  }
+</script>
+```
+
+---
+
+## ✅ **Day 4: Styling & Class Manipulation**
+
+### 📚 Learn:
+
+* `.style` object
+* `.classList.add()`, `.remove()`, `.toggle()`
+
+### 🛠 Task:
+
+* Change colors, fonts, margins using JS
+* Add/remove class dynamically
+
+### 💻 Mini Task:
+
+```js
+const box = document.querySelector(".box");
+box.style.backgroundColor = "yellow";
+box.classList.add("rounded");
+```
+
+---
+
+## ✅ **Day 5: DOM Events & Event Listeners**
+
+### 📚 Learn:
+
+* `onclick`, `onchange`, `oninput`, etc.
+* `addEventListener(event, callback)`
+* `event.target`, `event.type`
+
+### 🛠 Task:
+
+* Add event listeners to buttons, inputs
+* Understand event bubbling
+
+### 💻 Mini Task:
+
+```html
+<button id="btn">Click me</button>
+
+<script>
+  const btn = document.getElementById("btn");
+  btn.addEventListener("click", function () {
+    alert("Button was clicked!");
+  });
+</script>
+```
+
+---
+
+## ✅ **Day 6: Creating & Removing Elements**
+
+### 📚 Learn:
+
+* `document.createElement()`
+* `element.appendChild()`
+* `element.remove()`
+* `insertBefore()`, `replaceChild()`
+
+### 🛠 Task:
+
+* Dynamically add a new item to a list
+* Remove an element when a button is clicked
+
+### 💻 Mini Task:
+
+```html
+<ul id="list"></ul>
+<button onclick="addItem()">Add Item</button>
+
+<script>
+  function addItem() {
+    const li = document.createElement("li");
+    li.textContent = "New Item";
+    document.getElementById("list").appendChild(li);
+  }
+</script>
+```
+
+---
+
+## ✅ **Day 7: Mini Project – To-Do List (Pure DOM)**
+
+### Features:
+
+* Add a task
+* Mark it complete
+* Delete task
+
+### 💡 Build using:
+
+* `createElement()`
+* `appendChild()`
+* `addEventListener()`
+* `remove()`
+
+---
+
+# 🎯 Final Revision: DOM Interview Questions & Answers
+
+### ✅ Practice:
+
+* What is DOM?
+* How do you select elements?
+* Difference between `innerText`, `textContent`, and `innerHTML`
+* How to handle click events?
+* How to add/remove elements dynamically?
+
+---
+
+# 💼 Small Projects to Solidify DOM
+
+| Project         | Concepts Used                              |
+| --------------- | ------------------------------------------ |
+| To-do list      | Selection, events, element creation        |
+| Color switcher  | Styling, event listeners                   |
+| Image slider    | `src` attribute manipulation, timers       |
+| Modal popup     | Show/hide, class manipulation              |
+| Form validation | Events, `input.value`, conditional styling |
+
+---
+
+Would you like me to:
+
+* 🎯 Build your first DOM project with full code?
+* ✍️ Give you DOM mini quizzes?
+* 🎬 Share interactive tasks for practice?
+
+Let me know how you'd like to continue!

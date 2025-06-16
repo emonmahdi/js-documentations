@@ -1,0 +1,89 @@
+DOM stands for document object model is a programming interface for HTML and XML documents. It represents the structure of a web page as a tree of objects (nodes) that you can access and manipulate using JavaScript.
+
+
+The web browser uses DOM to represent the HTML document internally. Additionally, it provides a set of functions and methods to modify the HTML document programmatically.
+
+These functions and methods are often called DOM Application Programming Interfaces or DOM API.
+
+
+🧠 Think of it like this:
+When your browser loads a webpage (HTML), it parses the HTML and creates a DOM tree in memory — this tree is a live representation of the page.
+
+# You can then use JavaScript to:
+
+    - Access elements (like <div>, <p>, <button>)
+    - Change content
+    - Update styles
+    - Add or remove elements
+    - React to user actions (e.g., clicks)
+
+
+📂 Structure of the DOM:
+    <html>
+  └── <head>
+  └── <body>
+        └── <h1>
+        └── <p>
+        └── <button>
+
+-> Each of these tags is called a node.
+
+
+📌 Real Life Analogy:
+Think of your HTML like a blueprint of a house, and the DOM is the actual house your browser builds in memory. JavaScript is your remote control that moves things around inside the house.
+
+✅ Common DOM Methods:
+
+| Method                          | Purpose                             |
+| ------------------------------- | ----------------------------------- |
+| `getElementById(id)`            | Selects element by ID               |
+| `getElementsByClassName(class)` | HTMLCollection by class             |
+| `getElementsByTagName(tag)`     | HTMLCollection by tag name          |
+| `querySelector(selector)`       | First element matching CSS selector |
+| `querySelectorAll(selector)`    | NodeList of all matching elements   |
+
+
+
+🧠 DOM Interview Questions with Answers
+❓ Q1. What is the DOM?
+Answer: The DOM is a programming interface that represents HTML and XML documents as a tree of objects. It allows JavaScript to access and manipulate the structure, style, and content of a webpage dynamically.
+
+❓ Q2. What’s the difference between innerHTML, innerText, and textContent?
+Answer:
+
+- innerHTML: Returns the HTML content as a string (includes tags).
+
+- innerText: Returns only visible text (respects CSS like display: none).
+
+- textContent: Returns all text, regardless of CSS visibility.
+
+❓ Q3. How can you add an element to the DOM?
+Answer:
+
+const newPara = document.createElement("p");
+newPara.textContent = "New Paragraph";
+document.body.appendChild(newPara);
+
+
+❓ Q4. What is the difference between == and === in JavaScript?
+Answer:
+
+== checks value only (performs type coercion).
+
+=== checks value and type (strict comparison).
+
+❓ Q5. How do you remove an element from the DOM?
+Answer:
+
+const element = document.getElementById("main-heading");
+element.remove();
+
+❓ Q6. Explain event bubbling in the DOM.
+Answer:
+Event bubbling is when an event starts from the target element and bubbles up through its ancestors. You can capture or stop it using event.stopPropagation().
+
+
+
+Summary
+- DOM stands for Document Object Model.
+- DOM API provides a set of functions and methods to modify the HTML document dynamically via JavaScript.

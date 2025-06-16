@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Example</title>
+</head>
+
+<body>
+    <h1 id="main-heading">Hello DOM!</h1>
+    <button onclick="changeHeading()">Click Me</button>
+
+    <script>
+
+        function changeHeading() {
+            const heading = document.getElementById('main-heading');
+            heading.textContent = "Dom Manipulated";
+            heading.style.color = "red"
+        }
+
+    </script>
+</body>
+
+</html>
