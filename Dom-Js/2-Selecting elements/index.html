@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+</head>
+
+<body>
+
+    <h3 id="greetings">Hi There How are You?</h3>
+    <p>I am js of DOM</p>
+    <button onclick="greetings()">Change The Greeting</button>
+
+
+    <!-- getElementsByName -->
+
+    <p>Please rate the service:</p>
+    <p>
+        <label for="very-poor">
+            <input type="radio" name="rate" value="Very poor" id="very-poor"> Very poor
+        </label>
+        <label for="poor">
+            <input type="radio" name="rate" value="Poor" id="poor"> Poor
+        </label>
+        <label for="ok">
+            <input type="radio" name="rate" value="OK" id="ok"> OK
+        </label>
+        <label for="good">
+            <input type="radio" name="rate" value="Good"> Good
+        </label>
+        <label for="very-good">
+            <input type="radio" name="rate" value="Very Good" id="very-good"> Very Good
+        </label>
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <p id="output"></p>
+
+    <!-- getElementsByTagName -->
+    <h1>JavaScript getElementsByTagName() Demo</h1>
+    <h2>First heading</h2>
+    <p>This is the first paragraph.</p>
+    <h2>Second heading</h2>
+    <p>This is the second paragraph.</p>
+    <h2>Third heading</h2>
+    <p>This is the third paragraph.</p>
+    <h2>Fourth heading</h2>
+    <p>This is the third paragraph.</p>
+
+    <button id="btnCount">Count h2</button>
+
+
+    <!-- getElementsByClassName -->
+    <h2>getElementsByClassName</h2>
+
+
+    <div id="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+    </div>
+
+    <button onclick="addBox()">Add New Box</button>
+
+
+
+
+
+
+
+
+    <script>
+        function greetings() {
+            const greeting = document.getElementById('greetings');
+            greeting.style.color = "orange"
+        }
+
+
+        // getElementsByName
+        const buttonRate = document.getElementById('btnRate')
+        const output = document.getElementById('output')
+
+
+        buttonRate.addEventListener('click', () => {
+            const rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    output.innerText = `Your Selected is ${rate.value}`
+                }
+            })
+        })
+
+        // getElementsByTagName
+        const btn = document.getElementById('btnCount')
+
+        btn.addEventListener('click', () => {
+            const headings = document.getElementsByTagName('h2')
+            alert(`The number of h2 tags ${headings.length} `)
+        })
+
+        // getElementsByClassName
+        function addBox() {
+            const container = document.getElementById("container");
+            const newDiv = document.createElement("div");
+            newDiv.className = "box";
+            newDiv.textContent = "New Box";
+            container.appendChild(newDiv);
+
+            const boxes = document.getElementsByClassName("box");
+            console.log("Number of boxes:", boxes.length); // auto-updated
+        }
+
+
+    </script>
+</body>
+
+</html>
