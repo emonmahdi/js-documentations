@@ -51,3 +51,31 @@ The getElementsByClassName() method returns a live HTMLCollection of the matched
 If no element in the document matches the class names, the getElementsByClassName() method returns an empty HTMLCollection [].
 
 The getElementsByClassName() method is available on both the document element and any other DOM elements.
+
+
+#querySelector()
+
+The querySelector() is a method of the Element interface. The querySelector() method allows you to select the first element that matches one or more CSS selectors.
+
+let element = parentNode.querySelector(selector);
+
+In this syntax, the selector is a CSS selector or a group of CSS selectors to match the descendant elements of the parentNode.
+
+If the selector is not valid CSS syntax, the method will raise a SyntaxError exception.
+
+If no element matches the CSS selectors, the querySelector() returns null.
+
+The querySelector() method is available on the document object or any Element object.
+
+
+#querySelectorAll()
+
+The querySelectorAll() method returns a static NodeList of elements that match the CSS selector. If no element matches, it returns an empty NodeList.
+
+
+let elementList = parentNode.querySelectorAll(selector);
+
+
+The querySelectorAll() method returns a static NodeList of elements that match the CSS selector. If no element matches, it returns an empty NodeList.
+
+Note that the NodeList is an array-like object, not an array object. However, in modern web browsers, you can use the forEach() method or the for...of loop.
