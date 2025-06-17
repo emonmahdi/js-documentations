@@ -98,6 +98,56 @@
         <p>let logo = document.querySelector('#logo');</p>
 
         <h4>5- Attribute selector</h4>
+
+        <p>To select all elements that have a given attribute, you use one of the following attribute selector syntaxes:
+        </p>
+
+        <p>[attribute],
+            [attribute=value],
+            [attribute~=value],
+            [attribute|=value],
+            [attribute^=value],
+            [attribute$=value],
+            [attribute*$*=value]</p>
+
+        <p>let autoplay = document.querySelector('[autoplay]');</p>
+        <p>let autoplays = document.querySelectorAll('[autoplay]');</p>
+
+        <h5>Grouping selectors - (selector, selector, ...)</h5>
+
+        <p>The selector list will match any element with one of the selectors in the group.</p>
+        <pre>The following example finds all
+        'div' and 'p' elements:</pre>
+
+        <h4>Combinators</h4>
+
+        <h4>1- descendant combinator</h4>
+        <p>To find descendants of a node, you use the space ( ) descendant combinator -- selector selector</p>
+        <p>let links = document.querySelector('p a');</p>
+
+        <h4>2- Child combinator</h4>
+        <p>The > child combinator finds all elements that are direct children of the first -- selector > selector</p>
+        <p>let listItems = document.querySelectorAll('ul > li');</p>
+        <p>let listItems = document.querySelectorAll('ul.nav > li');</p>
+
+
+        <h4>3- General sibling combinator</h4>
+        <p>The ~ combinator selects siblings that share the same parent: selector ~ selector</p>
+        <p>let links = document.querySelectorAll('p ~ a');</p>
+
+
+        <h4>4- Adjacent sibling combinator</h4>
+        <p>The + adjacent sibling combinator selects adjacent siblings: selector + selector</p>
+        <p>let links = document.querySelectorAll('h1 + a');</p>
+
+        <h3>Pseudo</h3>
+        <h4>1- Pseudo-classes</h4>
+        <p>The : pseudo matches elements based on their states:</p>
+        <p>element:state -- let listItem = document.querySelectorAll('li:nth-child(2)');</p>
+
+        <h4>2) Pseudo-elements.</h4>
+        <p>The :: represent entities that are not included in the document therefore the querySelector() method cannot
+            select pseudo-elements</p>
     </div>
 
 

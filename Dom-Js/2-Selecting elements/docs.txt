@@ -79,3 +79,9 @@ let elementList = parentNode.querySelectorAll(selector);
 The querySelectorAll() method returns a static NodeList of elements that match the CSS selector. If no element matches, it returns an empty NodeList.
 
 Note that the NodeList is an array-like object, not an array object. However, in modern web browsers, you can use the forEach() method or the for...of loop.
+
+
+Summary
+- The querySelector() finds the first element that matches a CSS selector or a group of CSS selectors.
+- The querySelectorAll() finds all elements that match a CSS selector or a group of CSS selectors.
+- A CSS selector defines elements to which a CSS rule applies.
