@@ -11,3 +11,15 @@ If you create a new node but haven’t attached it to the DOM tree, the parentNo
 Summary
 The node.parentNode returns the read-only parent node of a specified node or null if it does not exist.
 The document and DocumentFragment do not have a parent node.
+
+
+firstElementChild - get the first child element 
+lastChild - To get the last child element of a node
+lastElementChild - the last child element with the element node type
+childNodes - To get a live NodeList of child elements of a specified element
+children - To get the child element with only the element node type
+
+Summary
+The firstChild and lastChild return the first and last child of a node, which can be any node type including text node, comment node, and element node.
+The firstElementChild and lastElementChild return the first and last child Element node.
+The childNodes returns a live NodeList of all child nodes of any node type of a specified node. The children return all child Element nodes of a specified node.

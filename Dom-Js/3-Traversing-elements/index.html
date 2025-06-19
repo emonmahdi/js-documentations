@@ -7,8 +7,101 @@
     <title>Traversing elements</title>
 </head>
 
+<style>
+    .myDiv {
+        text-align: center;
+        color: green;
+        font-size: 20px;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+</style>
+
 <body>
 
+
+    <h2>Getting Child Elements of a Node in JavaScript</h2>
+
+    <h4>To get the first child element of a specified element, you use the firstChild property of the element:</h4>
+
+    <p>let firstChild = parentElement.firstChild; </p>
+
+    <p>If the parentElement does not have any child element, the firstChild returns null.
+
+    </p>
+
+    <p>The firstChild property returns a child node which can be any node type such as an element node, a text node, or
+        a comment node.</p>
+
+
+
+    <div>
+        <ul id="menu">
+            <li>home</li>
+            <li>about</li>
+            <li>contact</li>
+        </ul>
+    </div>
+    <p>The Console window shows #text because a text node is inserted to maintain the whitespace between the opening
+    <ul> and <li> tags. This whitespace creates a #text node. (content.firstChild.nodeName;)</p>
+
+
+            <h2>Get all child elements</h2>
+            <p>To get a live NodeList of child elements of a specified element, you use the childNodes</p>
+
+
+            <div>
+                <h4>To create an HTML element, you use the document.createElement() method:</h4>
+
+                let element = document.createElement(htmlTag);
+                Code language: JavaScript (javascript)
+                The document.createElement() accepts an HTML tag name and returns a new Node with the Element type.
+
+                <p>
+                    Summary: <br>
+                    The document.createElement() creates a new HTML element.
+                    The element.appendChild() appends an HTML element to an existing element.
+                </p>
+            </div>
+
+
+
+
+
+            <script>
+                const content = document.getElementById('menu');
+                const firstChild = content.firstElementChild;
+                const lastChild = content.lastElementChild;
+                const children = content.children;
+                console.log(firstChild)
+                console.log(lastChild)
+                console.log(children)
+
+                // createElement()
+
+                let div = document.createElement('div');
+                div.id = 'content';
+                div.className = 'myDiv';
+                div.innerHTML = '<p>this is paragraph </p>'
+
+                const text = document.createTextNode('I want to try something new using JS')
+                div.appendChild(text)
+
+
+                // h2   
+                let h2 = document.createElement('h2')
+                h2.innerText = 'this is heading two'
+                h2.title = 'title two'
+                div.appendChild(h2)
+
+                let li = document.createElement('li')
+                li.textContent = 'Blog';
+                menu.appendChild(li)
+
+                // add div to the document
+                document.body.appendChild(div)
+
+            </script>
 </body>
 
 </html>

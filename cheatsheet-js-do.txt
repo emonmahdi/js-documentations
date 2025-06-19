@@ -1,0 +1,10 @@
+
+
+firstElementChild - get the first child element 
+lastChild - To get the last child element of a node
+lastElementChild - the last child element with the element node type
+childNodes - To get a live NodeList of child elements of a specified element
+children - To get the child element with only the element node type
+
+createElement() - To create an HTML element, you use the document.createElement() method 
+The element.appendChild() appends an HTML element to an existing element
