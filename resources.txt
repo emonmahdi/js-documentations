@@ -5,3 +5,8 @@ some list resources:
 3. https://github.com/anisul-Islam/javascript-documentation
 4. https://www.w3schools.com/js/default.asp
 5. https://academy.vivasoftltd.com/javascript-bootcamp/course-introduction/
+
+
+
+
+5. How is JavaScript executed in the browser? What are the call stack, callback queue, and microtask queue?
