@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript </title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+
+    <!-- responsiveness -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Dashbaord css -->
+    <link rel="stylesheet" href="css/dashboard-style.css" />
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar d-flex flex-column p-3">
+        <h4 class="text-white mb-4">
+            <a href="index.html">
+                <img src="assets/images/logo/logo-white.png" alt="Rainbow Global Logo" class="img-fluid"
+                    style="height: 25px;">
+            </a>
+        </h4>
+        <ul class="nav nav-pills flex-column mb-auto">
+
+            <!-- Account -->
+            <li>
+                <a class="nav-link" data-bs-toggle="collapse" href="#accountMenu" role="button" aria-expanded="false">
+                    <i class="fa-solid fa-user"></i> Account <i class="fa-solid fa-chevron-down float-end"></i>
+                </a>
+                <div class="collapse" id="accountMenu">
+                    <ul class="list-unstyled dropdown-menu-sidebar">
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('myProfile')">
+                                <i class="fas fa-angle-right me-2"></i> My Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('updateProfile')">
+                                <i class="fas fa-angle-right me-2"></i> Update Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('bankInfo')">
+                                <i class="fas fa-angle-right me-2"></i> Bank Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('bankInfo')">
+                                <i class="fas fa-angle-right me-2"></i> Nominee Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('bankInfo')">
+                                <i class="fas fa-angle-right me-2"></i> Change Password
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('bankInfo')">
+                                <i class="fas fa-angle-right me-2"></i> Wallet Password
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+
+            <!-- Network -->
+            <li>
+                <a class="nav-link" data-bs-toggle="collapse" href="#networkMenu" role="button" aria-expanded="false">
+                    <i class="fa-solid fa-network-wired"></i> Network <i class="fa-solid fa-chevron-down float-end"></i>
+                </a>
+                <div class="collapse" id="networkMenu">
+                    <ul class="list-unstyled dropdown-menu-sidebar">
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Genealogy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Sponsor Members
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Team Members
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('generation')">
+                                <i class="fas fa-angle-right me-2"></i> Generation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <!-- Shop -->
+            <li>
+                <a class="nav-link" data-bs-toggle="collapse" href="#shopMenu" role="button" aria-expanded="false">
+                    <i class="fa-solid fa-store"></i> Shop <i class="fa-solid fa-chevron-down float-end"></i>
+                </a>
+                <div class="collapse" id="shopMenu">
+                    <ul class="list-unstyled dropdown-menu-sidebar">
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Urgent Account
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Purchase
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Offer Product
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('generation')">
+                                <i class="fas fa-angle-right me-2"></i> Cart
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <!-- Wallet -->
+            <li>
+                <a class="nav-link" data-bs-toggle="collapse" href="#walletMenu" role="button" aria-expanded="false">
+                    <i class="fa-solid fa-wallet"></i> Wallet <i class="fa-solid fa-chevron-down float-end"></i>
+                </a>
+                <div class="collapse" id="walletMenu">
+                    <ul class="list-unstyled dropdown-menu-sidebar">
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Wallet Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Upload Photo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('teamMembers')">
+                                <i class="fas fa-angle-right me-2"></i> Withdrow Balance
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <!-- Reports -->
+            <li>
+                <a class="nav-link" data-bs-toggle="collapse" href="#jsInterview" role="button" aria-expanded="false">
+                    <i class="fa-solid fa-wallet"></i> Js Interview Question <i class="fa-solid fa-chevron-down float-end"></i>
+                </a>
+                <div class="collapse" id="jsInterview">
+                    <ul class="list-unstyled dropdown-menu-sidebar">
+                        <li>
+                            <a href="#" class="nav-link" onclick="showContent('commonQuestion')">
+                                <i class="fas fa-angle-right me-2"></i>Most Common Question
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+
+            </li>
+
+            <!-- Reports -->
+            <li><a href="#" class="nav-link" onclick="showContent('reports')"><i class="fa-solid fa-chart-line"></i>
+                    Reports</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <main class="content" id="main-content">
+        <!-- <div class="content-menu-bar bg-primary  shadow m-0">
+            <div class="profile-user">
+                <p>User</p>
+            </div>
+        </div> -->
+        <div class="dashboard-menu-bar d-flex justify-content-between align-items-center shadow px-4 py-2 text-white">
+            <div class="dashboard-logo">
+                <h4 class="mb-0">Dashboard</h4>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <span class="user-name fw-semibold">John Doe</span>
+
+                <div class="dropdown">
+                    <div class="d-flex align-items-center gap-2 dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="assets/images/a-4.avif" alt="Profile" class="rounded-circle" width="40" height="40">
+                        <i class="fas fa-chevron-down text-white"></i>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2">
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-menu-body-content">
+            <!-- Sections -->
+            <div id="myProfile" class="content-section">
+                <h2>My Profile</h2>
+                <p>View your personal information.</p>
+            </div>
+
+            <div id="updateProfile" class="content-section d-none">
+                <h2>Update Profile</h2>
+                <p>Update your contact info, password, and other details.</p>
+            </div>
+
+            <div id="bankInfo" class="content-section d-none">
+                <h2>Bank Information</h2>
+                <p>Manage your bank details.</p>
+            </div>
+
+            <div id="teamMembers" class="content-section d-none">
+                <h2>Team Members</h2>
+                <p>View your downline team members.</p>
+            </div>
+
+            <div id="generation" class="content-section d-none">
+                <h2>Generation</h2>
+                <p>Explore your generational structure.</p>
+            </div>
+
+            <div id="shop" class="content-section d-none">
+                <h2>Shop</h2>
+                <p>Browse and purchase products.</p>
+            </div>
+
+            <div id="wallet" class="content-section d-none">
+                <h2>Wallet</h2>
+                <p>Track your earnings and transactions.</p>
+            </div>
+
+            <div id="reports" class="content-section d-none">
+                <h2>Reports</h2>
+                <p>Generate performance and transaction reports.</p>
+            </div>
+            <!-- Js Interview Q and A --> 
+              <div id="commonQuestion" class="content-section d-none">
+                <div class="container">
+                  <h2 class="text-center text-primary section-heading mb-5">💡 JavaScript Interview Questions & Answers</h2>
+              
+                  <!-- Q1 -->
+                  <div class="question-box">
+                    <div class="question-title" onclick="toggleAnswer(this)">
+                      1. What is the difference between var, let, and const?
+                    </div>
+                    <div class="answer">
+                      <ul>
+                        <li><strong>var</strong> – Function scoped, can be re-declared and updated.</li>
+                        <li><strong>let</strong> – Block scoped, can be updated but not re-declared.</li>
+                        <li><strong>const</strong> – Block scoped, cannot be updated or re-declared.</li>
+                      </ul>
+                      <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <pre><code>var x = 10;
+              let y = 20;
+              const z = 30;
+              
+              x = 15; // OK
+              y = 25; // OK
+              z = 35; // ❌ Error: Assignment to constant variable
+              </code></pre>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Q2 -->
+                  <div class="question-box">
+                    <div class="question-title" onclick="toggleAnswer(this)">
+                      2. Difference between forEach, for, and map?
+                    </div>
+                    <div class="answer">
+                      <ul>
+                        <li><strong>for</strong>: Traditional loop, flexible with break/continue.</li>
+                        <li><strong>forEach</strong>: Array method, no break/continue, doesn't return new array.</li>
+                        <li><strong>map</strong>: Returns new array, good for transformation.</li>
+                      </ul>
+                      <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <pre><code>const numbers = [1, 2, 3, 4];
+              
+              // for
+              for (let i = 0; i < numbers.length; i++) {
+                console.log(numbers[i]);
+              }
+              
+              // forEach
+              numbers.forEach(num => console.log(num));
+              
+              // map
+              const doubled = numbers.map(num => num * 2);
+              console.log(doubled); // [2, 4, 6, 8]
+              </code></pre>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Q3 -->
+                  <div class="question-box">
+                    <div class="question-title" onclick="toggleAnswer(this)">
+                      3. ES6 Features?
+                    </div>
+                    <div class="answer">
+                      <ul>
+                        <li>let & const</li>
+                        <li>Arrow functions</li>
+                        <li>Template literals</li>
+                        <li>Destructuring</li>
+                        <li>Default parameters</li>
+                        <li>Spread/Rest operators</li>
+                        <li>Promises & async/await</li>
+                        <li>Modules, Classes</li>
+                      </ul>
+                      <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <pre><code>// Template literal
+              const name = "Emon";
+              console.log(`Hello, ${name}`);
+              
+              // Arrow function
+              const add = (a, b) => a + b;
+              
+              // Destructuring
+              const [x, y] = [10, 20];
+              console.log(x, y); // 10 20
+              </code></pre>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Q4 -->
+                  <div class="question-box">
+                    <div class="question-title" onclick="toggleAnswer(this)">
+                      4. Difference between callback, promise, and async/await?
+                    </div>
+                    <div class="answer">
+                      <ul>
+                        <li><strong>Callback</strong>: Function passed as an argument.</li>
+                        <li><strong>Promise</strong>: Represents future result, avoids callback hell.</li>
+                        <li><strong>Async/Await</strong>: Cleaner syntax to handle Promises.</li>
+                      </ul>
+                      <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <pre><code>// Callback
+              function fetchData(callback) {
+                setTimeout(() => callback("Done!"), 1000);
+              }
+              
+              // Promise
+              function fetchPromise() {
+                return new Promise(resolve => {
+                  setTimeout(() => resolve("Resolved!"), 1000);
+                });
+              }
+              
+              // Async/Await
+              async function loadData() {
+                const data = await fetchPromise();
+                console.log(data); // "Resolved!"
+              }
+              </code></pre>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Add more questions following the same format -->
+              
+                </div>
+              </div> 
+    </main>
+
+    <!-- Bootstrap & Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showContent(sectionId) {
+            document.querySelectorAll('.content-section').forEach(el => el.classList.add('d-none'));
+            document.getElementById(sectionId).classList.remove('d-none');
+
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+    <script>
+        function toggleAnswer(el) {
+          el.parentElement.classList.toggle("active");
+        }
+      
+        function copyCode(btn) {
+          const code = btn.nextElementSibling.innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            btn.textContent = "Copied!";
+            setTimeout(() => {
+              btn.textContent = "Copy";
+            }, 1500);
+          });
+        }
+      </script>
+</body>
+
+</html>

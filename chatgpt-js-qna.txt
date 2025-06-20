@@ -1,0 +1,699 @@
+নিশ্চিতভাবেই! নিচে কিছু প্রায় ১০০+ JavaScript ইন্টারভিউ প্রশ্ন ও তাদের উত্তর (Bangla ভাষায়), উদাহরণসহ বর্ণনা দিচ্ছি। পুরো সেট এখানে পোস্ট করা হলে অনেক বড় হবে, তাই আমি কয়েকটি প্রধান ধারার প্রশ্ন দিয়ে শুরু করছি। আপনি চাইলে পরে আরও প্রশ্ন যোগ করতে পারেন।
+
+---
+
+## 🔹 ১. JavaScript কি?
+
+**উত্তর**: JavaScript হলো একটি স্ক্রিপ্টিং ভাষা যা ওয়েব পেজে ইন্টারঅ্যাকটিভ ফাংশনালিটি যোগ করতে ব্যবহৃত হয়। এটি ক্লায়েন্ট-সাইডে (ব্রাউজারে) রান করে, অথব সার্ভার-সাইডেও Node.js দিয়ে চলে।
+
+**উদাহরণ**:
+
+```html
+<button onclick="alert('Hello!')">Click me</button>
+```
+
+---
+
+## ২. Difference between var, let, const
+
+**উত্তর**:
+
+* **var**: function-scoped, hoisting হয়, redeclare ও reassign উভয়ই করতে পারি।
+* **let**: block-scoped, hoisting হয় but temporal dead zone রয়েছে, redeclare নয় but reassign হয়।
+* **const**: block-scoped, hoisting similar to let, redeclare & reassign একদম নয়। তবে object/array এর ক্ষেত্রে তার content পরিবর্তন করা যায়।
+
+**উদাহরণ**:
+
+```js
+function test() {
+  if(true){
+    var a = 1;
+    let b = 2;
+    const c = 3;
+  }
+  console.log(a); // 1
+  // console.log(b); // Error: b is not defined
+  // console.log(c); // Error: c is not defined
+}
+```
+
+---
+
+## ৩. JavaScript তে closure কী?
+
+**উত্তর**: Closure হল একটি function যার context বা lexical scope রেখে যায়—যার ফলে অনান্য জায়গায় সেই variable/function access করা যায়।
+
+**উদাহরণ**:
+
+```js
+function outer() {
+  let count = 0;
+  return function(){
+    count++;
+    console.log(count);
+  }
+}
+const fn = outer();
+fn(); // 1
+fn(); // 2
+```
+
+---
+
+## ৪. difference between == and ===
+
+**উত্তর**:
+
+* `==` : Loose equality, type conversion আছে
+* `===`: Strict equality, type conversion নয়
+
+**উদাহরণ**:
+
+```js
+0 == '0';   // true
+0 === '0';  // false
+false == 0; // true
+false === 0;// false
+```
+
+---
+
+## ৫. Hoisting কি?
+
+**উত্তর**: JavaScript execution পযর্ন্তে declaration (var/func) কোডের প্রথমে "hoist" করে (উঠিয়ে নেয়), কিন্তু assignment নেয় না।
+
+**উদাহরণ**:
+
+```js
+console.log(x); // undefined
+var x = 5;
+```
+
+`x` declaration আগে নেয়া হয়েছে, কিন্তু assignment তারপর।
+
+---
+
+## ৬. IIFE – Immediately Invoked Function Expression
+
+**উত্তর**: একটি function যা declaration-ই তৎক্ষণাৎ কল করা হয়।
+
+**উদাহরণ**:
+
+```js
+(function(){
+  console.log("IIFE executed");
+})();
+```
+
+---
+
+## ৭. Event delegation কী?
+
+**উত্তর**: একটি পদ্ধতি যেখানে একটি parent element‑এ একবার event listener যোগ করে, আর তারই child‑এর ইভেন্ট হ্যান্ডেল করা হয়। এটি DOM elements অনেক থাকলে কার্যকর ও মেমরি সাশ্রয়ী হয়।
+
+**উদাহরণ**:
+
+```js
+document.querySelector('#list').addEventListener('click', function(e){
+  if(e.target && e.target.nodeName === 'LI') {
+    console.log('Clicked:', e.target.textContent);
+  }
+});
+```
+
+---
+
+## ৮. Prototypal inheritance কী?
+
+**উত্তর**: প্রতিটি JS object‑এর একটি prototype থাকে, যার properties ও methods ওতে “inherit” করা যায়।
+
+**উদাহরণ**:
+
+```js
+function Person(name){
+  this.name = name;
+}
+Person.prototype.greet = function(){
+  console.log('Hello, ' + this.name);
+};
+let p = new Person('Rahim');
+p.greet();  // Hello, Rahim
+```
+
+---
+
+## ৯. Arrow function ও normal function এ কী পার্থক্য?
+
+**উত্তর**:
+
+1. Arrow functions `this`, `arguments`, `super`, `new.target` ও binding করে না।
+2. Arrow functions can't be used as constructors (no `new`).
+3. Syntax সংক্ষিপ্ত।
+
+**উদাহরণ**:
+
+```js
+const add = (a, b) => a + b;
+function add2(a,b){ return a+b; }
+```
+
+---
+
+## 🔟 Promise কী? Async/Await কীভাবে কাজ করে?
+
+**উত্তর**:
+
+* **Promise**: একটি object যা asynchronous অপারেশনের eventual value বা reason প্রকাশ করে।
+* **Async/Await**: Promise syntax‑কে synchronous‑এর মতো লিখতে দেয়। `async` ফাংশন একটি Promise return করে, আর `await` দিয়ে Promise resolve হওয়া পর্যন্ত অপেক্ষা করা যায়।
+
+**উদাহরণ**:
+
+```js
+function fetchData(){
+  return new Promise((resolve) =>{
+    setTimeout(() => resolve('Done!'), 1000);
+  });
+}
+
+async function run(){
+  const result = await fetchData();
+  console.log(result); // Done!
+}
+run();
+```
+
+---
+
+## ⚡ আপনার জন্য সম্পূরক প্রশ্নের তালিকা (প্রতিটি উত্তর+উদাহরণসহ আপনি চাইলে বলতে পারেন):
+
+* Hoisting & TDZ (Temporal Dead Zone)
+* Call, Apply, Bind
+* Event bubbling & capturing এর মধ্যে পার্থক্য
+* Prototype vs **proto**
+* ES6 फीচাৰসমূহ (Destructuring, Spread/Rest, Template literals)
+* Deep vs Shallow copy
+* Debounce ও Throttle
+* Cross-Origin(Resource Sharing - CORS) কী?
+* Memory leak কীভাবে ঘটে JS‑তে?
+* Garbage Collection কীভাবে কাজ করে?
+* Webpack/Babel কী? এর সুবিধা কী?
+* Modules – CommonJS vs ES6 modules
+* Fetch vs XMLHttpRequest
+* WebStorage (localStorage/sessionStorage) কী?
+* WebWorker কী?
+* Single-threaded nature আরও অনেক বিষয়সহ...
+
+---
+
+👉 **পরবর্তীতে যদি চান**:
+
+* নিয়মিত ধারাবাহিকে Q\&A দেওয়া
+* কোনো নির্দিষ্ট বিষয় (যেমন Closure, Asynchronous JS) গাইড
+* বাংলা উদাহরণ কিংবা কোড নিয়ে বিস্তারিত ট্রেনিং
+
+আপনি কোনগুলো বিস্তারিত চান? বা অন্য কোনো ধরনে present করতে চাইলে জানাবেন—আমি সাজিয়ে দেবো 💡
+
+
+
+চমৎকার! তাহলে নিচে অগ্রিম ধারায় আরো কিছু গুরুত্বপূর্ণ JS ইন্টারভিউ প্রশ্নের উত্তর ও উদাহরণ দিচ্ছি:
+
+---
+
+## 🔹 ১১. Call, Apply, Bind
+
+**উত্তর**:
+
+* `.call(thisArg, arg1, arg2…)`: ফাংশন কল করে বেঁধে দেওয়া `this` দিয়ে।
+* `.apply(thisArg, [argsArray])`: arguments অ্যারে হিসেবে নেয়।
+* `.bind(thisArg, arg1, …)`: নতুন ফাংশন তৈরি করে নির্দিষ্ট `this`–সহ; পরে কল করা যায়।
+
+**উদাহরণ**:
+
+```js
+function say(greeting){
+  console.log(greeting + ', ' + this.name);
+}
+const person = { name: 'Karim' };
+say.call(person, 'Hello');     // Hello, Karim
+say.apply(person, ['Hi']);     // Hi, Karim
+const bound = say.bind(person, 'Hey');
+bound();                       // Hey, Karim
+```
+
+---
+
+## 🔹 ১২. Debounce vs Throttle
+
+**উত্তর**:
+
+* **Debounce**: ইভেন্ট শেষ হওয়ার পর নির্দিষ্ট সময় পর callback একবারই চালায়।
+* **Throttle**: ইভেন্ট চলাকালীন প্রতি নির্দিষ্ট সময় অন্তর callback চালায়।
+
+**উদাহরণ**:
+
+```js
+function debounce(fn, delay){
+  let timer;
+  return function(...args){
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+function throttle(fn, limit){
+  let last;
+  return function(...args){
+    if(!last || Date.now() - last >= limit){
+      fn.apply(this, args);
+      last = Date.now();
+    }
+  };
+}
+```
+
+---
+
+## 🔹 ১৩. Deep copy vs Shallow copy
+
+**উত্তর**:
+
+* **Shallow copy**: শুধুমাত্র প্রথম লেভেলের কপি হয়; nested object তখন রেফারেন্স ধরে।
+* **Deep copy**: nested সব অবজেক্ট নতুন করে কপি হয়, সম্পূর্ণ আলাদা।
+
+**উদাহরণ**:
+
+```js
+const obj = { a:1, b: { c:2 } };
+const shallow = { ...obj };
+shallow.b.c = 3;
+console.log(obj.b.c); // 3 — একই nested object
+
+const deep = JSON.parse(JSON.stringify(obj));
+deep.b.c = 4;
+console.log(obj.b.c); // 3 — মূল অবজেক্ট অননুমোদিত না
+```
+
+---
+
+## 🔹 ১৪. Event bubbling ও capturing
+
+**উত্তর**:
+
+* **Bubbling**: ইভেন্ট child থেকে সোজা 올라 যায় parent‑তে।
+* **Capturing**: parent থেকে প্রথমে নিচে আসে child‑তে।
+
+**উদাহরণ**:
+
+```js
+parent.addEventListener('click', fn1, true);  // capturing
+child.addEventListener('click', fn2);         // bubbling default
+```
+
+---
+
+## 🔹 ১৫. ES6 ফিচারসমূহ
+
+* **Destructuring**:
+
+```js
+const [x, y] = [1, 2];
+const { name, age } = { name:'Rahim', age:30 };
+```
+
+* **Spread/Rest**:
+
+```js
+const arr = [1,2,3];
+const newArr = [...arr,4];
+function sum(...nums){ return nums.reduce((a,b)=>a+b); }
+```
+
+* **Template literals**:
+
+```js
+console.log(`Hello ${name}, you are ${age} years old.`);
+```
+
+---
+
+## 🔹 ১৬. Module system: CommonJS vs ES6
+
+* **CommonJS**: Node.js–এ `require`, `module.exports` দিয়ে।
+* **ES6 modules**: ব্রাউজার ও রিন্তে `import/export` দিয়ে।
+
+**উদাহরণ**:
+
+```js
+// CommonJS
+const utils = require('./utils');
+module.exports = { foo };
+
+// ES6
+import { foo } from './utils.js';
+export function bar() { ... }
+```
+
+---
+
+## 🔹 ১৭. WebStorage: localStorage ও sessionStorage
+
+* **localStorage**: ব্রাউজার বন্ধ হয়ে গেলে ডেটা থেকে যায়।
+* **sessionStorage**: শুধুমাত্র পেজ session পর্যন্ত থাকে; ব্রাউজার ট্যাব বন্ধ করলে মুছে যায়।
+
+**উদাহরণ**:
+
+```js
+localStorage.setItem('user', 'Alia');
+console.log(localStorage.getItem('user'));
+
+sessionStorage.setItem('token', 'abc123');
+sessionStorage.removeItem('token');
+```
+
+---
+
+## 🔹 ১৮. Fetch vs XMLHttpRequest
+
+* **XHR**: পুরনো পদ্ধতি, callback‑based।
+* **Fetch**: Promise‑based, কোড পড়তে সহজ, `Response` & `Request` objects।
+
+**উদাহরণ**:
+
+```js
+fetch('https://api.example.com/data')
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+---
+
+## 🔹 ১৯. Garbage Collection কীভাবে কাজ করে?
+
+**উত্তর**: JS engine (যেমন V8) reference counting, mark-and-sweep টেকনিক ব্যবহার করে unused মেমরি সরিয়ে দেয়।
+
+---
+
+## 🔹 ২০. Memory leak কীভাবে ঘটে?
+
+**উত্তর**: যখন অবজেক্ট আর ব্যবহার না হলেও তা GC থেকে রক্ষা পায়, যেমন: unintended global variables, forgotten timers, detached DOM nodes ইত্যাদি।
+
+---
+
+## 🔹 ২১. Polyfills & Transpilers (Babel/Webpack)
+
+* **Polyfills**: নতুন ফিচার পুরনো ব্রাউজারে আনার জন্য।
+* **Transpiler**: ES6+ কোড ES5‑এ রূপান্তর করে (যেমন Babel)।
+* **Bundle tool**: Webpack, Rollup–এর মতো ফাইলগুলো combine ও optimize করে।
+
+---
+
+## 🔹 ২২. WebWorker কী?
+
+**উত্তর**: JS-এর background thread run করার জন্য Web API; heavy computation page freeze না করেই চালানো যায়।
+
+**উদাহরণ**:
+
+```js
+// main.js
+const worker = new Worker('worker.js');
+worker.postMessage('Start');
+worker.onmessage = e => console.log('Result:', e.data);
+
+// worker.js
+onmessage = function(e){
+  const result = heavyCalc();
+  postMessage(result);
+}
+```
+
+---
+
+## 🔹 ২৩. Single-threaded nature ও Event Loop
+
+**উত্তর**: JS single-threaded হলেও asynchronous কাজ হয় event loop–এর মাধ্যমে; callback, promises, micro/macro‑tasks scheduling এর মাধ্যমে concurrent behavior হয়।
+
+---
+
+## 🔹 ২৪. CORS কী?
+
+Cross-Origin Resource Sharing একটি নিরাপত্তা বৈশিষ্ট্য, যে ক্ষেত্রে একটি web page অন্য domain থেকে resource fetch করতে চাইলে server বাধ্যমত নির্দিষ্ট header (e.g. `Access-Control-Allow-Origin`) দিতে হয়।
+
+---
+
+### 🚀 পরবর্তী ধাপ:
+
+আরও Q\&A চান? নিচ আয়রায় আপনি কোনগুলো বিস্তারিত চান?
+
+* ⭐ Async JavaScript (Callbacks, Promises, async/await)
+* 🧩 Testing (Unit testing, Jest)
+* ⚛️ Framework-specific JS (React/Vue)
+* 🧠 Algorithms & Data Structures
+* 💡 Design Patterns (Module, Factory, Singleton)
+* 🔒 Security (XSS, CSRF, OWASP rules)
+
+বলুন—পরবর্তী আরেকটি ১০+ প্রশ্ন উদাহরণ ও ব্যাখ্যা নিয়ে দেবো।
+
+
+
+
+বাহ, দারুণ! তাহলে আরও ১০টি গুরুত্বপূর্ণ JavaScript ইন্টারভিউ প্রশ্ন সংক্ষিপ্ত করে উত্তর ও উদাহরণসহ দিচ্ছি—সবই বাংলায় 🧠
+
+---
+
+## 🔹 ২৫. Callback vs Promise vs Async/Await
+
+**উত্তর**:
+
+* **Callback**: asynchronous function পরেও কলব্যাক যায়, but callback hell হতে পারে।
+* **Promise**: clearer syntax, `then`/`catch`, chaining সহজ।
+* **Async/Await**: ধরা বোঝার কোড স্টাইল, `try/catch` দিয়ে error handling।
+
+**উদাহরণ**:
+
+```js
+// Callback
+fs.readFile('file.txt', (err, data) => {
+  if(err) return console.error(err);
+  console.log(data);
+});
+
+// Promise
+readFilePromise('file.txt')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+// Async/Await
+async function load(){
+  try{
+    const data = await readFilePromise('file.txt');
+    console.log(data);
+  } catch(err){
+    console.error(err);
+  }
+}
+load();
+```
+
+---
+
+## 🔹 ২৬. Promise chaining and error handling
+
+**উত্তর**: একাধিক asynchronous কাজ একসাথে করতে সহজে চেইন করা যায়, আর শেষে centralized error catch করা যায়।
+
+**উদাহরণ**:
+
+```js
+doFirst()
+  .then(result => doSecond(result))
+  .then(result2 => doThird(result2))
+  .then(final => console.log(final))
+  .catch(err => console.error('Error:', err));
+```
+
+---
+
+## 🔹 ২৭. Map vs Set vs WeakMap vs WeakSet
+
+**উত্তর**:
+
+* **Map**: key-value store, কোনো type key দিতে পারেন।
+* **WeakMap**: key শুধুমাত্র object, এবং garbage-collected হয় যখন আর reference না থাকে।
+* **Set**: unique value collection।
+* **WeakSet**: শুধুমাত্র object stored, garbage-collected।
+
+**উদাহরণ**:
+
+```js
+const map = new Map();
+map.set(1, 'one');
+
+const set = new Set([1,2,2]); // {1,2}
+```
+
+---
+
+## 🔹 ২৮. Generators & Iterators
+
+**উত্তর**: Generators (function\*) ক্রমাগত yield করে value নিয়ে suspend করতে পারে। Iterators হচ্ছে objects যা sequence থেকে element ঢুকতে দেয়।
+
+**উদাহরণ**:
+
+```js
+function* count(){
+  let i = 1;
+  while(true){
+    yield i++;
+  }
+}
+const gen = count();
+console.log(gen.next().value); //1
+console.log(gen.next().value); //2
+```
+
+---
+
+## 🔹 ২৯. Proxy & Reflect
+
+**উত্তর**: Proxy দিয়ে object access methods intercept করা যায় (get/set), আর Reflect দিয়ে default behavior invoke করা যায়।
+
+**উদাহরণ**:
+
+```js
+const obj = {a:1};
+const proxy = new Proxy(obj, {
+  get(target, prop){
+    console.log(`Accessing ${prop}`);
+    return Reflect.get(target, prop);
+  }
+});
+console.log(proxy.a); // prints log, value 1
+```
+
+---
+
+## 🔹 ৩০. Custom Events & EventEmitter (Node.js)
+
+**উত্তর**: ব্রাউজারে `CustomEvent`, Node.js এ `EventEmitter` দিয়ে ইভেন্ট ম্যানেজ করা যায়।
+
+**উদাহরণ (Node.js)**:
+
+```js
+const EventEmitter = require('events');
+class MyEmitter extends EventEmitter {}
+const emitter = new MyEmitter();
+emitter.on('greet', name => console.log('Hello', name));
+emitter.emit('greet', 'Rahim'); // Hello Rahim
+```
+
+---
+
+## 🔹 ৩১. Currying
+
+**উত্তর**: একটি ফাংশন ভিন্ন ভিন্ন আর্গুমেন্ট নিয়ে অংশে‑আংশে return হয়ে যায়।
+
+**উদাহরণ**:
+
+```js
+function add(a){
+  return function(b){
+    return a + b;
+  };
+}
+const add5 = add(5);
+console.log(add5(3)); // 8
+```
+
+---
+
+## 🔹 ৩২. Memoization
+
+**উত্তর**: ফাংশনের পূর্বের আউটপুট গুলো ক্যাশ করে performance বাড়ায়, বিশেষ করে expensive ops‑এ।
+
+**উদাহরণ**:
+
+```js
+function memoize(fn){
+  const cache = {};
+  return (...args) => {
+    const key = JSON.stringify(args);
+    if(cache[key]) return cache[key];
+    return cache[key] = fn(...args);
+  };
+}
+const slowFib = n => n<2 ? n : slowFib(n-1) + slowFib(n-2);
+const fastFib = memoize(slowFib);
+console.log(fastFib(40));
+```
+
+---
+
+## 🔹 ৩৩. Thunks
+
+**উত্তর**: একটি থাংক হলো zero-argument ফাংশন যা computation বা evaluation deferred করে।
+
+**উদাহরণ**:
+
+```js
+const thunk = () => computeHeavy();
+if(condition){
+  console.log(thunk());
+}
+```
+
+---
+
+## 🔹 ৩৪. Optional Chaining ו Nullish Coalescing
+
+**উত্তর**:
+
+* `?.` দিয়ে এমন nested property-safe access করা যায়।
+* `??` দিয়ে default value when null eða undefined।
+
+**উদাহরণ**:
+
+```js
+const user = {};
+console.log(user?.profile?.name); // undefined
+console.log(null ?? 'Default'); // 'Default'
+```
+
+---
+
+## 🔹 ৩৫. Bitwise operations
+
+**উত্তর**: JavaScript এ bit-level operations— & , | , ^ , << , >> — দিয়ে low-level logic দেয়া যায়।
+
+**উদাহরণ**:
+
+```js
+console.log(5 & 3); // 1   (0101 & 0011 = 0001)
+```
+
+---
+
+## 🔹 ৩৬. Designing a module with IIFE
+
+**উত্তর**: পুরনোবার্থে তৈরি করা module pattern যেখানে private variables ব্যবহৃত হয় closure দিয়ে।
+
+**উদাহরণ**:
+
+```js
+const Counter = (function(){
+  let count = 0;
+  return {
+    inc: () => ++count,
+    dec: () => --count
+  };
+})();
+console.log(Counter.inc()); //1
+```
+
+---
+
+### ✅ পরবর্তী প্ল্যান:
+
+* যদি এগুলোর যে কোনওটি নিয়ে আরও deep dive চান—দিলেকারও, real-world usages বা coding challenge দিয়ে আয়ত্ত করতে পারে।
+* বা চান আরো ১০-২০ প্রশ্ন: যেমন tree/graph algorithms in JS, design patterns, testing strategies (Jest, Mocha), performance optimization, secure JS practices—বললেই পেতে পারবেন!
+
+আপনি কোন দিকে থাকলে সবচেয়ে সাহায্য হবে? 🎯
