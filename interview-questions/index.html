@@ -173,7 +173,8 @@
             <!-- Reports -->
             <li>
                 <a class="nav-link" data-bs-toggle="collapse" href="#jsInterview" role="button" aria-expanded="false">
-                    <i class="fa-solid fa-wallet"></i> Js Interview Question <i class="fa-solid fa-chevron-down float-end"></i>
+                    <i class="fa-solid fa-wallet"></i> Js Interview Question <i
+                        class="fa-solid fa-chevron-down float-end"></i>
                 </a>
                 <div class="collapse" id="jsInterview">
                     <ul class="list-unstyled dropdown-menu-sidebar">
@@ -181,7 +182,7 @@
                             <a href="#" class="nav-link" onclick="showContent('commonQuestion')">
                                 <i class="fas fa-angle-right me-2"></i>Most Common Question
                             </a>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
 
@@ -261,65 +262,69 @@
                 <h2>Reports</h2>
                 <p>Generate performance and transaction reports.</p>
             </div>
-            <!-- Js Interview Q and A --> 
-              <div id="commonQuestion" class="content-section d-none">
+            <!-- Js Interview Q and A -->
+            <div id="commonQuestion" class="content-section d-none">
                 <div class="container">
-                  <h2 class="text-center text-primary section-heading mb-5">💡 JavaScript Interview Questions & Answers</h2>
-              
-                  <!-- Q1 -->
-                  <div class="question-box">
+                    <h2 class="text-center text-primary section-heading mb-5">💡 JavaScript Interview Questions &
+                        Answers</h2>
+
+                    <!-- Q1 -->
+                    <div class="question-box">
                         <div class="question-title" onclick="toggleAnswer(this)">
-                        1. What is JavaScript?
+                            1. What is JavaScript?
                         </div>
                         <div class="answer">
-                        <p>
-                            <strong>JavaScript</strong> is a high-level, interpreted programming language primarily used to add interactivity and dynamic behavior to websites. It runs in the browser and allows developers to:
-                        </p>
-                        <ul>
-                            <li>Manipulate the DOM (Document Object Model)</li>
-                            <li>Handle user events (clicks, input, etc.)</li>
-                            <li>Make asynchronous requests using AJAX or fetch</li>
-                            <li>Build interactive UI, games, SPAs (Single Page Applications)</li>
-                        </ul>
-                        <p>
-                            JavaScript is also used in server-side development (e.g., with <strong>Node.js</strong>), making it a full-stack language.
-                        </p>
-                        <div class="code-block">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre><code>// JavaScript example: Change text on button click
+                            <p>
+                                <strong>JavaScript</strong> is a high-level, interpreted programming language primarily
+                                used to add interactivity and dynamic behavior to websites. It runs in the browser and
+                                allows developers to:
+                            </p>
+                            <ul>
+                                <li>Manipulate the DOM (Document Object Model)</li>
+                                <li>Handle user events (clicks, input, etc.)</li>
+                                <li>Make asynchronous requests using AJAX or fetch</li>
+                                <li>Build interactive UI, games, SPAs (Single Page Applications)</li>
+                            </ul>
+                            <p>
+                                JavaScript is also used in server-side development (e.g., with
+                                <strong>Node.js</strong>), making it a full-stack language.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// JavaScript example: Change text on button click
                     document.getElementById("myBtn").addEventListener("click", function() {
                         document.getElementById("demo").innerText = "Hello JavaScript!";
                     });
                     </code></pre>
+                            </div>
                         </div>
-                        </div>
-                    </div> 
+                    </div>
                     <!-- Q2 -->
-                   <div class="question-box">
+                    <div class="question-box">
                         <div class="question-title" onclick="toggleAnswer(this)">
-                        2. What are the data types in JavaScript?
+                            2. What are the data types in JavaScript?
                         </div>
                         <div class="answer">
-                        <p>
-                            JavaScript has <strong>six primitive data types</strong>:
-                        </p>
-                        <ul>
-                            <li><code>string</code></li>
-                            <li><code>number</code></li>
-                            <li><code>boolean</code></li>
-                            <li><code>null</code></li>
-                            <li><code>undefined</code></li>
-                            <li><code>symbol</code> (introduced in ES6)</li>
-                        </ul>
-                        <p>
-                            It also has one <strong>non-primitive (complex) data type</strong>:
+                            <p>
+                                JavaScript has <strong>six primitive data types</strong>:
+                            </p>
                             <ul>
-                            <li><code>object</code> – used for arrays, functions, and other objects.</li>
+                                <li><code>string</code></li>
+                                <li><code>number</code></li>
+                                <li><code>boolean</code></li>
+                                <li><code>null</code></li>
+                                <li><code>undefined</code></li>
+                                <li><code>symbol</code> (introduced in ES6)</li>
                             </ul>
-                        </p>
-                        <div class="code-block">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre><code>// Primitive types
+                            <p>
+                                It also has one <strong>non-primitive (complex) data type</strong>:
+                            <ul>
+                                <li><code>object</code> – used for arrays, functions, and other objects.</li>
+                            </ul>
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Primitive types
                     let name = "Emon";       // string
                     let age = 25;            // number
                     let isDeveloper = true;  // boolean
@@ -332,28 +337,31 @@
                     let colors = ["red", "green"];
                     let greet = function() { console.log("Hi"); };
                     </code></pre>
-                        </div>
+                            </div>
                         </div>
                     </div>
-  
-                 <!-- Q3 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    3. What is the difference between null and undefined?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        The value <strong><code>null</code></strong> represents the intentional absence of any object value.
-                        <br>
-                        The value <strong><code>undefined</code></strong> means a variable has been declared but has not yet been assigned a value.
-                    </p>
-                    <ul>
-                        <li><strong>null</strong> is an assigned value. It means nothing.</li>
-                        <li><strong>undefined</strong> means a variable has been declared but not assigned a value yet.</li>
-                    </ul>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>let a;
+
+                    <!-- Q3 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            3. What is the difference between null and undefined?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The value <strong><code>null</code></strong> represents the intentional absence of any
+                                object value.
+                                <br>
+                                The value <strong><code>undefined</code></strong> means a variable has been declared but
+                                has not yet been assigned a value.
+                            </p>
+                            <ul>
+                                <li><strong>null</strong> is an assigned value. It means nothing.</li>
+                                <li><strong>undefined</strong> means a variable has been declared but not assigned a
+                                    value yet.</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>let a;
                 console.log(a); // undefined
                 
                 let b = null;
@@ -362,24 +370,27 @@
                 console.log(typeof a); // "undefined"
                 console.log(typeof b); // "object"
                 </code></pre>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
-                <!-- Q4 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    4. Explain the concept of hoisting in JavaScript.
-                    </div>
-                    <div class="answer">
-                    <p>
-                        <strong>Hoisting</strong> is a JavaScript mechanism where variable and function declarations are moved to the top of their scope (global or local) during the compilation phase. This allows you to use variables and call functions before they're declared in the code.
-                    </p>
-                    <p>
-                        However, only the declarations are hoisted, not the initializations.
-                    </p>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>// Example with var
+                    <!-- Q4 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            4. Explain the concept of hoisting in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <strong>Hoisting</strong> is a JavaScript mechanism where variable and function
+                                declarations are moved to the top of their scope (global or local) during the
+                                compilation phase. This allows you to use variables and call functions before they're
+                                declared in the code.
+                            </p>
+                            <p>
+                                However, only the declarations are hoisted, not the initializations.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Example with var
                 console.log(a); // undefined
                 var a = 5;
                 
@@ -393,28 +404,46 @@
                     console.log("Hello!");
                 }
                 </code></pre>
+                            </div>
+                            <p class="mt-2">
+                                ⚠️ Variables declared with <code>let</code> and <code>const</code> are hoisted but not
+                                initialized, leading to a <strong>ReferenceError</strong> if accessed before
+                                declaration. This period is known as the <strong>Temporal Dead Zone (TDZ)</strong>.
+                            </p>
+                            <p>let এবং const দিয়ে ডিক্লেয়ার করা ভ্যারিয়েবলগুলো hoist হয়, কিন্তু এগুলো initialize হয় না।
+                                তাই যদি আপনি এগুলোকে ডিক্লেয়ার করার আগেই অ্যাক্সেস করতে চান, তাহলে ReferenceError দেখা
+                                যায়। এই সময়কালটিকে বলা হয় Temporal Dead Zone (TDZ)।</p>
+                        </div>
                     </div>
-                    <p>
-                        ⚠️ Variables declared with <code>let</code> and <code>const</code> are hoisted but not initialized, leading to a <strong>ReferenceError</strong> if accessed before declaration. This period is known as the <strong>Temporal Dead Zone (TDZ)</strong>.
-                    </p>
-                    </div>
-                </div>
-  
-                <!-- Q5 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    5. What is a closure in JavaScript?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        A <strong>closure</strong> is a function that retains access to variables from its <strong>outer lexical scope</strong> even after that outer function has finished executing. 
-                        <br>
-                        Closures are useful for <strong>data encapsulation</strong>, creating <strong>private variables</strong>, and maintaining state across function calls.
-                    </p>
-                    <p>Closures are created every time a function is created inside another function and the inner function accesses variables from the outer one.</p>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>function outer() {
+
+                    <!-- Q5 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            5. What is a closure in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                A <strong>closure</strong> is a function that retains access to variables from its
+                                <strong>outer lexical scope</strong> even after that outer function has finished
+                                executing.
+                                <br>
+                                Closures are useful for <strong>data encapsulation</strong>, creating <strong>private
+                                    variables</strong>, and maintaining state across function calls.
+                            </p>
+                            <p>Closures are created every time a function is created inside another function and the
+                                inner function accesses variables from the outer one.</p>
+
+                            <p>Closure হলো এমন একটি ফাংশন, যা তার বাইরের লেক্সিক্যাল স্কোপের ভ্যারিয়েবলগুলোর অ্যাক্সেস
+                                রাখে, এমনকি সেই বাইরের ফাংশনটি এক্সিকিউট হয়ে শেষ হয়ে গেলেও।
+
+                                Closures ডেটা গোপন (data encapsulation), প্রাইভেট ভ্যারিয়েবল তৈরি, এবং ফাংশন কলের মাঝে
+                                স্টেট ধরে রাখার জন্য অনেক উপকারী।
+
+                                Closure প্রতিবারই তৈরি হয় যখন কোনো ফাংশনের ভিতরে আরেকটি ফাংশন তৈরি করা হয় এবং সেই ভিতরের
+                                ফাংশনটি বাইরের ফাংশনের ভ্যারিয়েবল অ্যাক্সেস করে।</p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function outer() {
                     let count = 0;
                 
                     return function inner() {
@@ -427,26 +456,33 @@
                 counter(); // Count: 1
                 counter(); // Count: 2
                 </code></pre>
+                            </div>
+                            <p class="mt-2">
+                                In this example, <code>inner()</code> retains access to the <code>count</code> variable
+                                from the <code>outer()</code> function even after <code>outer()</code> has executed.
+                            </p>
+                            <p>এখানে inner ফাংশনটি একটি closure, কারণ এটি outer ফাংশনের count ভ্যারিয়েবল অ্যাক্সেস করছে,
+                                যদিও outer ফাংশনটি ইতোমধ্যে এক্সিকিউট হয়ে গেছে।</p>
+                        </div>
                     </div>
-                    <p>
-                        In this example, <code>inner()</code> retains access to the <code>count</code> variable from the <code>outer()</code> function even after <code>outer()</code> has executed.
-                    </p>
-                    </div>
-                </div>
-                <!-- Q6 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    6. What is the difference between “==” and “===” operators in JavaScript?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        The <strong><code>==</code></strong> operator is known as the <strong>loose equality</strong> operator. It compares two values for equality after converting them to a common type (<strong>type coercion</strong>).
-                        <br>
-                        The <strong><code>===</code></strong> operator is the <strong>strict equality</strong> operator. It checks for equality <strong>without type conversion</strong>, meaning both the value and the data type must be the same.
-                    </p>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>// Loose equality
+                    <!-- Q6 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            6. What is the difference between “==” and “===” operators in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <strong><code>==</code></strong> operator is known as the <strong>loose
+                                    equality</strong> operator. It compares two values for equality after converting
+                                them to a common type (<strong>type coercion</strong>).
+                                <br>
+                                The <strong><code>===</code></strong> operator is the <strong>strict equality</strong>
+                                operator. It checks for equality <strong>without type conversion</strong>, meaning both
+                                the value and the data type must be the same.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Loose equality
                 console.log(5 == '5');     // true (number vs string, type converted)
                 console.log(null == undefined); // true
                 
@@ -454,30 +490,43 @@
                 console.log(5 === '5');    // false (different types)
                 console.log(5 === 5);      // true (same value and type)
                 </code></pre>
+                            </div>
+                            <p>
+                                ✅ Use <code>===</code> to avoid unexpected type coercion and bugs in your code.
+                            </p>
+                        </div>
                     </div>
-                    <p>
-                        ✅ Use <code>===</code> to avoid unexpected type coercion and bugs in your code.
-                    </p>
-                    </div>
-                </div>
-                <!-- Q7 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    7. What is prototypal inheritance in JavaScript?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        In JavaScript, <strong>prototypal inheritance</strong> is a method by which an object can inherit properties and methods from another object.
-                    </p>
-                    <p>
-                        Every JavaScript object has an internal link to another object called its <code>[[Prototype]]</code>. When trying to access a property that's not found on the object itself, the JavaScript engine will look up the prototype chain until it finds it (or reaches <code>null</code>).
-                    </p>
-                    <p>
-                        This allows for <strong>code reuse</strong> and is an alternative to classical inheritance.
-                    </p>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>// Base object
+                    <!-- Q7 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            7. What is prototypal inheritance in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                In JavaScript, <strong>prototypal inheritance</strong> is a method by which an object
+                                can inherit properties and methods from another object.
+                            </p>
+                            <p>
+                                Every JavaScript object has an internal link to another object called its
+                                <code>[[Prototype]]</code>. When trying to access a property that's not found on the
+                                object itself, the JavaScript engine will look up the prototype chain until it finds it
+                                (or reaches <code>null</code>).
+                            </p>
+                            <p>
+                                This allows for <strong>code reuse</strong> and is an alternative to classical
+                                inheritance.
+                            </p>
+                            <p>জাভাস্ক্রিপ্টে, প্রোটোটাইপাল ইনহেরিটেন্স হলো একটি পদ্ধতি যার মাধ্যমে একটি অবজেক্ট অন্য
+                                একটি অবজেক্ট থেকে প্রপার্টি এবং মেথড উত্তরাধিকারসূত্রে পেতে পারে।</p>
+                            <p>প্রতিটি জাভাস্ক্রিপ্ট অবজেক্টের মধ্যে একটি অভ্যন্তরীণ লিঙ্ক থাকে আরেকটি অবজেক্টের সাথে,
+                                যেটিকে বলা হয় এর [[Prototype]]। যদি কোনো প্রপার্টি সরাসরি সেই অবজেক্টে খুঁজে না পাওয়া
+                                যায়, তাহলে জাভাস্ক্রিপ্ট ইঞ্জিন প্রোটোটাইপ চেইন ধরে উপরের দিকে খুঁজে চলে যতক্ষণ না সেটা
+                                পাওয়া যায় বা null-এ পৌঁছে।</p>
+                            <p>এই প্রক্রিয়াটি কোড পুনঃব্যবহার (code reuse) করতে সহায়তা করে এবং এটি ক্লাসিক্যাল
+                                ইনহেরিটেন্সের একটি বিকল্প হিসেবে ব্যবহৃত হয়।</p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Base object
                 const animal = {
                     sound: "Generic sound",
                     speak() {
@@ -491,31 +540,32 @@
                 
                 dog.speak(); // Output: Bark
                 </code></pre>
+                            </div>
+                            <p class="mt-2">
+                                ✅ <code>Object.create()</code> is commonly used to establish prototypal inheritance.
+                            </p>
+                            <p>Object.create() সাধারণত প্রোটোটাইপাল ইনহেরিটেন্স স্থাপন করতে ব্যবহৃত হয়।</p>
+                        </div>
                     </div>
-                    <p>
-                        ✅ <code>Object.create()</code> is commonly used to establish prototypal inheritance.
-                    </p>
-                    </div>
-                </div>
-                <!-- Q8 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    8. What are the different ways to define a function in JavaScript?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        In JavaScript, functions can be defined in multiple ways:
-                    </p>
-                    <ul>
-                        <li><strong>Function Declaration</strong></li>
-                        <li><strong>Function Expression</strong></li>
-                        <li><strong>Arrow Function</strong> (ES6)</li>
-                        <li><strong>Method definition inside an object</strong></li>
-                    </ul>
-                
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>// Function Declaration
+                    <!-- Q8 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            8. What are the different ways to define a function in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                In JavaScript, functions can be defined in multiple ways:
+                            </p>
+                            <ul>
+                                <li><strong>Function Declaration</strong></li>
+                                <li><strong>Function Expression</strong></li>
+                                <li><strong>Arrow Function</strong> (ES6)</li>
+                                <li><strong>Method definition inside an object</strong></li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Function Declaration
                 function greet(name) {
                     return "Hello " + name;
                 }
@@ -535,32 +585,47 @@
                     }
                 };
                 </code></pre>
+                            </div>
+
+                            <p>
+                                ✅ All these forms are valid and useful in different situations. Arrow functions are
+                                concise but do not have their own <code>this</code> context.
+                            </p>
+                        </div>
                     </div>
-                
-                    <p>
-                        ✅ All these forms are valid and useful in different situations. Arrow functions are concise but do not have their own <code>this</code> context.
-                    </p>
-                    </div>
-                </div>
-                <!-- Q9 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    9. How does event delegation work in JavaScript?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        <strong>Event delegation</strong> is a technique where a single event listener is added to a parent (or ancestor) element instead of attaching event listeners to individual child elements.
-                    </p>
-                    <p>
-                        It works by using <strong>event bubbling</strong>—the event starts at the target element and bubbles up to its ancestors, allowing the parent to handle the event for its children.
-                    </p>
-                    <p>
-                        This is useful for <strong>improved performance</strong> and dynamically added elements.
-                    </p>
-                
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>// HTML
+                    <!-- Q9 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            9. How does event delegation work in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <strong>Event delegation</strong> is a technique where a single event listener is added
+                                to a parent (or ancestor) element instead of attaching event listeners to individual
+                                child elements.
+                            </p>
+                            <p>
+                                It works by using <strong>event bubbling</strong>—the event starts at the target element
+                                and bubbles up to its ancestors, allowing the parent to handle the event for its
+                                children.
+                            </p>
+                            <p>
+                                This is useful for <strong>improved performance</strong> and dynamically added elements.
+                            </p>
+                            <p>Event delegation হলো একটি টেকনিক, যেখানে প্রতিটি চাইল্ড এলিমেন্টে আলাদাভাবে ইভেন্ট
+                                লিসেনার না দিয়ে, একটি প্যারেন্ট (বা পূর্বপুরুষ) এলিমেন্টে একটি মাত্র ইভেন্ট লিসেনার যোগ
+                                করা হয়।</p>
+
+                            <p>এটি event bubbling-এর মাধ্যমে কাজ করে—ইভেন্টটি টার্গেট এলিমেন্ট থেকে শুরু হয়ে তার
+                                প্যারেন্ট এলিমেন্ট পর্যন্ত বুদবুদের মতো উপরের দিকে ওঠে। এর ফলে প্যারেন্ট এলিমেন্ট তার
+                                চাইল্ড এলিমেন্টের ইভেন্টগুলো হ্যান্ডল করতে পারে।</p>
+                            <p>এই পদ্ধতি পারফরম্যান্স বৃদ্ধির জন্য খুবই উপকারী এবং ডাইনামিকভাবে DOM-এ যোগ হওয়া
+                                এলিমেন্টগুলোর জন্যও কার্যকর।</p>
+
+                           
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// HTML
                 &lt;ul id="list"&gt;
                     &lt;li&gt;Item 1&lt;/li&gt;
                     &lt;li&gt;Item 2&lt;/li&gt;
@@ -574,34 +639,42 @@
                     }
                 });
                 </code></pre>
+                            </div>
+
+                            <p class="mt-2">
+                                ✅ Event delegation is ideal when working with a large number of elements or elements
+                                that are dynamically added to the DOM.
+                            </p>
+                             <p>✅ Event delegation বিশেষভাবে উপযুক্ত যখন আপনি অনেক সংখ্যক এলিমেন্ট নিয়ে কাজ করছেন বা যখন
+                                এলিমেন্টগুলো DOM-এ ডাইনামিকভাবে যোগ হয়।</p>
+                        </div>
                     </div>
-                
-                    <p>
-                        ✅ Event delegation is ideal when working with a large number of elements or elements that are dynamically added to the DOM.
-                    </p>
-                    </div>
-                </div>
-                
-                <!-- Q10 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                    10. What is the purpose of the “this” keyword in JavaScript?
-                    </div>
-                    <div class="answer">
-                    <p>
-                        The <strong><code>this</code></strong> keyword in JavaScript refers to the <strong>object that is executing the current function</strong>. Its value depends on how and where the function is called.
-                    </p>
-                
-                    <ul>
-                        <li>In a method, <code>this</code> refers to the object the method belongs to.</li>
-                        <li>In a regular function, <code>this</code> refers to the global object (or <code>undefined</code> in strict mode).</li>
-                        <li>In an event, <code>this</code> refers to the element that received the event.</li>
-                        <li>Arrow functions don’t have their own <code>this</code>; they inherit it from their enclosing scope.</li>
-                    </ul>
-                
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <pre><code>const user = {
+
+                    <!-- Q10 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            10. What is the purpose of the “this” keyword in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <strong><code>this</code></strong> keyword in JavaScript refers to the
+                                <strong>object that is executing the current function</strong>. Its value depends on how
+                                and where the function is called.
+                            </p>
+
+                            <ul>
+                                <li>In a method, <code>this</code> refers to the object the method belongs to.</li>
+                                <li>In a regular function, <code>this</code> refers to the global object (or
+                                    <code>undefined</code> in strict mode).
+                                </li>
+                                <li>In an event, <code>this</code> refers to the element that received the event.</li>
+                                <li>Arrow functions don’t have their own <code>this</code>; they inherit it from their
+                                    enclosing scope.</li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const user = {
                     name: "Emon",
                     greet() {
                     console.log("Hi, I'm " + this.name);
@@ -621,119 +694,1305 @@
                     console.log(this); // Same as outer context
                 };
                 </code></pre>
+                            </div>
+
+                            <p>
+                                ✅ Understanding <code>this</code> is crucial for writing predictable, context-aware
+                                JavaScript functions and event handlers.
+                            </p>
+                        </div>
                     </div>
-                
-                    <p>
-                        ✅ Understanding <code>this</code> is crucial for writing predictable, context-aware JavaScript functions and event handlers.
-                    </p>
+
+                    <!-- Q11 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            11. What are the different ways to create objects in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                In JavaScript, objects can be created in multiple ways depending on the use case. Below
+                                are the most common methods:
+                            </p>
+
+                            <ul>
+                                <li><strong>Object Literal:</strong> The simplest and most common way to create objects.
+                                </li>
+                                <li><strong>Constructor Function:</strong> A regular function used with the
+                                    <code>new</code> keyword to create multiple object instances.
+                                </li>
+                                <li><strong>ES6 Class:</strong> A modern, syntactic sugar over constructor functions.
+                                </li>
+                                <li><strong><code>Object.create()</code>:</strong> Creates a new object with the
+                                    specified prototype object.</li>
+                                <li><strong>Factory Function:</strong> A function that returns a new object without
+                                    using <code>new</code>.</li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// 1. Object Literal
+const person1 = {
+    name: "Emon",
+    age: 25
+};
+
+// 2. Constructor Function
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+const person2 = new Person("Emon", 25);
+
+// 3. ES6 Class
+class PersonClass {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+const person3 = new PersonClass("Emon", 25);
+
+// 4. Object.create()
+const proto = {
+    greet() {
+        console.log("Hello from prototype");
+    }
+};
+const person4 = Object.create(proto);
+person4.name = "Emon";
+
+// 5. Factory Function
+function createPerson(name, age) {
+    return {
+        name,
+        age
+    };
+}
+const person5 = createPerson("Emon", 25);
+</code></pre>
+                            </div>
+
+                            <p>
+                                ✅ Each method has its own use case. Use <strong>object literals</strong> for simple
+                                static objects and <strong>constructors/classes</strong> when creating multiple similar
+                                objects.
+                            </p>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Q12 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            12. Explain the concept of callback functions in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                A <strong>callback function</strong> is a function that is passed as an argument to
+                                another function and is executed after the completion of that function. It is widely
+                                used in asynchronous programming, event handling, and functional programming.
+                            </p>
+
+                            <ul>
+                                <li>Allows execution of a function after another finishes.</li>
+                                <li>Commonly used with asynchronous operations like <code>setTimeout</code>,
+                                    <code>fetch</code>, and event listeners.
+                                </li>
+                                <li>Can be either named or anonymous functions.</li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Basic callback example
+function greet(name, callback) {
+    console.log("Hi, " + name);
+    callback();
+}
+
+function sayGoodbye() {
+    console.log("Goodbye!");
+}
+
+greet("Emon", sayGoodbye);
+
+// Callback with setTimeout (asynchronous)
+setTimeout(() => {
+    console.log("This runs after 2 seconds");
+}, 2000);
+</code></pre>
+                            </div>
+
+                            <p>
+                                ✅ Callbacks are essential for handling tasks that take time, such as loading data,
+                                waiting for user input, or working with APIs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q13 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            13. What is event bubbling and event capturing in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                In JavaScript, events propagate through the DOM in two main phases:
+                            </p>
+
+                            <ul>
+                                <li><strong>Event Bubbling:</strong> The event starts from the target (child) element
+                                    and bubbles up to its parent elements. This is the default behavior.</li>
+                                <li><strong>Event Capturing:</strong> Also known as event trickling, the event starts
+                                    from the top of the DOM tree and travels down to the target element.</li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// HTML:
+                    // &lt;div id="parent"&gt;
+                    //     &lt;button id="child"&gt;Click Me&lt;/button&gt;
+                    // &lt;/div&gt;
+
+                    document.getElementById("parent").addEventListener("click", () => {
+                        console.log("Parent clicked");
+                    }, false); // Bubbling
+
+                    document.getElementById("child").addEventListener("click", () => {
+                        console.log("Child clicked");
+                    }, false);
+                    </code></pre>
+                            </div>
+
+                            <p>
+                                ✅ Use bubbling or capturing depending on where you want to handle the event in the DOM
+                                tree.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q14 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            14. What is the purpose of the “bind” method in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <strong><code>bind()</code></strong> method is used to create a new function with a
+                                specific value of <code>this</code>. It allows you to set the context permanently for a
+                                function.
+                            </p>
+
+                            <ul>
+                                <li>Helps control <code>this</code> in event handlers or callbacks.</li>
+                                <li>Can be used to pre-set arguments (partial application).</li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const user = {
+    name: "Emon",
+    greet() {
+        console.log("Hello, " + this.name);
+    }
+};
+
+const greetFn = user.greet.bind(user);
+greetFn(); // Output: Hello, Emon
+</code></pre>
+                            </div>
+
+                            <p>
+                                ✅ <code>bind()</code> is essential when passing methods as callbacks to ensure the
+                                correct context.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q15 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            15. Explain the concept of AJAX in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <strong>AJAX</strong> (Asynchronous JavaScript and XML) is a technique used to send and
+                                receive data from a server asynchronously without reloading the entire page. This
+                                improves performance and user experience.
+                            </p>
+
+                            <ul>
+                                <li>Enables dynamic content updates without refreshing the page.</li>
+                                <li>Can be implemented using <code>XMLHttpRequest</code> or the modern
+                                    <code>fetch()</code> API.
+                                </li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Using fetch (modern AJAX)
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+</code></pre>
+                            </div>
+
+                            <p>
+                                ✅ AJAX enables seamless interaction between the client and server, making web apps
+                                faster and more responsive.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q16 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            16. What is the “typeof” operator used for?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <strong><code>typeof</code></strong> operator in JavaScript is used to determine the
+                                data type of a value or variable. It returns the type as a string.
+                            </p>
+
+                            <ul>
+                                <li>Useful for debugging and type checking.</li>
+                                <li>Returns values like <code>"string"</code>, <code>"number"</code>,
+                                    <code>"boolean"</code>, <code>"object"</code>, <code>"undefined"</code>, etc.
+                                </li>
+                            </ul>
+
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>console.log(typeof "Emon");      // "string"
+console.log(typeof 123);         // "number"
+console.log(typeof true);        // "boolean"
+console.log(typeof undefined);   // "undefined"
+console.log(typeof null);        // "object" (historical quirk)
+console.log(typeof {});          // "object"
+console.log(typeof []);          // "object"
+console.log(typeof function(){}); // "function"
+</code></pre>
+                            </div>
+
+                            <p>
+                                ✅ <code>typeof</code> is a handy tool for understanding what kind of data you're working
+                                with.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- Q17 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            17. How does JavaScript handle errors and exceptions?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                JavaScript uses <strong>try-catch-finally</strong> for handling errors and exceptions.
+                                The <code>try</code> block contains the code that may throw an error. The
+                                <code>catch</code> block handles the error, and the <code>finally</code> block runs
+                                regardless of an error occurring.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>try {
+  // risky code
+  let result = riskyFunction();
+} catch (error) {
+  console.log("An error occurred:", error.message);
+} finally {
+  console.log("This runs no matter what.");
+}</code></pre>
+                            </div>
+                            <p>✅ Proper error handling makes your app more stable and debuggable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q18 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            18. Explain the concept of event-driven programming in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <strong>Event-driven programming</strong> is a paradigm where the flow of a program is
+                                determined by events such as user actions, timers, or API responses. JavaScript is
+                                designed around this model using event listeners and callback functions.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>document.getElementById("btn").addEventListener("click", () => {
+  alert("Button clicked!");
+});</code></pre>
+                            </div>
+                            <p>✅ It’s ideal for building interactive, responsive web applications.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q19 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            19. What is the purpose of the “async” and “await” keywords in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <code>async</code> keyword is used to define an asynchronous function, which always
+                                returns a Promise. The <code>await</code> keyword is used inside an async function to
+                                wait for a Promise to resolve before continuing execution.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>async function fetchData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}</code></pre>
+                            </div>
+                            <p>✅ Helps write asynchronous code in a more readable and sequential style.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q20 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            20. What is the difference between a deep copy and a shallow copy in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                A <strong>shallow copy</strong> copies only the top-level properties, while a
+                                <strong>deep copy</strong> duplicates all nested levels to create a truly independent
+                                copy.
+                            </p>
+                            <ul>
+                                <li>Shallow copy: uses <code>Object.assign()</code> or spread <code>{...}</code>.</li>
+                                <li>Deep copy: uses recursive methods or
+                                    <code>structuredClone()</code>/<code>JSON.parse(JSON.stringify())</code>.
+                                </li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const original = { a: 1, b: { c: 2 } };
+
+// Shallow copy
+const shallow = { ...original };
+shallow.b.c = 99; // Affects original.b.c
+
+// Deep copy
+const deep = JSON.parse(JSON.stringify(original));
+deep.b.c = 88; // Does NOT affect original</code></pre>
+                            </div>
+                            <p>✅ Use deep copies when you need full data isolation between objects.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q21 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            21. How does JavaScript handle memory management?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                JavaScript handles memory management automatically using a technique called
+                                <strong>garbage collection</strong>. When objects are no longer referenced, they are
+                                considered unreachable and are removed from memory.
+                            </p>
+                            <ul>
+                                <li>Reference-counting and mark-and-sweep algorithms are commonly used.</li>
+                                <li>Developers should avoid creating memory leaks by clearing unused references.</li>
+                            </ul>
+                            <p>✅ Efficient memory management improves app performance and avoids slowdowns.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q22 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            22. Explain the concept of event loop in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <strong>event loop</strong> is a mechanism that allows JavaScript to perform
+                                non-blocking operations despite being single-threaded. It checks the
+                                <code>call stack</code> and the <code>message queue</code>, moving tasks from the queue
+                                to the stack when it's empty.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// Timeout</code></pre>
+                            </div>
+                            <p>✅ Understanding the event loop helps you write efficient asynchronous code.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q23 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            23. What is the purpose of the “map” method in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <strong><code>map()</code></strong> method is used to iterate over an array and
+                                transform each element using a callback function. It returns a new array with the
+                                results, leaving the original array unchanged.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const numbers = [1, 2, 3, 4];
+const squares = numbers.map(num => num * num);
+
+console.log(squares); // [1, 4, 9, 16]</code></pre>
+                            </div>
+                            <p>✅ Use <code>map()</code> when you want to apply a function to all items in an array and
+                                return a new one.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q24 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            24. What is a promise in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                A <strong>promise</strong> represents the eventual completion or failure of an
+                                asynchronous operation. It has three states: <code>pending</code>,
+                                <code>fulfilled</code>, and <code>rejected</code>.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Data received");
+  }, 1000);
+});
+
+promise.then(data => console.log(data));</code></pre>
+                            </div>
+                            <p>✅ Promises improve the readability and flow of asynchronous JavaScript code.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q25 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            25. How do you handle errors in promises?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Errors in promises are handled using the <strong><code>catch()</code></strong> method,
+                                which runs if the promise is rejected. The <code>finally()</code> method is executed
+                                whether the promise is fulfilled or rejected.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error))
+  .finally(() => console.log("Request completed"));</code></pre>
+                            </div>
+                            <p>✅ Always handle errors in asynchronous code to ensure reliability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q26 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            26. Explain the concept of currying in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Currying is a technique where a function with multiple arguments is transformed into a
+                                sequence of functions,
+                                each taking a single argument. This allows partial application and makes functions more
+                                reusable.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function multiply(a) {
+  return function(b) {
+    return a * b;
+  };
+}
+
+const double = multiply(2);
+console.log(double(5)); // Output: 10</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q27 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            27. What is the purpose of the “reduce” method in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <code>reduce()</code> method applies a function to each element of an array,
+                                accumulating the result into a
+                                single value.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const numbers = [1, 2, 3, 4];
+const total = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(total); // Output: 10</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q28 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            28. What is the difference between “null” and “undefined” in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <ul>
+                                <li><code>null</code> is an assigned value representing no value or object.</li>
+                                <li><code>undefined</code> means a variable has been declared but has not been assigned
+                                    a value.</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>let x;
+console.log(x); // Output: undefined
+
+let y = null;
+console.log(y); // Output: null</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q29 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            29. What are the different types of loops in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <ul>
+                                <li><code>for</code> loop</li>
+                                <li><code>while</code> loop</li>
+                                <li><code>do...while</code> loop</li>
+                                <li><code>for...of</code> loop</li>
+                                <li><code>for...in</code> loop</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// for loop
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+
+// for...of loop
+const arr = ['a', 'b', 'c'];
+for (const item of arr) {
+  console.log(item);
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q30 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            30. What is the difference between “let,” “const,” and “var” in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <ul>
+                                <li><code>var</code> is function-scoped and hoisted.</li>
+                                <li><code>let</code> is block-scoped and can be reassigned.</li>
+                                <li><code>const</code> is block-scoped and cannot be reassigned.</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>var a = 1;
+let b = 2;
+const c = 3;
+
+b = 4; // valid
+// c = 5; // Error: Assignment to constant variable</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q31 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            31. Explain the concept of event propagation in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Event propagation describes the order in which events are handled: <strong>capturing
+                                    phase</strong> (from the root
+                                to the target) and <strong>bubbling phase</strong> (from the target back up to the
+                                root).
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>document.getElementById("child").addEventListener("click", function () {
+  alert("Child clicked");
+}, false); // Bubbling phase</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q32 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            32. What are the different ways to manipulate the DOM in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <ul>
+                                <li><code>getElementById()</code></li>
+                                <li><code>querySelector()</code></li>
+                                <li><code>createElement()</code>, <code>appendChild()</code></li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const p = document.createElement("p");
+p.textContent = "Hello";
+document.body.appendChild(p);</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q33 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            33. What is the purpose of the “localStorage” and “sessionStorage” objects?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Both <code>localStorage</code> and <code>sessionStorage</code> are used to store
+                                key-value pairs in the browser.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// localStorage example
+localStorage.setItem("name", "Emon");
+console.log(localStorage.getItem("name"));
+
+// sessionStorage example
+sessionStorage.setItem("temp", "123");</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q34 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            34. How do you handle asynchronous operations in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <ul>
+                                <li>Callbacks</li>
+                                <li>Promises</li>
+                                <li>Async/await</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Async/await example
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q35 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            35. What is the purpose of the “forEach” method in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <code>forEach()</code> method executes a callback function for each element in an
+                                array. It is commonly used
+                                to perform actions like logging or manipulating data.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const fruits = ["apple", "banana", "mango"];
+fruits.forEach(fruit => console.log(fruit));</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q36 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            36. What are the differences between “let” and “var” in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The key differences between <code>let</code> and <code>var</code> are related to scoping
+                                and hoisting:
+                            </p>
+                            <ul>
+                                <li><code>let</code> is block-scoped — only accessible within the curly braces
+                                    <code>{}</code> where it’s defined.
+                                </li>
+                                <li><code>var</code> is function-scoped — accessible throughout the entire function.
+                                </li>
+                                <li><code>let</code> is not hoisted like <code>var</code>, so using it before
+                                    declaration throws an error.</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>if (true) {
+  let x = 10;
+  var y = 20;
+}
+
+console.log(typeof x); // ReferenceError: x is not defined
+console.log(typeof y); // 'number'</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q37 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            37. Explain the concept of memoization in JavaScript.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Memoization is a performance optimization technique that stores the results of expensive
+                                function calls and returns
+                                the cached result when the same inputs occur again.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function memoize(fn) {
+  const cache = {};
+  return function(arg) {
+    if (cache[arg]) {
+      return cache[arg];
+    } else {
+      const result = fn(arg);
+      cache[arg] = result;
+      return result;
+    }
+  };
+}
+
+const square = memoize(x => x * x);
+console.log(square(4)); // 16
+console.log(square(4)); // 16 (from cache)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q38 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            38. What is the purpose of the “splice” method in JavaScript arrays?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <code>splice()</code> method changes an array by removing, replacing, or adding
+                                elements at a specified index. It modifies the original array and returns an array of
+                                removed elements.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const arr = ['a', 'b', 'c', 'd'];
+
+// Remove 1 element at index 1
+const removed = arr.splice(1, 1);
+console.log(arr); // ['a', 'c', 'd']
+console.log(removed); // ['b']
+
+// Add elements at index 2
+arr.splice(2, 0, 'x', 'y');
+console.log(arr); // ['a', 'c', 'x', 'y', 'd']</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q39 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            39. What is a generator function in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                A <strong>generator function</strong> is a special function that can pause and resume
+                                execution using the <code>yield</code> keyword. It allows producing a sequence of values
+                                over time.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function* count() {
+  let i = 0;
+  while (i < 3) {
+    yield i++;
+  }
+}
+
+const counter = count();
+console.log(counter.next().value); // 0
+console.log(counter.next().value); // 1
+console.log(counter.next().value); // 2
+console.log(counter.next().done);  // true</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q40 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            40. How does JavaScript handle variable scoping?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                JavaScript uses <strong>lexical scoping</strong>, meaning the scope of a variable is
+                                determined by its location in the source code. Variables declared inside functions are
+                                local; those outside are global.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>let globalVar = 'global';
+
+function test() {
+  let localVar = 'local';
+  console.log(globalVar); // 'global'
+  console.log(localVar);  // 'local'
+}
+
+test();
+
+console.log(localVar); // ReferenceError: localVar is not defined</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q41 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            41. What is the purpose of the “split” method in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <code>split()</code> method divides a string into an array of substrings based on a
+                                specified separator.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const str = "apple,banana,mango";
+const fruits = str.split(",");
+console.log(fruits); // ['apple', 'banana', 'mango']</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q42 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            42. What is the difference between a deep clone and a shallow clone of an object?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                A <strong>deep clone</strong> copies an object and all nested objects independently. A
+                                <strong>shallow clone</strong> copies only the top-level properties, referencing nested
+                                objects.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Shallow clone
+const obj1 = { a: 1, b: { c: 2 } };
+const shallowClone = { ...obj1 };
+shallowClone.b.c = 3;
+console.log(obj1.b.c); // 3 (changed)
+
+// Deep clone (using JSON)
+const deepClone = JSON.parse(JSON.stringify(obj1));
+deepClone.b.c = 4;
+console.log(obj1.b.c); // 3 (unchanged)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q43 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            43. Explain the concept of the event delegation pattern.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Event delegation involves attaching a single event listener to a parent element to
+                                handle events from its child elements using event bubbling.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>document.getElementById('parent').addEventListener('click', (e) => {
+  if (e.target && e.target.matches('button.child-btn')) {
+    console.log('Child button clicked:', e.target.textContent);
+  }
+});</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q44 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            44. What are the differences between JavaScript’s “null” and “undefined”?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <code>null</code> means a deliberate absence of any value. <code>undefined</code> means
+                                a variable has been declared but not assigned a value. <code>null</code> is an assigned
+                                object value; <code>undefined</code> is a type.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>let a;
+console.log(a); // undefined
+
+let b = null;
+console.log(b); // null</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q45 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            45. What is the purpose of the “arguments” object in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The <code>arguments</code> object is array-like and contains all arguments passed to a
+                                function, allowing access to them even if not explicitly defined in the function
+                                parameters.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function sum() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3)); // 6</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q46 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            46. What are the different ways to define methods in JavaScript objects?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Methods can be defined using function expressions, shorthand method syntax, or arrow
+                                functions. Using <code>this</code> inside methods refers to the object.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const obj = {
+  // Function expression
+  greet: function() { console.log("Hi"); },
   
+  // Method shorthand
+  sayBye() { console.log("Bye"); },
   
-              
-                <!-- Q2 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                      2. Difference between forEach, for, and map?
+  // Arrow function (does not bind its own this)
+  arrowFunc: () => console.log(this)
+};
+
+obj.greet();   // Hi
+obj.sayBye();  // Bye
+obj.arrowFunc(); // Window or global object</code></pre>
+                            </div>
+                        </div>
                     </div>
-                    <div class="answer">
-                      <ul>
-                        <li><strong>for</strong>: Traditional loop, flexible with break/continue.</li>
-                        <li><strong>forEach</strong>: Array method, no break/continue, doesn't return new array.</li>
-                        <li><strong>map</strong>: Returns new array, good for transformation.</li>
-                      </ul>
-                      <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-              <pre><code>const numbers = [1, 2, 3, 4];
-              
-              // for
-              for (let i = 0; i < numbers.length; i++) {
-                console.log(numbers[i]);
-              }
-              
-              // forEach
-              numbers.forEach(num => console.log(num));
-              
-              // map
-              const doubled = numbers.map(num => num * 2);
-              console.log(doubled); // [2, 4, 6, 8]
-              </code></pre>
-                      </div>
+
+                    <!-- Q47 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            47. Explain the concept of memoization and its benefits.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Memoization caches the results of expensive function calls to return the cached result
+                                when the same inputs occur again, improving performance by avoiding redundant
+                                calculations.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function memoize(fn) {
+  const cache = {};
+  return function(arg) {
+    if (cache[arg]) return cache[arg];
+    const result = fn(arg);
+    cache[arg] = result;
+    return result;
+  };
+}
+
+const square = memoize(x => x * x);
+console.log(square(5)); // 25 (calculated)
+console.log(square(5)); // 25 (from cache)</code></pre>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-              
-                <!-- Q3 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                      3. ES6 Features?
+
+                    <!-- Q48 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            48. What is the difference between “slice” and “splice” in JavaScript arrays?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <code>slice()</code> returns a shallow copy of part of an array without changing the
+                                original. <code>splice()</code> modifies the array by removing, replacing, or adding
+                                elements.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const arr = ['a', 'b', 'c', 'd'];
+
+const sliced = arr.slice(1, 3);
+console.log(sliced); // ['b', 'c']
+console.log(arr);    // ['a', 'b', 'c', 'd']
+
+arr.splice(1, 2, 'x', 'y');
+console.log(arr);    // ['a', 'x', 'y', 'd']</code></pre>
+                            </div>
+                        </div>
                     </div>
-                    <div class="answer">
-                      <ul>
-                        <li>let & const</li>
-                        <li>Arrow functions</li>
-                        <li>Template literals</li>
-                        <li>Destructuring</li>
-                        <li>Default parameters</li>
-                        <li>Spread/Rest operators</li>
-                        <li>Promises & async/await</li>
-                        <li>Modules, Classes</li>
-                      </ul>
-                      <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-              <pre><code>// Template literal
-              const name = "Emon";
-              console.log(`Hello, ${name}`);
-              
-              // Arrow function
-              const add = (a, b) => a + b;
-              
-              // Destructuring
-              const [x, y] = [10, 20];
-              console.log(x, y); // 10 20
-              </code></pre>
-                      </div>
+
+                    <!-- Q49 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            49. What is the purpose of the “apply” and “call” methods in JavaScript?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                Both <code>apply</code> and <code>call</code> invoke functions with a specified
+                                <code>this</code> context. <code>apply</code> accepts arguments as an array,
+                                <code>call</code> as individual arguments.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>function greet(greeting, name) {
+  console.log(greeting + ", " + name);
+}
+
+greet.call(null, "Hello", "Emon");
+greet.apply(null, ["Hi", "Mahdi"]);</code></pre>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-              
-                <!-- Q4 -->
-                <div class="question-box">
-                    <div class="question-title" onclick="toggleAnswer(this)">
-                      4. Difference between callback, promise, and async/await?
+
+                    <!-- Q50 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            50. Explain the concept of the event loop in JavaScript and how it handles asynchronous
+                            operations.
+                        </div>
+                        <div class="answer">
+                            <p>
+                                The event loop manages asynchronous code by checking the call stack and task queue,
+                                ensuring only one operation runs at a time and processing queued tasks when the stack is
+                                empty for non-blocking execution.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// Timeout (runs after call stack is empty)</code></pre>
+                            </div>
+                        </div>
                     </div>
-                    <div class="answer">
-                      <ul>
-                        <li><strong>Callback</strong>: Function passed as an argument.</li>
-                        <li><strong>Promise</strong>: Represents future result, avoids callback hell.</li>
-                        <li><strong>Async/Await</strong>: Cleaner syntax to handle Promises.</li>
-                      </ul>
-                      <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-              <pre><code>// Callback
-              function fetchData(callback) {
-                setTimeout(() => callback("Done!"), 1000);
-              }
-              
-              // Promise
-              function fetchPromise() {
-                return new Promise(resolve => {
-                  setTimeout(() => resolve("Resolved!"), 1000);
-                });
-              }
-              
-              // Async/Await
-              async function loadData() {
-                const data = await fetchPromise();
-                console.log(data); // "Resolved!"
-              }
-              </code></pre>
-                      </div>
+
+
+                    <!-- Q51 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            51. Difference between forEach, for, and map?
+                        </div>
+                        <div class="answer">
+                            <p>
+                                - <strong>for</strong>: Traditional loop; flexible, supports break and continue.<br>
+                                - <strong>forEach</strong>: Array method; runs a function for each element but cannot
+                                break or return a new array.<br>
+                                - <strong>map</strong>: Array method; transforms elements and returns a new array.
+                            </p>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>const numbers = [1, 2, 3, 4];
+
+// for loop
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] === 3) break; // can break
+  console.log(numbers[i]);
+}
+
+// forEach
+numbers.forEach(num => {
+  if (num === 3) return; // can't break, just skips this iteration
+  console.log(num);
+});
+
+// map
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8]</code></pre>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-              
-                  <!-- Add more questions following the same format -->
-              
+
+                    <!-- Q52 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            52. ES6 Features?
+                        </div>
+                        <div class="answer">
+                            <p>ES6 introduced many useful features to make JavaScript coding easier and more powerful.
+                            </p>
+                            <ul>
+                                <li><strong>let & const:</strong> Block-scoped variable declarations.</li>
+                                <li><strong>Arrow functions:</strong> Shorter syntax for functions.</li>
+                                <li><strong>Template literals:</strong> String interpolation using backticks.</li>
+                                <li><strong>Destructuring:</strong> Extract values from arrays or objects.</li>
+                                <li><strong>Default parameters:</strong> Set default values for function parameters.
+                                </li>
+                                <li><strong>Spread/Rest operators:</strong> Expand or collect elements.</li>
+                                <li><strong>Promises & async/await:</strong> Simplify asynchronous code.</li>
+                                <li><strong>Modules & Classes:</strong> Modular code and OOP syntax.</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// let & const
+let a = 10;
+const b = 20;
+
+// Arrow function
+const add = (x, y) => x + y;
+
+// Template literal
+const name = "Emon";
+console.log(`Hello, ${name}!`);
+
+// Destructuring
+const [x, y] = [5, 10];
+const { title, year } = { title: "JS", year: 2025 };
+
+// Default parameters
+function greet(msg = "Hi") {
+  console.log(msg);
+}
+
+// Spread operator
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+
+// Promise
+const promise = new Promise(resolve => setTimeout(() => resolve("Done"), 1000));
+
+// Async/Await
+async function asyncFunc() {
+  const result = await promise;
+  console.log(result);
+}
+
+// Class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
+const p = new Person("Emon");
+p.greet();</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Q53 -->
+                    <div class="question-box">
+                        <div class="question-title" onclick="toggleAnswer(this)">
+                            53. Difference between callback, promise, and async/await?
+                        </div>
+                        <div class="answer">
+                            <ul>
+                                <li><strong>Callback:</strong> A function passed into another function to run after an
+                                    operation completes.</li>
+                                <li><strong>Promise:</strong> An object representing a future result, helping avoid
+                                    nested callbacks (callback hell).</li>
+                                <li><strong>Async/Await:</strong> Syntax sugar built on promises for writing
+                                    asynchronous code more clearly.</li>
+                            </ul>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre><code>// Callback example
+function fetchData(callback) {
+  setTimeout(() => callback("Data loaded"), 1000);
+}
+fetchData(data => console.log(data));
+
+// Promise example
+function fetchPromise() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Promise resolved"), 1000);
+  });
+}
+fetchPromise().then(data => console.log(data));
+
+// Async/Await example
+async function asyncFunction() {
+  const data = await fetchPromise();
+  console.log(data);
+}
+asyncFunction();</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Add more questions following the same format -->
+
                 </div>
-              </div> 
+            </div>
     </main>
 
     <!-- Bootstrap & Script -->
@@ -749,19 +2008,19 @@
     </script>
     <script>
         function toggleAnswer(el) {
-          el.parentElement.classList.toggle("active");
+            el.parentElement.classList.toggle("active");
         }
-      
+
         function copyCode(btn) {
-          const code = btn.nextElementSibling.innerText;
-          navigator.clipboard.writeText(code).then(() => {
-            btn.textContent = "Copied!";
-            setTimeout(() => {
-              btn.textContent = "Copy";
-            }, 1500);
-          });
+            const code = btn.nextElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.textContent = "Copied!";
+                setTimeout(() => {
+                    btn.textContent = "Copy";
+                }, 1500);
+            });
         }
-      </script>
+    </script>
 </body>
 
 </html>
