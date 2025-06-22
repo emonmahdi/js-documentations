@@ -8,3 +8,10 @@ children - To get the child element with only the element node type
 
 createElement() - To create an HTML element, you use the document.createElement() method 
 The element.appendChild() appends an HTML element to an existing element
+
+
+textContent - display the text of the node by accessing the textContent property.
+innerText -  takes the CSS style into account and returns only human-readable text
+innerHTML - property of an element to get or set HTML contained within the element.
+
+after() - Use the element.after() method to insert one or more nodes after the element.

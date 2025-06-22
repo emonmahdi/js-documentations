@@ -1,0 +1,437 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Methods Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333366;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .example {
+            margin-bottom: 30px;
+        }
+
+        .output {
+            background: #e8f4e5;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript DOM Methods with Examples</h1>
+
+    <div class="example" id="createElementExample">
+        <h2>1. createElement()</h2>
+        <p>Creates a new HTML element.</p>
+        <pre>
+const newDiv = document.createElement("div");
+newDiv.textContent = "Hello from createElement!";
+document.body.appendChild(newDiv);
+    </pre>
+    </div>
+
+    <div class="example">
+        <h2>2. appendChild()</h2>
+        <p>Appends a node as the last child of a parent.</p>
+        <div id="appendParent" class="output"></div>
+        <script>
+            const parent = document.getElementById("appendParent");
+            const child = document.createElement("p");
+            child.textContent = "Appended with appendChild()";
+            parent.appendChild(child);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>3. textContent</h2>
+        <p>Get or set text content of an element.</p>
+        <div id="textContentExample" class="output"></div>
+        <script>
+            const textDiv = document.getElementById("textContentExample");
+            textDiv.textContent = "Set using textContent.";
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>4. innerHTML</h2>
+        <p>Get or set HTML content.</p>
+        <div id="innerHTMLExample" class="output"></div>
+        <script>
+            document.getElementById("innerHTMLExample").innerHTML = "<strong>Bold text using innerHTML</strong>";
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>5. innerHTML vs createElement()</h2>
+        <p><strong>innerHTML:</strong> Easy for inserting raw HTML, but less secure and harder to manipulate later.<br>
+            <strong>createElement():</strong> Safer and better for creating and managing elements dynamically.
+        </p>
+    </div>
+
+    <div class="example">
+        <h2>6. DocumentFragment</h2>
+        <p>Efficiently build DOM offscreen before inserting.</p>
+        <ul id="fragmentList" class="output"></ul>
+        <script>
+            const fragment = document.createDocumentFragment();
+            for (let i = 1; i <= 3; i++) {
+                const li = document.createElement("li");
+                li.textContent = "Item " + i;
+                fragment.appendChild(li);
+            }
+            document.getElementById("fragmentList").appendChild(fragment);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>7. after()</h2>
+        <p>Insert element after another element.</p>
+        <div id="afterExample" class="output">Target Element</div>
+        <script>
+            const afterEl = document.getElementById("afterExample");
+            const newEl = document.createElement("div");
+            newEl.textContent = "Inserted after using after()";
+            afterEl.after(newEl);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>8. append()</h2>
+        <p>Append nodes or text to the end of a parent.</p>
+        <div id="appendExample" class="output"></div>
+        <script>
+            document.getElementById("appendExample").append("Text added using append()");
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>9. prepend()</h2>
+        <p>Insert at the beginning of a parent.</p>
+        <div id="prependExample" class="output">Old Content</div>
+        <script>
+            const prependTarget = document.getElementById("prependExample");
+            prependTarget.prepend("New Start - ");
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>10. insertAdjacentHTML()</h2>
+        <p>Insert HTML at specific positions like beforeend, afterbegin etc.</p>
+        <div id="insertHTMLExample" class="output">Target Element</div>
+        <script>
+            const htmlTarget = document.getElementById("insertHTMLExample");
+            htmlTarget.insertAdjacentHTML("beforeend", "<p>Inserted with insertAdjacentHTML()</p>");
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>11. replaceChild()</h2>
+        <p>Replaces a child element.</p>
+        <div id="replaceParent" class="output">
+            <p id="oldChild">Old Child</p>
+        </div>
+        <script>
+            const newChild = document.createElement("p");
+            newChild.textContent = "New Child";
+            const oldChild = document.getElementById("oldChild");
+            document.getElementById("replaceParent").replaceChild(newChild, oldChild);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>12. cloneNode()</h2>
+        <p>Clones an element and optionally its children.</p>
+        <div id="cloneTarget" class="output">This will be cloned</div>
+        <script>
+            const cloned = document.getElementById("cloneTarget").cloneNode(true);
+            document.body.appendChild(cloned);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>13. removeChild()</h2>
+        <p>Removes a child element.</p>
+        <div id="removeParent" class="output">
+            <p id="removeMe">This will be removed</p>
+        </div>
+        <script>
+            const removeMe = document.getElementById("removeMe");
+            removeMe.parentNode.removeChild(removeMe);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>14. insertBefore()</h2>
+        <p>Insert before a specific child.</p>
+        <ul id="insertBeforeExample" class="output">
+            <li id="second">Second</li>
+        </ul>
+        <script>
+            const first = document.createElement("li");
+            first.textContent = "First";
+            const second = document.getElementById("second");
+            second.parentNode.insertBefore(first, second);
+        </script>
+    </div>
+
+    <div class="example">
+        <h2>15. insertAfter() – Custom Helper</h2>
+        <p>No native insertAfter, but you can create a helper function.</p>
+        <div id="insertAfterExample" class="output">Reference Element</div>
+        <script>
+            function insertAfter(newNode, referenceNode) {
+                referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+            }
+            const ref = document.getElementById("insertAfterExample");
+            const node = document.createElement("div");
+            node.textContent = "Inserted using insertAfter() helper";
+            insertAfter(node, ref);
+        </script>
+    </div>
+
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript DOM Methods with Definitions and Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #fdfdfd;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2b2b7d;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #333366;
+            font-size: 24px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 12px;
+            border-left: 4px solid #007BFF;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 18px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript DOM Methods & Properties – Definitions with Examples</h1>
+
+    <h2>1. createElement() </h2>
+    <p><strong>Definition:</strong> Creates a new HTML element but does not place it in the DOM automatically.</p>
+    <pre><code>
+const newDiv = document.createElement('div');
+newDiv.textContent = 'This is a new div';
+document.body.appendChild(newDiv);
+  </code></pre>
+
+    <h2>2. appendChild()</h2>
+    <p><strong>Definition:</strong> Appends a node as the last child of a specified parent node.</p>
+    <pre><code>
+const ul = document.createElement('ul');
+const li = document.createElement('li');
+li.textContent = 'Item 1';
+ul.appendChild(li);
+document.body.appendChild(ul);
+  </code></pre>
+
+    <h2>3.textContent</h2>
+    <p><strong>Definition:</strong> Gets or sets the text content of a node, ignoring any HTML tags.</p>
+    <pre><code>
+const para = document.createElement('p');
+para.textContent = 'Hello, world!';
+document.body.appendChild(para);
+  </code></pre>
+
+    <h2>4. innerHTML</h2>
+    <p><strong>Definition:</strong> Gets or sets the HTML content (including tags) inside an element.</p>
+    <pre><code>
+const container = document.createElement('div');
+container.innerHTML = '&lt;strong&gt;Bold Text&lt;/strong&gt;';
+document.body.appendChild(container);
+  </code></pre>
+
+    <h2>5. innerHTML vs. createElement()</h2>
+    <p><strong>Definition:</strong> <code>innerHTML</code> is faster but less secure. <code>createElement()</code> is
+        safer and better for creating dynamic elements.</p>
+    <pre><code>
+// Using innerHTML
+const div1 = document.createElement('div');
+div1.innerHTML = '&lt;span&gt;Hello HTML&lt;/span&gt;';
+document.body.appendChild(div1);
+
+// Using createElement
+const div2 = document.createElement('div');
+const span = document.createElement('span');
+span.textContent = 'Hello JS';
+div2.appendChild(span);
+document.body.appendChild(div2);
+  </code></pre>
+
+    <h2>6. DocumentFragment </h2>
+    <p><strong>Definition:</strong> A lightweight container for DOM nodes, used to batch-insert multiple nodes
+        efficiently.</p>
+    <pre><code>
+const fragment = document.createDocumentFragment();
+for (let i = 0; i &lt; 3; i++) {
+  const li = document.createElement('li');
+  li.textContent = `Item ${i + 1}`;
+  fragment.appendChild(li);
+}
+const ul = document.createElement('ul');
+ul.appendChild(fragment);
+document.body.appendChild(ul);
+  </code></pre>
+
+    <h2>7. after() </h2>
+    <p><strong>Definition:</strong> Inserts a node directly after the specified element.</p>
+    <pre><code>
+const ref = document.createElement('div');
+ref.textContent = 'Reference Node';
+document.body.appendChild(ref);
+
+const newEl = document.createElement('div');
+newEl.textContent = 'Inserted After';
+ref.after(newEl);
+  </code></pre>
+
+    <h2>8. append() </h2>
+    <p><strong>Definition:</strong> Appends one or more nodes or strings to the end of a parent node.</p>
+    <pre><code>
+const div = document.createElement('div');
+div.append('Text using append()');
+document.body.appendChild(div);
+  </code></pre>
+
+    <h2>9. prepend() </h2>
+    <p><strong>Definition:</strong> Inserts one or more nodes or strings at the beginning of a parent node.</p>
+    <pre><code>
+const div = document.createElement('div');
+div.textContent = 'End';
+div.prepend('Start - ');
+document.body.appendChild(div);
+  </code></pre>
+
+    <h2>10. insertAdjacentHTML() </h2>
+    <p><strong>Definition:</strong> Parses text as HTML and inserts it into the DOM at a specified position.</p>
+    <pre><code>
+const target = document.createElement('div');
+target.textContent = 'Container';
+document.body.appendChild(target);
+
+target.insertAdjacentHTML('beforeend', '&lt;p&gt;Inserted HTML&lt;/p&gt;');
+  </code></pre>
+
+    <h2>11. replaceChild() </h2>
+    <p><strong>Definition:</strong> Replaces one child node of a specified parent node with another.</p>
+    <pre><code>
+const parent = document.createElement('div');
+const oldChild = document.createElement('p');
+oldChild.textContent = 'Old';
+parent.appendChild(oldChild);
+
+const newChild = document.createElement('p');
+newChild.textContent = 'New';
+parent.replaceChild(newChild, oldChild);
+document.body.appendChild(parent);
+  </code></pre>
+
+    <h2>12. cloneNode() </h2>
+    <p><strong>Definition:</strong> Creates a copy of a node. Set <code>true</code> to clone with children.</p>
+    <pre><code>
+const original = document.createElement('div');
+original.textContent = 'Original';
+document.body.appendChild(original);
+
+const clone = original.cloneNode(true);
+document.body.appendChild(clone);
+  </code></pre>
+
+    <h2>13. removeChild() </h2>
+    <p><strong>Definition:</strong> Removes a child node from its parent.</p>
+    <pre><code>
+const container = document.createElement('div');
+const child = document.createElement('p');
+child.textContent = 'Remove Me';
+container.appendChild(child);
+document.body.appendChild(container);
+
+container.removeChild(child);
+  </code></pre>
+
+    <h2>14. insertBefore() </h2>
+    <p><strong>Definition:</strong> Inserts a node before a reference node as a child of a specified parent.</p>
+    <pre><code>
+const ul = document.createElement('ul');
+const li2 = document.createElement('li');
+li2.textContent = 'Second';
+ul.appendChild(li2);
+
+const li1 = document.createElement('li');
+li1.textContent = 'First';
+ul.insertBefore(li1, li2);
+
+document.body.appendChild(ul);
+  </code></pre>
+
+    <h2>15. insertAfter() (Custom Helper)</h2>
+    <p><strong>Definition:</strong> Inserts a node after a reference node (not built-in; we define it).</p>
+    <pre><code>
+function insertAfter(newNode, refNode) {
+  refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
+}
+
+const ref = document.createElement('p');
+ref.textContent = 'Reference';
+document.body.appendChild(ref);
+
+const next = document.createElement('p');
+next.textContent = 'Inserted After';
+
+insertAfter(next, ref);
+  </code></pre>
+
+</body>
+
+</html>

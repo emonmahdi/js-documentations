@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Attributes & DOM Properties</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f8;
+            padding: 30px;
+            line-height: 1.6;
+            color: #212529;
+        }
+
+        h1 {
+            text-align: center;
+            color: #161d6f;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #0e144f;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px 25px;
+            border-left: 5px solid #161d6f;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+
+        code {
+            background: #ececec;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        input,
+        button {
+            padding: 10px 12px;
+            margin: 8px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #161d6f;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0e144f;
+        }
+
+        .output {
+            margin-top: 10px;
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML Attributes & DOM Properties</h1>
+
+    <!-- Section 1: Definitions -->
+    <div class="card">
+        <h2>1. HTML Attributes vs DOM Object Properties</h2>
+        <p><strong>HTML Attributes</strong> are defined in the HTML and represent the initial values of elements.</p>
+        <p><strong>DOM Object Properties</strong> are JavaScript representations of the elements that reflect the
+            current state.</p>
+
+        <ul>
+            <li><strong>Attribute:</strong> Static value from HTML – <code>&lt;input value="Hello"&gt;</code></li>
+            <li><strong>Property:</strong> Dynamic JS property – <code>element.value</code></li>
+        </ul>
+
+        <p>Changing a DOM property doesn’t update the HTML attribute (and vice versa).</p>
+    </div>
+
+    <!-- Section 2: Attribute vs Property Example -->
+    <div class="card">
+        <h2>2. Attribute vs Property Example</h2>
+        <input id="myInput" value="Hello" />
+        <br>
+        <button onclick="showInputValues()">Show Attribute vs Property</button>
+        <div id="output1" class="output"></div>
+
+        <script>
+            function showInputValues() {
+                const input = document.getElementById('myInput');
+                const attrVal = input.getAttribute('value');
+                const propVal = input.value;
+
+                document.getElementById('output1').innerHTML = `
+          <strong>Attribute value:</strong> ${attrVal} <br>
+          <strong>Property value:</strong> ${propVal}
+        `;
+            }
+        </script>
+    </div>
+
+    <!-- Section 3: setAttribute -->
+    <div class="card">
+        <h2>3. setAttribute()</h2>
+        <p><strong>Definition:</strong> Sets or updates the value of a specified attribute on an element.</p>
+        <input id="username" placeholder="Enter name" />
+        <br>
+        <button onclick="setPlaceholder()">Change Placeholder</button>
+
+        <script>
+            function setPlaceholder() {
+                document.getElementById('username').setAttribute('placeholder', 'Now say Hello!');
+            }
+        </script>
+    </div>
+
+    <!-- Section 4: getAttribute -->
+    <div class="card">
+        <h2>4. getAttribute()</h2>
+        <p><strong>Definition:</strong> Retrieves the current value of an attribute on an element.</p>
+        <img id="logo" src="https://via.placeholder.com/150x60" alt="Company Logo" />
+        <button onclick="getAltText()">Get ALT Attribute</button>
+        <div id="output2" class="output"></div>
+
+        <script>
+            function getAltText() {
+                const alt = document.getElementById('logo').getAttribute('alt');
+                document.getElementById('output2').innerText = `ALT Attribute: ${alt}`;
+            }
+        </script>
+    </div>
+
+    <!-- Section 5: removeAttribute -->
+    <div class="card">
+        <h2>5. removeAttribute()</h2>
+        <p><strong>Definition:</strong> Removes a specified attribute from an element.</p>
+        <input id="readonlyInput" value="Can't change me" readonly />
+        <br>
+        <button onclick="makeEditable()">Remove readonly</button>
+
+        <script>
+            function makeEditable() {
+                document.getElementById('readonlyInput').removeAttribute('readonly');
+            }
+        </script>
+    </div>
+
+    <!-- Section 6: hasAttribute -->
+    <div class="card">
+        <h2>6. hasAttribute()</h2>
+        <p><strong>Definition:</strong> Checks if an element has a given attribute. Returns <code>true</code> or
+            <code>false</code>.</p>
+        <input id="emailInput" type="email" required placeholder="Enter email" />
+        <br>
+        <button onclick="checkRequired()">Check 'required' Attribute</button>
+        <div id="output3" class="output"></div>
+
+        <script>
+            function checkRequired() {
+                const emailInput = document.getElementById('emailInput');
+                const hasAttr = emailInput.hasAttribute('required');
+                document.getElementById('output3').innerText = `Has 'required' attribute? ${hasAttr}`;
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

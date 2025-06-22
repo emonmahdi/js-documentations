@@ -75,6 +75,29 @@
         <li>sixth Item</li>
     </ul>
 
+    <div id="note">
+        <p>Hello JavaScript - I am textContent</p>
+        <span style="display: none;">Hidden Text </span>
+    </div>
+    <div id="note2">
+        <p>Hello JavaScript - I am innerText</p>
+        <span style="display: none;">Hidden Text </span>
+    </div>
+
+    <div>
+        <p>The DocumentFragment interface is a lightweight version of the Document that stores a piece of document
+            structure like a standard document. However, a DocumentFragment isn’t part of the active DOM tree.</p>
+
+        <div id="languages"></div>
+    </div>
+
+    <div>
+        <!-- <p>The after() is a method of the Element type. The element.after() method allows you to insert one or more
+            nodes after the element.</p> -->
+
+        <h1 id="headingOne">JavaScript DOM - after()</h1>
+    </div>
+
 
 
     <script>
@@ -137,6 +160,43 @@
         const everList = secondUl.firstElementChild;
 
         firstUl.appendChild(everList);
+
+
+        //textContent and innetText
+        const note = document.getElementById('note')
+        console.log('textContent - ', note.textContent); // this text show the all hidden and other text
+        const note2 = document.getElementById('note2')
+        console.log('innerText - ', note.innerText); // this are human readable text not show the hidden text
+
+        // innerHTML
+        console.log(note.innerHTML)
+
+
+        // DocumentFragment
+        const languages = ['C', 'C++', 'Php', 'JS', 'Python', 'Java', 'GO', 'Ruby'];
+
+        const langElement = document.querySelector('#languages')
+
+        const fragment = new DocumentFragment();
+
+        languages.forEach((language) => {
+            const li = document.createElement('li')
+            li.innerHTML = language;
+            fragment.appendChild(li)
+        })
+
+
+        langElement.appendChild(fragment)
+
+
+        // after()
+        const headingOne = document.querySelector('#headingOne');
+
+        const para = document.createElement('p')
+        para.innerText = 'this is the paragraph top heading'
+
+        headingOne.after(para)
+
     </script>
 </body>
 

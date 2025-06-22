@@ -1,0 +1,2 @@
+Summary
+Use the DocumentFragment to compose DOM nodes before updating them to the active DOM tree to get better performance.
