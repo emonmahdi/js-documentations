@@ -50,19 +50,7 @@
             <p>To get a live NodeList of child elements of a specified element, you use the childNodes</p>
 
 
-            <div>
-                <h4>To create an HTML element, you use the document.createElement() method:</h4>
 
-                let element = document.createElement(htmlTag);
-                Code language: JavaScript (javascript)
-                The document.createElement() accepts an HTML tag name and returns a new Node with the Element type.
-
-                <p>
-                    Summary: <br>
-                    The document.createElement() creates a new HTML element.
-                    The element.appendChild() appends an HTML element to an existing element.
-                </p>
-            </div>
 
 
 
@@ -76,30 +64,6 @@
                 console.log(firstChild)
                 console.log(lastChild)
                 console.log(children)
-
-                // createElement()
-
-                let div = document.createElement('div');
-                div.id = 'content';
-                div.className = 'myDiv';
-                div.innerHTML = '<p>this is paragraph </p>'
-
-                const text = document.createTextNode('I want to try something new using JS')
-                div.appendChild(text)
-
-
-                // h2   
-                let h2 = document.createElement('h2')
-                h2.innerText = 'this is heading two'
-                h2.title = 'title two'
-                div.appendChild(h2)
-
-                let li = document.createElement('li')
-                li.textContent = 'Blog';
-                menu.appendChild(li)
-
-                // add div to the document
-                document.body.appendChild(div)
 
             </script>
 </body>

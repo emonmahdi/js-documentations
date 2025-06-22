@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating elements</title>
+    <style>
+        .code-container {
+            position: relative;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #21262d;
+            color: #8b949e;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .copy-button:hover {
+            background: #30363d;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body style="width: 80%; margin:0 auto">
+    <div>
+        <h4>To create an HTML element, you use the document.createElement() method:</h4>
+
+        let element = document.createElement(htmlTag);
+        Code language: JavaScript (javascript)
+        The document.createElement() accepts an HTML tag name and returns a new Node with the Element type.
+
+        <p>
+            Summary: <br>
+            The document.createElement() creates a new HTML element.
+            The element.appendChild() appends an HTML element to an existing element.
+        </p>
+    </div>
+    <div>
+        <h4>The appendChild() is a method of the Node interface. The appendChild() method allows you to add a node to
+            the end of the list of child nodes of a specified parent node.</h4>
+
+        <div class="code-container">
+            <button class="copy-button">Copy</button>
+            <pre><code>parentNode.appendChild(childNode);</code></pre>
+        </div>
+    </div>
+    <ul id="menu">
+
+    </ul>
+
+    <ul id="first-ul">
+        <li>first Item</li>
+        <li>second Item</li>
+        <li>third Item</li>
+    </ul>
+    <ul id="second-ul">
+        <li>fourth Item</li>
+        <li>fivth Item</li>
+        <li>sixth Item</li>
+    </ul>
+
+
+
+    <script>
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.nextElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    const original = button.textContent;
+                    button.textContent = 'Copied!';
+                    setTimeout(() => button.textContent = original, 1500);
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // createElement()
+
+        let div = document.createElement('div');
+        div.id = 'content';
+        div.className = 'myDiv';
+        div.innerHTML = '<p>this is paragraph </p>'
+
+        const text = document.createTextNode('I want to try something new using JS')
+        div.appendChild(text)
+
+
+        // h2   
+        let h2 = document.createElement('h2')
+        h2.innerText = 'this is heading two'
+        h2.title = 'title two'
+        div.appendChild(h2)
+
+        let li = document.createElement('li')
+        li.textContent = 'Blog';
+        menu.appendChild(li)
+
+        // add div to the document
+        document.body.appendChild(div)
+
+
+        // create Menu li
+        function createMenuItem(name) {
+            let li = document.createElement('li')
+            li.textContent = name;
+            return li
+        }
+
+        let menus = document.querySelector('#menu')
+        menus.appendChild(createMenuItem('Home'))
+        menus.appendChild(createMenuItem('About'))
+        menus.appendChild(createMenuItem('Blog'))
+
+
+        // first ul
+        const firstUl = document.getElementById('first-ul')
+
+        const secondUl = document.getElementById('second-ul')
+
+        const everList = secondUl.firstElementChild;
+
+        firstUl.appendChild(everList);
+    </script>
+</body>
+
+</html>
