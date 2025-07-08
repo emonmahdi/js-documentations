@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting inline styles</title>
+    <style type="text/css">
+        .message {
+            background-color: #fff3d4;
+            border: solid 1px #f6b73c;
+            padding: 20px;
+            color: orange;
+        }
+
+        .newClasss {
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Setting inline styles</h2>
+    <p>Use the properties of element.style object to set the inline CSS properties for the HTML element.</p>
+    <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, tempora!</p>
+
+
+    <h2>getComputedStyle(): </h2>
+    <p class="message" style="color:green">
+        This is a JS getComputedStyle() Demo!
+    </p>
+    <h3>Summary:</h3>
+    <ul>
+        <li>The getComputedStyle() is a method of the window object.</li>
+        <li>The getComputedStyle() method returns an object that contains the computed style of an element.</li>
+    </ul>
+
+
+    <h2>The className is the property of an element that returns a space-separated list of CSS classes of the element as
+        a string</h2>
+
+    <ul id="menu" class="vertical main">
+        <li>Homepage</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <h3>Summary:</h3>
+    <ul>
+        <li>The className property returns a space-separated list of classes of an element as a string.</li>
+        <li>classList to add a new class to the existing classes of an element:</li>
+    </ul>
+
+
+    <h2>classList</h2>
+    <p>The classList is a read-only property of an element that returns a live collection of CSS classes</p>
+
+    <p>1- Get the CSS classes of an element</p>
+    <p>2- Add one or more classes to the class list of an element</p>
+    <pre><code>let div = document.querySelector('#content');
+            div.classList.add('info','visible','block');</code></pre>
+
+    <p>3- Remove element’s classes</p>
+    <pre>
+        <code>
+            let div = document.querySelector('#content');
+            div.classList.remove('visible');
+        </code>
+    </pre>
+    <p>4- Replace a class of an element</p>
+    <pre>
+        <code>
+            let div = document.querySelector('#content');
+            div.classList.replace('info','warning');
+        </code>
+    </pre>
+    <p>5- Toggle a class</p>
+    <p>If the class list of an element contains a specified class name, the toggle() method removes it. If the class
+        list doesn’t contain the class name, the toggle() method adds it to the class list.</p>
+    <pre>
+        <code>
+            let div = document.querySelector('#content');
+            div.classList.toggle('visible');
+        </code>
+    </pre>
+</body>
+
+<script>
+    const content = document.querySelector('.desc');
+    content.style.color = 'white';
+    content.style.background = 'black';
+    content.style.padding = '10px'
+</script>
+<script>
+    let message = document.querySelector('.message');
+    let style = getComputedStyle(message);
+
+    console.log('color:', style.color);
+    console.log('background color:', style.backgroundColor);
+</script>
+<script>
+    const menu = document.querySelector('#menu');
+    menu.className += ' newClasss'
+    console.log(menu)
+</script>
+
+</html>
