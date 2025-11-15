@@ -1,0 +1,294 @@
+Below is **Module 7: OOP in JavaScript** — fully explained in Bangla with beginners-friendly examples + interview-focused answers.
+
+---
+
+# ✅ **Module 7: OOP in JavaScript (A to Z Guide)**
+
+JavaScript মূলত **prototype-based**, কিন্তু ES6 থেকে আমরা **class** syntax ব্যবহার করে সহজে OOP কনসেপ্ট apply করতে পারি।
+
+---
+
+# ⭐ 1) **Class (ক্লাস)**
+
+ক্লাস হলো একটি **blueprint**, যেটা দিয়ে object তৈরি করা হয়।
+
+### ✔ Example:
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const p1 = new Person("Emon", 25);
+console.log(p1);
+```
+
+---
+
+# ⭐ 2) **Constructor**
+
+Constructor হলো special method যা object তৈরি হওয়ার সময় স্বয়ংক্রিয়ভাবে চলে।
+
+```js
+class Car {
+  constructor(model, price) {
+    this.model = model;
+    this.price = price;
+  }
+}
+```
+
+---
+
+# ⭐ 3) **new keyword**
+
+`new` keyword করলে যা ঘটে:
+
+1. নতুন empty object create হয়
+2. constructor call হয়
+3. `this` নতুন object কে refer করে
+4. object return হয়
+
+---
+
+# ⭐ 4) **Inheritance (extends + super)**
+
+একটি ক্লাস অন্য একটি ক্লাস এর property/method inherit করতে পারে।
+
+### ✔ Example:
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log(`Hello, I am ${this.name}`);
+  }
+}
+
+class Student extends Person {
+  constructor(name, roll) {
+    super(name); // parent constructor call
+    this.roll = roll;
+  }
+}
+
+const s1 = new Student("Mahdi", 5);
+s1.greet();
+```
+
+---
+
+# ⭐ 5) **Encapsulation**
+
+Data hide করা বা control করা।
+
+### ✔ Example:
+
+```js
+class BankAccount {
+  #balance = 0;   // private property
+
+  deposit(amount) {
+    this.#balance += amount;
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+const acc = new BankAccount();
+acc.deposit(500);
+console.log(acc.getBalance());
+```
+
+---
+
+# ⭐ 6) **Polymorphism**
+
+একই method নাম → বিভিন্ন ক্লাসে বিভিন্ন কাজ করবে।
+
+### ✔ Example:
+
+```js
+class Animal {
+  speak() {
+    console.log("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Dog barking");
+  }
+}
+
+const d = new Dog();
+d.speak();
+```
+
+---
+
+# ⭐ 7) **Static methods**
+
+Static methods ক্লাসের own method, object দিয়ে access করা যায় না।
+
+### ✔ Example:
+
+```js
+class MathUtil {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+console.log(MathUtil.add(5, 3)); // 8
+```
+
+---
+
+# ⭐ 8) **this keyword in OOP**
+
+ক্লাসের মধ্যে `this` → object কে refer করে।
+
+```js
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  show() {
+    console.log(this.name);
+  }
+}
+
+new User("Emon").show();
+```
+
+---
+
+# 🔥 INTERVIEW FOCUS QUESTIONS + ANSWERS
+
+---
+
+## ✅ **1) Class vs Prototype — Interview Answer**
+
+**Answer:**
+JavaScript internally prototype-based, অর্থাৎ প্রতিটি object এর একটি hidden property থাকে — `[[Prototype]]`.
+Class হলো just **syntactic sugar** যা prototype কে সহজ করে।
+
+✔ Prototype → পুরনো system (ES5)
+✔ Class → modern readable syntax (ES6)
+
+**Example:**
+
+```js
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.say = function () {
+  console.log(this.name);
+};
+```
+
+vs
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  say() {
+    console.log(this.name);
+  }
+}
+```
+
+---
+
+## ✅ **2) How does inheritance work in JS?**
+
+**Answer:**
+Inheritance prototype chain এর মাধ্যমে কাজ করে।
+`extends` করলে child class এর prototype → parent class কে link করে।
+
+Flow:
+
+```
+child → parent → Object.prototype → null
+```
+
+---
+
+## ✅ **3) Why use OOP in JS?**
+
+Interview answer:
+
+✔ কোড structure clean হয়
+✔ reusable components
+✔ large project organize করা সহজ
+✔ inheritance → duplicate code কমে
+✔ encapsulation → data control করা যায়
+
+---
+
+# 🔥 Real-Life Example: OOP Project Structure
+
+### ⭐ Example: User → Admin Inheritance
+
+```js
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  login() {
+    console.log(`${this.name} logged in`);
+  }
+}
+
+class Admin extends User {
+  deleteUser() {
+    console.log(`${this.name} deleted a user`);
+  }
+}
+
+const admin = new Admin("Emon", "e@gmail.com");
+admin.login();
+admin.deleteUser();
+```
+
+---
+
+# 📌 **Practice Tasks (Must Do)**
+
+### ✔ Task 1
+
+একটি `Product` ক্লাস বানান (name, price, discount)
+
+→ discounted price return করবে এমন method
+
+### ✔ Task 2
+
+Animal → Dog → Cat → Cow inheritance chain বানান
+প্রতিটা ক্লাসের নিজস্ব `sound()` method থাকবে।
+
+### ✔ Task 3
+
+একটি Bank System বানান
+
+* deposit
+* withdraw
+* balance check
+  Private fields ব্যবহার করুন (#balance)
+
+---
+
+If you want, I can provide **Module 8: Asynchronous JavaScript (Promises, async/await, event loop)** next.

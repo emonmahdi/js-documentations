@@ -1,0 +1,342 @@
+# ✅ **Module 6: ES6+ Features (Most Asked in JS Interviews)**
+
+(বাংলায় সহজ + Professional + Interview Ans + Coding Examples)
+
+---
+
+# --------------------------------------------
+
+# ✅ **1. Template Literals (Backtick ``)**
+
+### 📌 Definition
+
+String লেখার নতুন ES6 syntax যেখানে variable interpolation + multiline string লেখা সহজ।
+
+### 📌 Example
+
+```js
+const name = "Mehedi";
+const msg = `Hello, ${name}! Welcome to JS.`;
+console.log(msg);
+```
+
+### ✔ Multiline
+
+```js
+const text = `
+Line 1
+Line 2
+Line 3
+`;
+```
+
+### 📌 Interview Answer
+
+Template literals string dynamic করা সহজ করে এবং `${}` দিয়ে variable embed করা যায়, এবং multiline without `\n` possible।
+
+---
+
+# --------------------------------------------
+
+# ✅ **2. Spread Operator (`...`)**
+
+### 📌 Definition
+
+Array বা object-এর value গুলোকে আলাদা করে "spread" করে।
+
+### 📌 Array Example
+
+```js
+const a = [1, 2];
+const b = [...a, 3]; // [1,2,3]
+```
+
+### 📌 Object Example
+
+```js
+const user = {name: "Mehedi"};
+const newUser = {...user, age: 23};
+```
+
+### ✔ Copying
+
+```js
+const copy = [...a];  // shallow copy
+```
+
+### 📌 Interview Answer
+
+Spread operator iterable/object-এর values আলাদা করে expand করতে ব্যবহৃত হয়—যেমন copy, merge, combine ইত্যাদি।
+
+---
+
+# --------------------------------------------
+
+# ✅ **3. Rest Operator (`...`)**
+
+### 📌 Definition
+
+Multiple values → single array/parameter-এ সংগ্রহ করে।
+
+### 📌 Function Example
+
+```js
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b);
+}
+
+sum(1, 2, 3); // 6
+```
+
+### 📌 Object Rest
+
+```js
+const {name, ...rest} = {name:"Mehedi", age:23, city:"Dhaka"};
+console.log(rest);  // {age:23, city:"Dhaka"}
+```
+
+---
+
+## ⭐ Spread vs Rest → **Interview Gold Answer**
+
+| Spread               | Rest                        |
+| -------------------- | --------------------------- |
+| Values কে expand করে | Values কে collect করে       |
+| Copy, merge, expand  | Function parameters collect |
+| Array/Object unpack  | Array/Object pack           |
+
+### 📌 Interview Short Answer
+
+Spread “ভেঙে দেয়”, Rest “জমা করে”।
+
+---
+
+# --------------------------------------------
+
+# ✅ **4. Destructuring (Array + Object)**
+
+### 📌 Array Destructuring
+
+```js
+const arr = [10, 20, 30];
+const [a, b] = arr; 
+```
+
+### 📌 Object Destructuring
+
+```js
+const user = { name: "Mehedi", age: 23 };
+const { name, age } = user;
+```
+
+### 📌 Nested
+
+```js
+const user = { info: { city: "Dhaka" } };
+const { info: { city } } = user;
+```
+
+---
+
+### ⭐ **Benefits of Destructuring → Interview Answer**
+
+✔ কোড ছোট, readable
+✔ API response data quickly extract করা যায়
+✔ Nested data easily access
+
+**Interview Answer (2 lines):**
+Destructuring হলো shortcut syntax যা object/array থেকে value সহজে বের করতে সাহায্য করে, এবং কোড clean ও readable করে।
+
+---
+
+# --------------------------------------------
+
+# ✅ **5. Default Parameters**
+
+### 📌 Example
+
+```js
+function greet(name = "Guest") {
+  console.log("Hello", name);
+}
+
+greet();        // Guest  
+greet("Mehedi")
+```
+
+### 📌 Interview Answer
+
+Default parameter ensures function argument undefined হলে default মান ব্যবহার করা হয়। ES6-এর আগে logical OR ব্যবহার করতে হতো।
+
+---
+
+# --------------------------------------------
+
+# ✅ **6. Enhanced Object Literals**
+
+### 📌 Features
+
+✔ Same-name property shorthand
+✔ Method shorthand
+✔ Dynamic property name
+
+### 📌 Example
+
+```js
+const name = "Mehedi";
+const age = 23;
+
+const user = {
+  name,       // shorthand
+  age,
+  greet() {   // method shorthand
+    console.log("Hi");
+  },
+  ["city"]: "Dhaka"  // dynamic key
+};
+```
+
+### 📌 Interview Answer
+
+Enhanced object literal object creation সহজ করে: shorthand properties, shorthand methods, এবং dynamic keys add করা যায়।
+
+---
+
+# --------------------------------------------
+
+# ✅ **7. Modules (import/export)**
+
+### 📌 Export
+
+```js
+export const name = "Mehedi";
+
+export function add(a, b) {
+  return a + b;
+}
+```
+
+### 📌 Import
+
+```js
+import { name, add } from "./utils.js";
+```
+
+### 📌 Default Export
+
+```js
+export default function () {}
+```
+
+### 📌 Interview Answer
+
+ES6 Modules কোডকে পৃথক ফাইলে ভাগ করে reusable করে — import/export দিয়ে dependency manageable হয়।
+
+---
+
+# --------------------------------------------
+
+# ✅ **8. Iterators**
+
+### 📌 Definition
+
+Iterator হলো a special object যা `next()` method দিয়ে sequence আকারে value return করে।
+
+### 📌 Example
+
+```js
+const arr = [10, 20, 30];
+const it = arr[Symbol.iterator]();
+
+console.log(it.next()); 
+```
+
+### 📌 Interview Answer
+
+Iterator হলো এমন mechanism যা sequential value access করতে next() ব্যবহার করে — arrays, strings সব iterable object iterator ব্যবহার করে।
+
+---
+
+# --------------------------------------------
+
+# ✅ **9. Symbols**
+
+### 📌 Definition
+
+Symbol হলো unique & immutable primitive value—object-এর hidden বা unique key হিসেবে ব্যবহৃত হয়।
+
+### 📌 Example
+
+```js
+const id = Symbol("id");
+
+const user = {
+  name: "Mehedi",
+  [id]: 123
+};
+```
+
+### 📌 Interview Answer
+
+Symbol দিয়ে object-এর unique property তৈরি করা যায় যেটি অন্য code accidentally overwrite করতে পারে না।
+
+---
+
+# --------------------------------------------
+
+# ✅ **10. Sets**
+
+### 📌 Definition
+
+Set হলো unique value store করে (duplicate allowed নয়)।
+
+### 📌 Example
+
+```js
+const set = new Set([1, 2, 2, 3]);
+console.log(set); // {1,2,3}
+```
+
+### 📌 Interview Answer
+
+Set duplicate value রাখে না, এবং operations দ্রুত এবং efficient (has, add, delete).
+
+---
+
+# --------------------------------------------
+
+# ✅ **11. Maps**
+
+### 📌 Definition
+
+Map key-value structure যেখানে যে কোনো type key ব্যবহার করা যায়।
+
+### 📌 Example
+
+```js
+const map = new Map();
+map.set("name", "Mehedi");
+map.set({x:1}, "object key");
+```
+
+---
+
+# ⭐ **Set vs Map → Interview Gold Answer**
+
+| Set                   | Map                           |
+| --------------------- | ----------------------------- |
+| Only values store করে | Key–value pair store করে      |
+| Duplicate নেই         | Duplicate key possible নয়     |
+| Fast lookup           | Fast lookup with any-key type |
+
+### 📌 Interview Answer
+
+Set unique values রাখে কিন্তু Map key-value structure ব্যবহার করে যেখানে key যে কোনো data type হতে পারে।
+
+---
+
+# --------------------------------------------
+
+# 🎉 **Module 6 Complete!**
+
+Ready for **Module 7: Asynchronous JavaScript (Promises + Async/Await + Event Loop + Microtask Queue)**?

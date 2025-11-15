@@ -1,0 +1,325 @@
+ নিশ্চয়! নিচে **JavaScript সম্পূর্ণ A–Z ইন্টারভিউ প্রস্তুতির জন্য Module-wise Plan** দিলাম।
+এটি এমনভাবে সাজানো—
+✔ সব JS concepts ক্লিয়ার হবে
+✔ ES6 থেকে advanced topics
+✔ Most asked interview concepts
+✔ Industry-standard sequence
+
+---
+
+# 🚀 **JavaScript Interview Master Plan (Module Wise — A to Z)**
+
+*(Full Stack Developer পজিশনের জন্য ১০০% কাভারেজ)*
+
+---
+
+# ✅ **Module 1: JavaScript Fundamentals (Basics + Core Concepts)**
+
+### 📌 What to Learn
+
+* What is JavaScript
+* Variables: var, let, const
+* Data Types (Primitive & Non-primitive)
+* typeof operator
+* String, Number, Boolean basics
+* Math, Date
+* Comments & Clean Code
+
+### 🎯 Interview Focus
+
+* var vs let vs const
+* Primitive vs Reference type
+* Mutable vs immutable data
+
+---
+
+# ✅ **Module 2: Execution, Memory & Scope**
+
+### 📌 Concepts
+
+* JS Compilation & Execution
+* Memory Heap & Call Stack
+* Hoisting
+* Scope (Global, Local, Block, Function)
+* Temporal Dead Zone (TDZ)
+
+### 🎯 Interview Focus
+
+* How JavaScript works?
+* Hoisting explained
+* let/const hoisting
+
+---
+
+# ✅ **Module 3: Functions (A to Z)**
+
+### 📌 Concepts
+
+* Function Declaration
+* Function Expression
+* Arrow Functions
+* Parameter vs Argument
+* Default Parameter
+* IIFE
+* Pure vs Impure Function
+* Higher-Order Function
+* Callback Function
+
+### 🎯 Interview Focus
+
+* Arrow function + this behavior
+* Higher-order function
+* Differences between function & arrow
+
+---
+
+# ✅ **Module 4: Objects & Prototypes**
+
+### 📌 Concepts
+
+* Object creation
+* Dot vs bracket notation
+* Object methods
+* Object Destructuring
+* Object.freeze(), Object.seal()
+* Prototype & Prototype Chain
+* `this` keyword deep explanation
+
+### 🎯 Interview Focus
+
+* What is prototype?
+* this binding
+* shallow copy vs deep copy
+
+---
+
+# ✅ **Module 5: Arrays + ES6 Array Methods**
+
+### 📌 Concepts
+
+* Array basics
+* Array mutation
+* Iteration methods
+
+  * map()
+  * filter()
+  * reduce()
+  * find()
+  * findIndex()
+  * some(), every()
+  * sort()
+  * forEach()
+
+### 🎯 Interview Focus
+
+* map vs forEach
+* reduce real-life uses
+* filter vs find
+
+---
+
+# ✅ **Module 6: ES6+ Features (Most Asked)**
+
+### 📌 Concepts
+
+* Template Literals
+* Spread & Rest Operator
+* Destructuring (Array + Object)
+* Default Parameters
+* Enhanced Object Literals
+* Modules (import/export)
+* Iterators
+* Symbols
+* Sets & Maps
+
+### 🎯 Interview Focus
+
+* Spread vs Rest
+* Destructuring benefits
+* Difference between set & map
+
+---
+
+# ✅ **Module 7: OOP in JavaScript**
+
+### 📌 Concepts
+
+* Class
+* Constructor
+* `new` keyword
+* Inheritance (extends, super)
+* Encapsulation
+* Polymorphism
+* Static methods
+
+### 🎯 Interview Focus
+
+* Class vs prototype
+* How inheritance works?
+* Why use OOP in JS?
+
+---
+
+# ✅ **Module 8: Asynchronous JavaScript**
+
+### 📌 Concepts
+
+* Synchronous vs Asynchronous
+* Event Loop
+* Callback
+* Promises
+* Promise chaining
+* async/await
+* try/catch
+* Microtask & Macrotask queue
+
+### 🎯 Interview Focus
+
+* Event loop explained
+* Promise vs async/await
+* Call stack vs callback queue
+
+---
+
+# ✅ **Module 9: Error Handling & Debugging**
+
+### 📌 Concepts
+
+* try…catch
+* throw
+* Developer tools console
+* Debugger
+* Common errors (TypeError, ReferenceError, SyntaxError)
+
+### 🎯 Interview Focus
+
+* How to handle async errors?
+* try/catch vs .catch()
+
+---
+
+# ✅ **Module 10: DOM & Browser Concepts**
+
+*(Full Stack Developer হলেও কিছু বেসিক জিজ্ঞেস করতে পারে)*
+
+### 📌 Concepts
+
+* DOM Tree
+* Selecting Elements
+* Event Handling
+* Event Bubbling & Capturing
+* LocalStorage / SessionStorage
+* Fetch API
+* Cookies, Tokens
+
+### 🎯 Interview Focus
+
+* Event bubbling
+* Fetch vs Axios
+
+---
+
+# ✅ **Module 11: Advanced JavaScript (Must Know)**
+
+### 📌 Concepts
+
+* Closures
+* Currying
+* Memoization
+* Debounce
+* Throttle
+* Module Pattern
+* Factory Function
+* Generators
+* Deep Clone Techniques
+* Immutable Data Patterns
+
+### 🎯 Interview Focus
+
+* Closure real-life example
+* Debounce vs throttle
+* Deep copy vs shallow copy
+
+---
+
+# ✅ **Module 12: JavaScript Performance Optimization**
+
+### 📌 Concepts
+
+* Time complexity in JS
+* Avoid mutation
+* Lazy loading
+* Using map/set for faster lookup
+* How JS engine optimizes code
+
+### 🎯 Interview Focus
+
+* Why use map/set?
+* Best practices for performance
+
+---
+
+# ✅ **Module 13: Practical Coding Problems (Most Asked)**
+
+### 📌 Must-Solve Problems
+
+* Reverse string
+* Remove duplicates
+* FizzBuzz
+* Find largest/smallest number
+* Check palindrome
+* Count vowels
+* Sum of array
+* Flatten array
+* Merge two arrays
+* Frequency counter
+* Anagram check
+
+### 🎯 Interview Focus
+
+* Use map, filter, reduce
+* Use spread operator
+* Time complexity
+
+---
+
+# 🎯 **Top 30 Most Asked JavaScript Interview Concepts**
+
+(একেবারে নিচে Must Prepare)
+
+1. Hoisting
+2. Closure
+3. this keyword
+4. Event loop
+5. Var vs let vs const
+6. Spread vs rest
+7. Prototype inheritance
+8. Arrow function vs regular
+9. Promise vs async/await
+10. map vs forEach
+11. filter vs find
+12. Deep vs shallow copy
+13. Null vs undefined
+14. == vs ===
+15. Mutable vs immutable
+16. Higher order functions
+17. Callback vs promise
+18. Event bubbling
+19. Destructuring
+20. Currying
+21. Debouncing
+22. Throttling
+23. Set vs Map
+24. Factory function
+25. Memory lifecycle
+26. Block scope vs function scope
+27. TDZ
+28. Pure function
+29. Error handling
+30. JS Single-threaded model
+
+---
+
+# 📘 আপনি চাইলে আমি এগুলোর **Module-wise বিস্তারিত নোট + MCQ + Interview Q&A + Practice Code** বানিয়ে দিতে পারি।
+
+চান কি?

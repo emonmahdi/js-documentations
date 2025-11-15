@@ -1,0 +1,185 @@
+Below is **Module 13: Practical Coding Problems (Most Asked)** — explained with problem definitions, sample code in JavaScript, and interview-style tips in Bangla.
+
+---
+
+# ✅ **MODULE 13: Practical Coding Problems (Most Asked in Interviews)**
+
+---
+
+# 🔹 1) **Reverse String**
+
+```js
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+console.log(reverseString("Emon")); // nome
+```
+
+---
+
+# 🔹 2) **Remove Duplicates from Array**
+
+```js
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+console.log(removeDuplicates([1, 2, 2, 3])); // [1, 2, 3]
+```
+
+---
+
+# 🔹 3) **FizzBuzz**
+
+Print numbers 1 to n:
+
+* Multiple of 3 → "Fizz"
+* Multiple of 5 → "Buzz"
+* Multiple of both → "FizzBuzz"
+
+```js
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) console.log("FizzBuzz");
+    else if (i % 3 === 0) console.log("Fizz");
+    else if (i % 5 === 0) console.log("Buzz");
+    else console.log(i);
+  }
+}
+
+fizzBuzz(15);
+```
+
+---
+
+# 🔹 4) **Find Largest / Smallest Number**
+
+```js
+function findLargest(arr) {
+  return Math.max(...arr);
+}
+
+function findSmallest(arr) {
+  return Math.min(...arr);
+}
+
+console.log(findLargest([1, 5, 3])); // 5
+console.log(findSmallest([1, 5, 3])); // 1
+```
+
+---
+
+# 🔹 5) **Check Palindrome**
+
+```js
+function isPalindrome(str) {
+  const reversed = str.split("").reverse().join("");
+  return str === reversed;
+}
+
+console.log(isPalindrome("madam")); // true
+```
+
+---
+
+# 🔹 6) **Count Vowels in String**
+
+```js
+function countVowels(str) {
+  const vowels = "aeiouAEIOU";
+  return [...str].filter(ch => vowels.includes(ch)).length;
+}
+
+console.log(countVowels("Emon")); // 2
+```
+
+---
+
+# 🔹 7) **Sum of Array**
+
+```js
+function sumArray(arr) {
+  return arr.reduce((acc, curr) => acc + curr, 0);
+}
+
+console.log(sumArray([1, 2, 3, 4])); // 10
+```
+
+---
+
+# 🔹 8) **Flatten Array**
+
+```js
+function flattenArray(arr) {
+  return arr.flat(Infinity);
+}
+
+console.log(flattenArray([1, [2, [3, 4]]])); // [1, 2, 3, 4]
+```
+
+---
+
+# 🔹 9) **Merge Two Arrays**
+
+```js
+function mergeArrays(arr1, arr2) {
+  return [...arr1, ...arr2];
+}
+
+console.log(mergeArrays([1, 2], [3, 4])); // [1, 2, 3, 4]
+```
+
+---
+
+# 🔹 10) **Frequency Counter**
+
+Count frequency of elements in array.
+
+```js
+function frequencyCounter(arr) {
+  return arr.reduce((acc, curr) => {
+    acc[curr] = (acc[curr] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+console.log(frequencyCounter(["a", "b", "a"])); // { a: 2, b: 1 }
+```
+
+---
+
+# 🔹 11) **Anagram Check**
+
+Check if two strings are anagrams.
+
+```js
+function isAnagram(str1, str2) {
+  const normalize = str =>
+    str.toLowerCase().split("").sort().join("");
+  return normalize(str1) === normalize(str2);
+}
+
+console.log(isAnagram("listen", "silent")); // true
+```
+
+---
+
+# 🎯 **INTERVIEW TIPS**
+
+* Use **map**, **filter**, **reduce** to solve problems declaratively.
+* Use **spread operator** (`...`) for copying/merging arrays.
+* Always think about **time complexity** — prefer O(n) solutions over O(n²).
+* Explain your approach clearly during interviews.
+
+---
+
+# 🧪 **Practice Tasks**
+
+* Implement all problems without using built-in methods.
+* Optimize each problem’s time complexity.
+* Explain your solution to a peer or record yourself explaining.
+
+---
+
+Want me to create detailed interview Q&A for these problems?

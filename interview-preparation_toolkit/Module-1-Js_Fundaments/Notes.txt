@@ -1,0 +1,224 @@
+নিশ্চয়! নিচে আপনার চাওয়া অনুযায়ী **Module-1: JavaScript Fundamentals** এর প্রতিটি টপিকের জন্য—
+
+✔ Definition (বাংলায়)
+✔ কেন ব্যবহার হয়
+✔ কীভাবে ব্যবহার হয়
+✔ Coding Examples
+✔ Short Interview Answers (2–3 lines) 
+
+---
+
+# 🚀 **Module 1: JavaScript Fundamentals (A to Z with Examples + Interview Answers)**
+
+---
+
+# ✅ **1. What is JavaScript?**
+
+### 📌 Definition
+
+JavaScript একটি high-level, dynamic, interpreted programming language যা web page কে interactive করে।
+
+### 📌 Why Use
+
+✔ Browser এ logic control
+✔ DOM manipulation
+✔ API call
+✔ Frontend + Backend development (Node.js)
+
+### 📌 Example
+
+```js
+console.log("Hello JavaScript!");
+```
+
+### 🎯 Interview Answer (2–3 lines)
+
+**JavaScript একটি single-threaded, dynamic programming language যা web interactivity তৈরি করে। Browser ও Node.js উভয় জায়গায় রান হয়।**
+
+---
+
+# ✅ **2. Variables (var, let, const)**
+
+### 📌 Definition
+
+Variable হলো ডাটা স্টোর করার container। ES6 এ `let` এবং `const` এসেছে block-scope সহ।
+
+### 📌 Why Use
+
+✔ ডাটা store
+✔ পরিবর্তনযোগ্য মান track
+✔ Scope control
+
+### 📌 How to Use + Examples
+
+```js
+var a = 10;      // function scoped
+let b = 20;      // block scoped
+const c = 30;    // constant value
+```
+
+### 🎯 Interview Answer
+
+**var function scope এবং hoisted হয়; let এবং const block scope এবং TDZ এর কারণে আগে access করা যায় না। const মান reassign করা যায় না।**
+
+---
+
+# ✅ **3. Data Types (Primitive & Non-Primitive)**
+
+### 📌 Primitive Types
+
+* string
+* number
+* boolean
+* null
+* undefined
+* symbol
+* bigint
+
+### 📌 Non-Primitive
+
+* object
+* array
+* function
+
+### 📌 Why Use
+
+✔ ডাটা category অনুযায়ী ব্যবহার
+✔ Memory allocation & behavior আলাদা
+
+### 📌 Example
+
+```js
+let name = "Emon";        // string
+let age = 25;             // number
+let married = false;      // boolean
+let user = { id: 1 };     // object
+let numbers = [1,2,3];    // array
+```
+
+### 🎯 Interview Answer
+
+**Primitive মান copy হয়; non-primitive reference হিসেবে store হয়। এজন্য object/array পরিবর্তন করলে মূল reference affect হয়।**
+
+---
+
+# ✅ **4. typeof Operator**
+
+### 📌 Definition
+
+typeof operator দিয়ে variable এর data type check করা হয়।
+
+### 📌 Example
+
+```js
+console.log(typeof "Hello");     // string
+console.log(typeof 100);         // number
+console.log(typeof true);        // boolean
+console.log(typeof {});          // object
+console.log(typeof []);          // object (special case)
+console.log(typeof null);        // object (JS bug)
+```
+
+### 🎯 Interview Answer
+
+**typeof null = "object" একটি historical bug। array ও object উভয়ই object type দেখায়, তাই Array.isArray() ব্যবহার করতে হয়।**
+
+---
+
+# ✅ **5. String, Number, Boolean (Basics)**
+
+### 📌 String
+
+```js
+let text = "Hello JS";
+console.log(text.length);
+console.log(text.toUpperCase());
+```
+
+### 📌 Number
+
+```js
+let x = 10.5;
+console.log(Number.isInteger(x));
+console.log(x.toFixed(2));
+```
+
+### 📌 Boolean
+
+```js
+let isLogin = true;
+console.log(isLogin);
+```
+
+### 🎯 Interview Answer
+
+**String immutable; number JS-এ সব floating point; boolean TRUE/FALSE logical condition এর জন্য ব্যবহৃত হয়।**
+
+---
+
+# ✅ **6. Math & Date**
+
+### 📌 Math Example
+
+```js
+console.log(Math.floor(4.9));  // 4
+console.log(Math.random());    // random 0-1
+console.log(Math.max(1,5,9));  // 9
+```
+
+### 📌 Date Example
+
+```js
+let now = new Date();
+console.log(now.getFullYear());
+console.log(now.toLocaleString());
+```
+
+### 🎯 Interview Answer
+
+**Math object numeric operations দেয়। Date object সময় ও তারিখ manipulate করতে ব্যবহৃত হয়।**
+
+---
+
+# ✅ **7. Comments & Clean Code**
+
+### 📌 Definition
+
+Comments কোড বুঝতে সাহায্য করে এবং future developers এর readability বাড়ায়।
+
+### 📌 Example
+
+```js
+// This is a single-line comment
+
+/*
+ This is a 
+ multi-line comment
+*/
+```
+
+### 🎯 Interview Answer
+
+**Clean code readable, maintainable হয়। Comments logical flow explain করে, কিন্তু অতি বেশি comment করতে হয় না।**
+
+---
+
+# 🎯 **Module-1 Interview Most Important Q&A (Quick Answers)**
+
+### ❓ var vs let vs const
+
+**var function scope; let এবং const block scope। var hoisting এর কারণে bug হতে পারে। const reassign করা যায় না।**
+
+### ❓ Primitive vs Non-Primitive
+
+**Primitive value copy হয়; object/array reference হিসেবে pass হয়।**
+
+### ❓ Mutable vs Immutable
+
+**Primitive immutable; object এবং array mutable।**
+
+### ❓ typeof null "object" কেন?
+
+**JS-এর historical bug।**
+
+--- 

@@ -1,0 +1,331 @@
+# ✅ **Module 5: Arrays + ES6 Array Methods**
+
+(বাংলায় Complete + Professional Interview Preparation)
+
+এই মডিউলে Array-এর সবচেয়ে গুরুত্বপূর্ণ concepts + interview-focused ছোট উত্তর + coding examples দেওয়া হলো।
+
+---
+
+# ✅ **1. Array Basics**
+
+### 📌 Definition
+
+Array হলো ordered list যেখানে multiple value index আকারে রাখা হয়।
+
+### 📌 Example
+
+```js
+const numbers = [10, 20, 30];
+```
+
+### 📌 Interview Answer
+
+Array হলো index-based ordered data structure যেখানে মানগুলো sequentially store হয় (starting index = 0)।
+
+---
+
+# ✅ **2. Array Mutation (push, pop, shift, unshift, splice)**
+
+### 📌 push() → last-এ add
+
+```js
+let arr = [1, 2];
+arr.push(3);  
+```
+
+### 📌 pop() → last থেকে remove
+
+```js
+arr.pop();
+```
+
+### 📌 shift() → first থেকে remove
+
+```js
+arr.shift();
+```
+
+### 📌 unshift() → first-এ add
+
+```js
+arr.unshift(0);
+```
+
+### 📌 splice() → add/remove at any index
+
+```js
+arr.splice(1, 1, 10); // index=1 remove 1 item, insert 10
+```
+
+### 📌 Interview Answer
+
+Array mutation methods original array পরিবর্তন করে। push, pop, shift, unshift, splice—all are mutating methods.
+
+---
+
+# --------------------------------------------
+
+# 🔥 **ES6 Array Iteration Methods (Most Asked in Interviews)**
+
+(map, filter, reduce → Always asked!)
+
+---
+
+# ✅ **3. forEach()**
+
+### 📌 Use
+
+Just loop করে, return দেয় না।
+
+### Example
+
+```js
+[1, 2, 3].forEach(num => console.log(num));
+```
+
+### 📌 Interview Answer
+
+forEach শুধু iterate করে, কোন value return বা নতুন array তৈরি করে না—এটি শুধুমাত্র side-effects-এর জন্য ব্যবহৃত হয়।
+
+---
+
+# ✅ **4. map()**
+
+### 📌 Use
+
+একটা array থেকে নতুন array তৈরি করে, transform করতে ব্যবহৃত হয়।
+
+### Example
+
+```js
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2);
+```
+
+### 📌 Interview Answer
+
+map মূল array না বদলে value পরিবর্তন করে নতুন array তৈরি করে — এটি pure transformation।
+
+---
+
+# ✅ **map() vs forEach() → Interview Gold Answer**
+
+| map()                   | forEach()            |
+| ----------------------- | -------------------- |
+| নতুন array return করে ✔ | কিছু return করে না ❌ |
+| functional & chainable  | chainable নয়         |
+| pure transformation     | mostly side-effects  |
+
+### 📌 **2-line Interview Answer**
+
+map নতুন array return করে, যেখানে forEach কিছুই return করে না। map transformation-এর জন্য, আর forEach looping-এর জন্য ব্যবহৃত হয়।
+
+---
+
+# --------------------------------------------
+
+# ✅ **5. filter()**
+
+### 📌 Use
+
+Condition true হলে value return করে **নতুন array** দেয়।
+
+### Example
+
+```js
+const nums = [1, 2, 3, 4];
+const evens = nums.filter(n => n % 2 === 0);
+```
+
+### 📌 Interview Answer
+
+filter condition অনুযায়ী elements বেছে নেয় এবং নতুন array return করে। এটি মূল array modify করে না।
+
+---
+
+# --------------------------------------------
+
+# ✅ **6. find()**
+
+### 📌 Use
+
+Condition true হলে প্রথম matching element return করে।
+
+### Example
+
+```js
+const users = [{id:1},{id:2}];
+const u = users.find(x => x.id === 2);
+```
+
+### 📌 Interview Answer
+
+find শুধু প্রথম matching element return করে—array নয়।
+
+---
+
+# --------------------------------------------
+
+# ✅ **7. findIndex()**
+
+### 📌 Use
+
+match পাওয়া element-এর index return করে।
+
+### Example
+
+```js
+const n = [5, 10, 15];
+const index = n.findIndex(x => x === 10); // 1
+```
+
+---
+
+# --------------------------------------------
+
+# 😎 **filter vs find → Interview Answer**
+
+| filter                                     | find                                   |
+| ------------------------------------------ | -------------------------------------- |
+| সব matching element array আকারে return করে | শুধু প্রথম matching element return করে |
+| always array                               | always value                           |
+
+### 📌 2-line Interview Answer
+
+filter condition-based all results return করে (array), কিন্তু find প্রথম matching value return করে।
+
+---
+
+# --------------------------------------------
+
+# ✅ **8. some()**
+
+### 📌 Use
+
+কমপক্ষে ১টা match পেলে true return করে।
+
+### Example
+
+```js
+const hasAdult = [12, 18, 20].some(age => age >= 18);
+```
+
+---
+
+# --------------------------------------------
+
+# ✅ **9. every()**
+
+### 📌 Use
+
+সব element condition pass করলে true return করে।
+
+### Example
+
+```js
+const allAdult = [18, 22, 30].every(age => age >= 18);
+```
+
+---
+
+# --------------------------------------------
+
+# ⭐ **some() vs every() → Interview Answer**
+
+| some                  | every                     |
+| --------------------- | ------------------------- |
+| ১টা হলেও match → true | সবগুলো match না হলে false |
+| OR logic              | AND logic                 |
+
+---
+
+# --------------------------------------------
+
+# ✅ **10. reduce() (Hard but Most Important)**
+
+### 📌 Use
+
+Array → single value convert করে
+(সর্বাধিক ব্যবহার হয় real projects এ)
+
+### Example
+
+Sum of array:
+
+```js
+const nums = [1, 2, 3];
+const total = nums.reduce((acc, cur) => acc + cur, 0);
+```
+
+### More Real Life Example
+
+Count occurrences:
+
+```js
+const fruits = ["apple", "banana", "apple"];
+
+const count = fruits.reduce((acc, item) => {
+  acc[item] = (acc[item] || 0) + 1;
+  return acc;
+}, {});
+```
+
+### 📌 Interview Answer
+
+reduce accumulator ব্যবহার করে array-কে একক মানে রূপান্তর করে—যেমন sum, average, grouping, counting।
+
+---
+
+# 👍 **reduce এর Real-Life Uses (Most Asked)**
+
+✔ Total price
+✔ Grouping
+✔ Counting
+✔ Flatten array
+✔ Convert array → object
+
+---
+
+# --------------------------------------------
+
+# ✅ **11. sort()**
+
+### 📌 Use
+
+alphabetically বা custom ভাবে সাজানো যায়
+⚠️ মূল array mutate করে
+
+### Example
+
+```js
+const nums = [10, 5, 20];
+nums.sort((a, b) => a - b); // ascending
+```
+
+### 📌 Interview Answer
+
+sort মূল array পরিবর্তন করে এবং compare function দিয়ে custom sorting করা যায়।
+
+---
+
+# --------------------------------------------
+
+# 🎯 **Final Interview Summary (Module 5)**
+
+### ✔ map vs forEach
+
+map নতুন array return করে, forEach শুধু loop করে।
+
+### ✔ filter vs find
+
+filter সব match (array) return করে, find শুধু প্রথম value return করে।
+
+### ✔ reduce
+
+reduce accumulator ব্যবহার করে array → single value তৈরি করে। সবচেয়ে powerful array method।
+
+---
+
+# 🎉 Module 5 Complete
+
+Ready for **Module 6 (Promises + Async/Await + Event Loop + Microtask Queue)**?

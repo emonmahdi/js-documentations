@@ -1,0 +1,34 @@
+# 🎯 **Top 30 Most Asked JavaScript Interview Concepts**
+
+(একেবারে নিচে Must Prepare)
+
+1. Hoisting
+2. Closure
+3. this keyword
+4. Event loop
+5. Var vs let vs const
+6. Spread vs rest
+7. Prototype inheritance
+8. Arrow function vs regular
+9. Promise vs async/await
+10. map vs forEach
+11. filter vs find
+12. Deep vs shallow copy
+13. Null vs undefined
+14. == vs ===
+15. Mutable vs immutable
+16. Higher order functions
+17. Callback vs promise
+18. Event bubbling
+19. Destructuring
+20. Currying
+21. Debouncing
+22. Throttling
+23. Set vs Map
+24. Factory function
+25. Memory lifecycle
+26. Block scope vs function scope
+27. TDZ
+28. Pure function
+29. Error handling
+30. JS Single-threaded model

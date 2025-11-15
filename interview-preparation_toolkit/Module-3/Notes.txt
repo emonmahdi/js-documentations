@@ -1,0 +1,313 @@
+নিশ্চয়! নিচে **Module 3: Functions (A to Z)** সম্পূর্ণভাবে দেওয়া হলো—
+✔ Definition
+✔ কেন ব্যবহার হয়
+✔ কিভাবে ব্যবহার হয়
+✔ Coding examples
+✔ Interview-focused 2–3 লাইনের উত্তর
+✔ Simple Bangla explanation
+
+---
+
+# 🚀 **Module 3: Functions (A to Z — Complete Interview Preparation)**
+
+---
+
+# ✅ **1. Function Declaration**
+
+### 📌 Definition
+
+Function declaration হলো function বানানোর traditional পদ্ধতি যেখানে `function` keyword ব্যবহার হয়।
+
+### 📌 Why Use
+
+✔ Hoisting হয় (function পুরোপুরি উপরে উঠে যায়)
+✔ কোড readable ও reusable হয়
+
+### 📌 Example
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(5, 3)); // 8
+```
+
+### 🎯 Interview Answer
+
+**Function declaration hoisted হয়, তাই কোডের আগে বা পরে কল করা যায়। এটি named function এবং traditional syntax।**
+
+---
+
+# ✅ **2. Function Expression**
+
+### 📌 Definition
+
+Function expression এ function কে একটি variable এর ভিতরে রাখা হয়।
+
+### 📌 Example
+
+```js
+const multiply = function (a, b) {
+  return a * b;
+};
+
+console.log(multiply(4, 5));
+```
+
+### 📌 Why Use
+
+✔ Not hoisted (safer, predictable)
+✔ Anonymous function support
+
+### 🎯 Interview Answer
+
+**Function expression hoisted হয় না কারণ এটি একটি variable-এ store হয়। এটি সবচেয়ে বেশি modern JS এ ব্যবহৃত হয়।**
+
+---
+
+# ✅ **3. Arrow Function (ES6)**
+
+### 📌 Definition
+
+Arrow function হলো shorthand function syntax, যেখানে `function` keyword ব্যবহার হয় না।
+
+### 📌 Why Use
+
+✔ Short syntax
+✔ Lexical `this` binding
+✔ Callback-এ বেশি সুবিধা
+
+### 📌 Example
+
+```js
+const sum = (a, b) => a + b;
+console.log(sum(3, 7));
+```
+
+---
+
+### ⚠️ Arrow Function `this` ভিন্নভাবে কাজ করে
+
+Arrow function নিজস্ব `this` তৈরি করে না; parent scope-এর `this` নেয় (lexical this)।
+
+### Example
+
+```js
+const obj = {
+  name: "Emon",
+  show: function () {
+    setTimeout(() => {
+      console.log(this.name); 
+    }, 1000);
+  }
+};
+
+obj.show(); // "Emon"
+```
+
+If we used a normal function instead of arrow, `this` undefined হয়ে যেত।
+
+---
+
+### 🎯 Interview Answer
+
+**Arrow function-এর নিজস্ব `this` নেই; parent scope থেকে `this` নেয়। এটি ছোট syntax এবং callback এ খুব useful।**
+
+---
+
+# ✅ **4. Parameter vs Argument**
+
+### 📌 Parameter
+
+Function define করার সময় variable গুলো → parameter।
+
+### 📌 Argument
+
+Function call করার সময় যে value পাঠাই → argument।
+
+### 📌 Example
+
+```js
+function greet(name) {   // name = parameter
+  console.log("Hello " + name);
+}
+
+greet("Mehedi");  // "Mehedi" = argument
+```
+
+### 🎯 Interview Answer
+
+**Parameters হলো function define-এর variable; arguments হলো function call-এর সময় পাঠানো value।**
+
+---
+
+# ✅ **5. Default Parameter**
+
+### 📌 Definition
+
+Function call-এর সময় argument না দিলে default value ব্যবহার করে।
+
+### 📌 Example
+
+```js
+function hello(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+hello();         // Hello Guest
+hello("Emon");   // Hello Emon
+```
+
+### 🎯 Interview Answer
+
+**Default parameter ব্যবহারে undefined argument পেলে fallback value পাওয়া যায়।**
+
+---
+
+# ✅ **6. IIFE (Immediately Invoked Function Expression)**
+
+### 📌 Definition
+
+Function declare করেই সঙ্গে সঙ্গে execute করার pattern।
+
+### 📌 Why Use
+
+✔ Global scope pollution কমাতে
+✔ Quick initialization
+
+### 📌 Example
+
+```js
+(function () {
+  console.log("IIFE Running");
+})();
+```
+
+### 🎯 Interview Answer
+
+**IIFE হলো self-invoking function যা declare হওয়ার সাথে সাথেই execute হয় এবং global scope পরিষ্কার রাখে।**
+
+---
+
+# ✅ **7. Pure vs Impure Function**
+
+### 📌 Pure Function
+
+✔ Same input → same output
+✔ No side effects
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+---
+
+### 📌 Impure Function
+
+✔ External data modify করে
+✔ Output unpredictable
+
+```js
+let x = 10;
+function addToX(a) {
+  x += a;           // modifies external variable
+  return x;
+}
+```
+
+### 🎯 Interview Answer
+
+**Pure function predictable, testable এবং side-effect free। Impure function বাহিরের state পরিবর্তন করে।**
+
+---
+
+# ✅ **8. Higher-Order Function (HOF)**
+
+### 📌 Definition
+
+যে function আরেকটি function কে argument হিসেবে নেয় অথবা return করে → HOF।
+
+### 📌 Example
+
+```js
+function calculate(a, b, fn) {
+  return fn(a, b);
+}
+
+const add = (x, y) => x + y;
+
+console.log(calculate(5, 3, add)); // 8
+```
+
+### 📌 Why Use
+
+✔ Reusable
+✔ Cleaner code
+✔ Functional programming base
+
+### 🎯 Interview Answer
+
+**Higher-order function অন্য function কে parameter হিসেবে নেয় বা return করে। এই concept functional programming এর core।**
+
+---
+
+# ✅ **9. Callback Function**
+
+### 📌 Definition
+
+যে function অন্য function-এর argument হয়ে কাজ করে → callback।
+
+### 📌 Example
+
+```js
+function greetUser(callback) {
+  callback("Mehedi");
+}
+
+greetUser((name) => {
+  console.log("Hello " + name);
+});
+```
+
+### 📌 Why Use
+
+✔ Event handling
+✔ Asynchronous operations
+✔ Flexible structure
+
+### 🎯 Interview Answer
+
+**Callback হলো এমন function যা অন্য function এর ভিতরে argument হিসেবে execute হয়। JS async কাজগুলো control করতে callback ব্যবহার করে।**
+
+---
+
+# 🎯 **Most Asked Interview Questions (Module 3)**
+
+### ❓ Arrow function vs normal function?
+
+**Arrow function-এর নিজস্ব `this`, arguments object নেই এবং concise syntax দেয়; normal function hoisted হয় এবং নিজের `this` তৈরি করে।**
+
+---
+
+### ❓ What is a higher-order function?
+
+**যে function আরেকটা function নেয় বা return করে—যেমন map, filter, reduce।**
+
+---
+
+### ❓ What are pure functions?
+
+**Same input দিলে same output দেয় এবং কোনো external state modify করে না।**
+
+---
+
+### ❓ What is IIFE?
+
+**Immediately Invoked Function Expression—function declare করেই execute হয়।**
+
+---
+
+# 🎁 Ready for **Module 4: Objects & Prototypes (with this, shallow/deep copy, prototype chain, interview Q&A)?**

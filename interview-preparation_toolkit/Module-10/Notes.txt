@@ -1,0 +1,242 @@
+Below is **Module 10: DOM & Browser Concepts** — full explanation, interview-oriented, and in Bangla with code examples.
+
+---
+
+# ✅ **MODULE 10: DOM & Browser Concepts**
+
+Full Stack Developer হলেও কিছু DOM + Browser API question জিজ্ঞেস করা হয়, কারণ frontend knowledge essential.
+
+---
+
+# 🔹 1) **DOM Tree (Document Object Model)**
+
+DOM হলো HTML-এর Programming Structure।
+JS দিয়ে HTML element select, modify, add, remove করতে DOM ব্যবহার করা হয়।
+
+### ✔ Example (Simple DOM Tree)
+
+```
+Document
+ └── html
+      ├── head
+      └── body
+           ├── h1
+           └── button
+```
+
+---
+
+# 🔹 2) **Selecting Elements**
+
+### ✔ ID
+
+```js
+document.getElementById("title");
+```
+
+### ✔ Class
+
+```js
+document.getElementsByClassName("item");
+```
+
+### ✔ Query Selector (Most Used)
+
+```js
+document.querySelector("#title");
+document.querySelectorAll(".item");
+```
+
+---
+
+# 🔹 3) **Event Handling**
+
+ইভেন্ট হলো user action → click, input, submit ইত্যাদি।
+
+### ✔ Example
+
+```js
+document.getElementById("btn").addEventListener("click", function () {
+  alert("Button clicked!");
+});
+```
+
+---
+
+# 🔹 4) **Event Bubbling vs Capturing**
+
+*(Most Asked in Interviews)*
+
+### ✔ Event Bubbling (Default)
+
+ইভেন্ট **child → parent → root** দিকে propagate হয়।
+
+```
+button → div → body → document
+```
+
+### ✔ Example:
+
+```js
+document.getElementById("child").addEventListener("click", () => {
+  console.log("Child clicked");
+});
+
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent clicked");
+});
+```
+
+👉 Output:
+
+```
+Child clicked  
+Parent clicked  
+```
+
+---
+
+### ✔ Event Capturing
+
+ইভেন্ট **parent → child** দিকে propagate হয়।
+
+```js
+parent.addEventListener("click", handler, true);
+```
+
+👉 third parameter = **true** → capturing enabled
+
+---
+
+# 🔹 5) **LocalStorage vs SessionStorage**
+
+| Topic         | LocalStorage             | SessionStorage        |
+| ------------- | ------------------------ | --------------------- |
+| Lifetime      | browser close করলেও থাকে | tab close করলে delete |
+| Storage limit | ~ 5MB                    | ~ 5MB                 |
+| Use           | token save, theme, cart  | form temporary data   |
+
+### ✔ Example
+
+```js
+localStorage.setItem("name", "Emon");
+localStorage.getItem("name");
+```
+
+---
+
+# 🔹 6) **Cookies**
+
+Browser-এ ছোট data store করার উপায়।
+Browser automatically server-এ cookie পাঠায়।
+
+### ✔ Example
+
+```js
+document.cookie = "token=123; max-age=3600";
+```
+
+---
+
+# 🔹 7) **Tokens (Auth Concepts)**
+
+### ✔ JWT Token
+
+Login successful হলে server user-এর জন্য token তৈরি করে।
+User → token localStorage/cookie-তে store করে।
+
+Used for:
+✔ Authentication
+✔ Authorization
+
+---
+
+# 🔹 8) **Fetch API**
+
+Fetch modern browser API to call backend.
+
+### ✔ GET request:
+
+```js
+fetch("https://api.com/users")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
+```
+
+---
+
+### ✔ POST request:
+
+```js
+fetch("https://api.com/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email: "test@test.com", password: "1234" }),
+});
+```
+
+---
+
+# 🔹 9) **Fetch vs Axios (Interview Hot Question)**
+
+### ✔ Fetch
+
+* built-in (no installation)
+* response manually parse করতে হয় (`res.json()`)
+* error handling hard
+* no timeout support
+
+### ✔ Axios
+
+* external library
+* auto JSON parsing
+* better error handling
+* supports timeout
+* interceptors আছে (token attach)
+
+---
+
+# 🎯 INTERVIEW FOCUS ANSWERS
+
+---
+
+## ✔ **1) What is Event Bubbling? (Interview Answer)**
+
+**Answer:**
+Event Bubbling হলো এমন একটি event propagation system যেখানে ইভেন্ট প্রথমে child element-এ trigger হয়, তারপর ধীরে ধীরে তার parent elements পর্যন্ত যায়।
+
+Example order:
+
+```
+button → div → body → document
+```
+
+---
+
+## ✔ **2) Fetch vs Axios difference? (Interview Answer)**
+
+**Answer:**
+Fetch একটি built-in browser API কিন্তু axios একটি third-party library।
+Axios automatically JSON parse করে, better error handling দেয় এবং interceptors + timeout support করে।
+Fetch-এ manually JSON convert এবং error handle করতে হয়।
+
+---
+
+# 🧪 Practice Tasks (Interview Level)
+
+### ✔ Task 1
+
+একটি button click করলে background color change করুন।
+
+### ✔ Task 2
+
+localStorage-এ user name save করে page reload করলে দেখান।
+
+### ✔ Task 3
+
+Fetch দিয়ে dummy API থেকে posts load করুন।
+
+---
+
+If you want, I can continue with **Module 11: Browser Events, Timers & Web APIs Deep Dive** or jump to **Node.js Backend Modules**.

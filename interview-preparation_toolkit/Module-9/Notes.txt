@@ -1,0 +1,230 @@
+Below is **Module 9: Error Handling & Debugging** — simple, clear, interview-oriented, and in Bangla with examples.
+
+---
+
+# ✅ **MODULE 9: Error Handling & Debugging**
+
+JavaScript-এ error handling খুব গুরুত্বপূর্ণ, বিশেষ করে asynchronous code, API call, এবং বড় project-এ।
+
+---
+
+# 🔹 1) **try…catch (Most Used)**
+
+try block → এমন code যেটা error করতে পারে
+catch block → error ধরবে
+
+### ✔ Example
+
+```js
+try {
+  let a = undefinedVariable; // ReferenceError
+} catch (error) {
+  console.log("Error occurred:", error.message);
+}
+```
+
+👉 Output:
+`Error occurred: undefinedVariable is not defined`
+
+---
+
+# 🔹 2) **throw (Custom Errors)**
+
+নিজের মতো custom error throw করা যায়।
+
+### ✔ Example
+
+```js
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  return a / b;
+}
+
+try {
+  console.log(divide(10, 0));
+} catch (err) {
+  console.log(err.message);
+}
+```
+
+---
+
+# 🔹 3) **Developer Tools Console**
+
+Chrome DevTools → সবচেয়ে powerful debugging tools
+আপনি দেখতে পারবেন:
+
+✔ Console logs
+✔ Errors
+✔ Network requests
+✔ Sources → breakpoints
+✔ Call stack
+
+---
+
+# 🔹 4) **Debugger (Most Professional Method)**
+
+Code execution line by line control করার জন্য debugger ব্যবহার করা হয়।
+
+### ✔ Example
+
+```js
+function test() {
+  debugger; // Execution will pause here
+  let x = 10;
+  let y = 20;
+  return x + y;
+}
+
+test();
+```
+
+👉 Chrome DevTools → Sources tab → code pause হবে
+👉 Variables দেখে bug খুঁজে বের করতে পারবেন
+
+---
+
+# 🔹 5) **Common JavaScript Errors**
+
+### ✔ 1) SyntaxError
+
+Code structure ভুল হলে।
+
+```js
+console.log("Hello"  
+```
+
+---
+
+### ✔ 2) ReferenceError
+
+Variable define না থাকলে।
+
+```js
+console.log(a); // a is not defined
+```
+
+---
+
+### ✔ 3) TypeError
+
+Wrong type of value ব্যবহার করলে।
+
+```js
+let num = 5;
+num.toUpperCase(); // TypeError
+```
+
+---
+
+### ✔ 4) RangeError
+
+Value range limit cross করলে।
+
+```js
+let arr = new Array(-5); // RangeError
+```
+
+---
+
+# 🎯 INTERVIEW FOCUS
+
+---
+
+## ✔ **1) How to handle async errors? (Interview Answer)**
+
+### **Answer (Short + Professional):**
+
+async/await ব্যবহার করলে errors try/catch দিয়ে handle করতে হয়।
+Promise chaining ব্যবহার করলে `.catch()` দিয়ে error ধরতে হয়।
+Async code কখনো synchronous try/catch দিয়ে catch হবে না—এজন্য await এর সাথে try/catch অত্যন্ত গুরুত্বপূর্ণ।
+
+---
+
+### ✔ async/await example
+
+```js
+async function fetchData() {
+  try {
+    let res = await fetch("https://api.com/data");
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log("Async Error:", err.message);
+  }
+}
+```
+
+---
+
+### ✔ Promise example
+
+```js
+fetch("https://api.com/data")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log("Promise Error:", err.message));
+```
+
+---
+
+## ✔ **2) try/catch vs .catch() difference**
+
+| Concept    | try/catch                           | .catch()               |
+| ---------- | ----------------------------------- | ---------------------- |
+| Use        | async/await                         | Promises               |
+| Works for  | synchronous + async (await-এর সাথে) | only promise errors    |
+| Code style | cleaner                             | chaining grows         |
+| Example    | await fetch()                       | fetch().then().catch() |
+
+---
+
+### ✔ Example Difference
+
+#### Using try/catch (async/await)
+
+```js
+async function getUser() {
+  try {
+    const res = await fetch("/user");
+    return await res.json();
+  } catch (err) {
+    console.log("Error:", err);
+  }
+}
+```
+
+#### Using .catch()
+
+```js
+fetch("/user")
+  .then(res => res.json())
+  .catch(err => console.log("Error:", err));
+```
+
+---
+
+# 🧪 Practical Error Handling Tasks
+
+### ✔ Task 1:
+
+TypeError catch করার চেষ্টা করুন
+
+```
+let x = 10;
+x.toLowerCase();
+```
+
+### ✔ Task 2:
+
+API call করে try/catch practice করুন
+
+### ✔ Task 3:
+
+Debugger ব্যবহার করে variable trace করুন
+
+---
+
+If you want, I can send **Module 10: DOM & Browser APIs** next.

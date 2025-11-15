@@ -1,0 +1,212 @@
+নিশ্চয়! নিচে **Module 2: Execution, Memory & Scope** সম্পূর্ণ ইন্টারভিউ ফোকাসডভাবে সাজানো হলো—
+✔ Definition
+✔ কেন ব্যবহার হয়
+✔ Coding Example
+✔ 2–3 লাইনের ইন্টারভিউ উত্তর
+✔ Easy-to-understand flow
+
+---
+
+# 🚀 **Module 2: Execution, Memory & Scope (Deep + Simple + Interview-ready)**
+
+---
+
+# ✅ **1. JavaScript Compilation & Execution**
+
+### 📌 Definition
+
+JS কোড প্রথমে **Compilation Phase** এ parse হয়, scope তৈরি হয় এবং hoisting ঘটে।
+তারপর **Execution Phase** এ কোড line-by-line execute হয়।
+
+### 📌 Why Use
+
+✔ কোড কিভাবে কাজ করে তা বুঝলে bug reduce হয়
+✔ hoisting, scope, TDZ বুঝতে সহজ হয়
+
+### 📌 Example
+
+```js
+console.log(x);   // undefined
+var x = 10;
+```
+
+### 🎯 Interview Answer
+
+**JavaScript দুটি ধাপে চলে—Compilation (scope creation + hoisting) এবং Execution (value assign + code run)। Engines like V8 AST তৈরি করে এবং পরে execute করে।**
+
+---
+
+# ✅ **2. Memory Heap & Call Stack**
+
+### 📌 Memory Heap
+
+Objects & functions store হয় unordered large memory area-তে।
+
+### 📌 Call Stack
+
+JS execution stack — function call one-by-one push/pop হয়।
+
+### 📌 Example
+
+```js
+function a(){ b(); }
+function b(){ console.log("Run"); }
+a();
+```
+
+Call Stack Flow → `a()` → `b()` → print → pop
+
+### 📌 Why Use
+
+✔ Understand async
+✔ Stack overflow avoid
+✔ Memory management
+
+### 🎯 Interview Answer
+
+**Heap ডাটা store করে; Call Stack function execution control করে। JS single-threaded তাই এক সময় একটাই stack frame execute হয়।**
+
+---
+
+# ✅ **3. Hoisting**
+
+### 📌 Definition
+
+JS প্রথমে variable & function declaration উপরে তুলে নেয় (during compilation)।
+
+### 📌 Why Important
+
+✔ var, let, const এর behaviour বুঝতে খুব জরুরি
+✔ TDZ concept clear হয়
+
+### 📌 Example
+
+```js
+console.log(a);  // undefined
+var a = 5;
+
+console.log(b);  // ReferenceError
+let b = 10;
+```
+
+### 🎯 Interview Answer
+
+**var hoist হয় এবং undefined হয়; let/const ও hoist হয় কিন্তু TDZ এর কারণে value assign না হওয়া পর্যন্ত access করা যায় না।**
+
+---
+
+# ✅ **4. Scope (Global, Local, Block, Function)**
+
+### 📌 Global Scope
+
+সব জায়গা থেকে access করা যায়।
+
+```js
+var x = 10;
+function test() { console.log(x); }
+```
+
+---
+
+### 📌 Function Scope
+
+var শুধুমাত্র function এর ভেতরে কার্যকর।
+
+```js
+function test(){
+  var a = 20;
+}
+```
+
+---
+
+### 📌 Block Scope
+
+let & const block `{ }` এর মধ্যে সীমাবদ্ধ।
+
+```js
+if(true){
+  let y = 50;
+}
+```
+
+---
+
+### 📌 Why Use
+
+✔ Maintain clean code boundary
+✔ Avoid variable name collision
+✔ Predictable behavior
+
+### 🎯 Interview Answer
+
+**var function scoped; let/const block scoped। Scope variable accessibility control করে এবং memory leak কমায়।**
+
+---
+
+# ✅ **5. Temporal Dead Zone (TDZ)**
+
+### 📌 Definition
+
+`let` ও `const` hoist হয় কিন্তু initialization এর আগে access করলে error দেয়—এই সময়টাকে TDZ বলে।
+
+### 📌 Why Use
+
+✔ Prevents accidental usage
+✔ Safer variables
+✔ Predictable behavior
+
+### 📌 Example
+
+```js
+console.log(a); // ReferenceError
+let a = 10;
+```
+
+### 🎯 Interview Answer
+
+**TDZ মানে hoisting এর পর থেকে initialization পর্যন্ত সময় যেখানে variable access করা যায় না। এটি let/const কে var থেকে safer করে।**
+
+---
+
+# 🎯 **Most Important Interview Q&A (Module 2)**
+
+---
+
+### ❓ **How JavaScript works?**
+
+**JS প্রথমে compilation করে scope ও hoisting তৈরি করে, তারপর execution phase এ code run করে। Call Stack execution control করে, memory heap এ ডাটা store হয়।**
+
+---
+
+### ❓ **What is hoisting?**
+
+**JS কোড চলার আগে declaration গুলো top-এ তুলে নেয়। var undefined হয়, let/const TDZ তে থাকে, function declaration পুরোপুরি hoist হয়।**
+
+---
+
+### ❓ **Does let/const get hoisted?**
+
+**হ্যাঁ hoist হয়, কিন্তু TDZ থাকার কারণে initialization এর আগে access করলে error দেয়।**
+
+---
+
+### ❓ **What is the difference between Global, Function & Block scope?**
+
+**Global সব জায়গায় accessible, function scope var এর জন্য, আর block scope let/const এর জন্য boundary তৈরি করে।**
+
+---
+
+### ❓ **What is the call stack?**
+
+**Function execution manage করার structure যেখানে LIFO ভাবে function push/pop হয়।**
+
+---
+
+### ❓ **What is memory heap?**
+
+**Objects, functions এবং reference type ডাটা store হয় heap-এ।**
+
+---
+
+# 🎁 Want Module 3: Function (A to Z — Declaration, Arrow, Higher-order, this, IIFE, Pure/Impure, Callback, interview Q&A)?

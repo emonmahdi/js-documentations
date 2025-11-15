@@ -1,0 +1,122 @@
+Here is **Module 12: JavaScript Performance Optimization** — explained clearly in Bangla with interview-style answers and examples.
+
+---
+
+# ✅ **MODULE 12: JavaScript Performance Optimization**
+
+JavaScript কোড দ্রুত এবং efficient করা প্রজেক্টে খুব গুরুত্বপূর্ণ।
+
+---
+
+# 🔹 1) **Time Complexity in JS**
+
+✔ Time complexity হলো algorithm কতো দ্রুত চলবে তার মাপ।
+
+### Example:
+
+```js
+// O(n) time — linear
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+// O(1) time — constant (fast)
+console.log(arr[0]);
+```
+
+---
+
+# 🔹 2) **Avoid Mutation (Immutable Data)**
+
+✔ Data পরিবর্তন না করে নতুন copy তৈরি করুন।
+
+✔ Mutable code bugs বেশি এবং debugging কঠিন করে।
+
+```js
+// Bad (mutation)
+const arr = [1, 2, 3];
+arr.push(4);
+
+// Good (immutable)
+const newArr = [...arr, 4];
+```
+
+---
+
+# 🔹 3) **Lazy Loading**
+
+✔ প্রয়োজন হলে resource load করা।
+
+✔ Page load দ্রুত হয় এবং ইউজার experience ভালো হয়।
+
+### Example: React Lazy Loading
+
+```js
+const LazyComponent = React.lazy(() => import("./Component"));
+```
+
+---
+
+# 🔹 4) **Using Map/Set for Faster Lookup**
+
+✔ Array vs Map/Set — search/lookup সময় কমে।
+
+### Example:
+
+```js
+const arr = [1,2,3,4];
+console.log(arr.includes(3));  // O(n)
+
+const set = new Set([1,2,3,4]);
+console.log(set.has(3));      // O(1)
+```
+
+---
+
+# 🔹 5) **How JS Engine Optimizes Code**
+
+✔ Modern JS engine (V8, SpiderMonkey) code runtime optimization করে।
+
+✔ Techniques: Just-In-Time (JIT) compilation, inline caching, hidden classes.
+
+---
+
+# 🎯 **INTERVIEW FOCUS ANSWERS**
+
+---
+
+## ✔ **1) Why use Map/Set?**
+
+**Answer:**
+Map ও Set দ্রুত lookups, insertions এবং deletions করতে পারে কারণ তারা hash-based data structure ব্যবহার করে। Array-এর মতো sequential search করতে হয় না।
+
+---
+
+## ✔ **2) Best Practices for Performance**
+
+* Avoid unnecessary DOM manipulation
+* Use immutable data structures
+* Debounce/throttle expensive operations
+* Use Web Workers for heavy tasks
+* Minimize reflows and repaints
+* Optimize loops and avoid nested loops when possible
+
+---
+
+# 🧪 **Practice Tasks**
+
+### ✔ Task 1
+
+Create a Set from an array and check if a value exists.
+
+### ✔ Task 2
+
+Write a function to debounce window resize event.
+
+### ✔ Task 3
+
+Compare performance of array includes() vs set has() for large data.
+
+---
+
+Would you like **Module 13: React.js Core Concepts & Performance** next?

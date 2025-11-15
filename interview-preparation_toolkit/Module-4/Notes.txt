@@ -1,0 +1,524 @@
+# ✅ **Module 4: Objects & Prototypes (Complete Prep in Bangla)**
+
+Definition + Coding Example + Interview Answer (2–3 lines)
+
+---
+
+# ✅ **1. Object Creation (অবজেক্ট তৈরির উপায়)**
+
+### 📌 **Definition (Bangla)**
+
+Object হলো key–value pair-এর collection, যেখানে data এবং function দুটোই রাখা যায়।
+
+### 📌 **How to Create**
+
+#### ✔ Object Literal
+
+```js
+const user = {
+  name: "Mehedi",
+  age: 23
+};
+```
+
+#### ✔ Constructor Function
+
+```js
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const u1 = new User("Mehedi", 23);
+```
+
+#### ✔ Object.create()
+
+```js
+const obj = Object.create(null);
+obj.name = "Mehedi";
+```
+
+### 📌 **Interview Answer**
+
+JavaScript-এ object key–value pair আকারে ডাটা রাখে এবং behavior ধারণ করতে পারে। Object literal, constructor, Object.create()—সবই object তৈরির উপায়।
+
+---
+
+# ✅ **2. Dot vs Bracket Notation**
+
+### 📌 Dot Notation
+
+```js
+user.name
+```
+
+### 📌 Bracket Notation
+
+```js
+user["name"]
+```
+
+### 📌 কখন bracket ব্যবহার করবেন?
+
+✔ যখন key dynamic
+✔ যখন key স্পেস বা স্পেশাল চিহ্ন থাকে
+
+### 📌 Interview Answer
+
+Dot notation direct property access করে, কিন্তু bracket notation dynamic key বা invalid identifier key access করতে ব্যবহৃত হয়।
+
+---
+
+# ✅ **3. Object Methods**
+
+### 📌 Common Methods
+
+```js
+const user = {
+  name: "Mehedi",
+  greet() {
+    console.log("Hello " + this.name);
+  }
+};
+
+user.greet();
+```
+
+### Built-in Methods
+
+* `Object.keys(obj)`
+* `Object.values(obj)`
+* `Object.entries(obj)`
+* `Object.assign(target, source)`
+
+### 📌 Interview Answer
+
+Object method হলো function যা object-এর মধ্যে define করা থাকে এবং `this` দিয়ে object-এর data access করে।
+
+---
+
+# ✅ **4. Object Destructuring**
+
+### 📌 Example
+
+```js
+const user = { name: "Mehedi", age: 23 };
+
+const { name, age } = user;
+
+console.log(name, age);
+```
+
+### 📌 Nested Destructuring
+
+```js
+const user = {
+  info: {
+    city: "Dhaka"
+  }
+};
+
+const {
+  info: { city },
+} = user;
+```
+
+### 📌 Interview Answer
+
+Destructuring হলো object থেকে variables-এ value সহজে বের করার shortcut syntax।
+
+---
+
+# ✅ **5. Object.freeze() vs Object.seal()**
+
+### 📌 Object.freeze()
+
+✔ নতুন property add করা যাবে না
+✔ delete করা যাবে না
+✔ value modify করা যাবে না (fully locked)
+
+```js
+const user = Object.freeze({ name: "Mehedi" });
+user.name = "Hasan"; // ❌ change হবে না
+```
+
+### 📌 Object.seal()
+
+✔ নতুন property add করা যাবে না
+✔ delete করা যাবে না
+✔ but value modify করা যাবে ✔
+
+```js
+const user = Object.seal({ name: "Mehedi" });
+user.name = "Hasan"; // ✔ allowed
+```
+
+### 📌 Interview Answer
+
+freeze পুরো object lock করে, seal শুধু নতুন property add/delete ব্লক করে, কিন্তু modify allow করে।
+
+---
+
+# ✅ **6. Prototype & Prototype Chain**
+
+### 📌 **Definition (Bangla)**
+
+Prototype হলো object-এর hidden reference, যেখান থেকে object আরেকটি object-এর property বা method inherit করে।
+
+### 📌 Example
+
+```js
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.sayHello = function () {
+  console.log("Hello " + this.name);
+};
+
+const p1 = new Person("Mehedi");
+p1.sayHello();
+```
+
+### 📌 Prototype Chain
+
+যখন property খুঁজতে হয়, তখন JS নিজ object → prototype → prototype chain ধরে খুঁজে।
+
+---
+
+### 📌 **Interview 2–3 line Answer (Gold Answer)**
+
+Prototype হলো object-এর parent-like structure যার মাধ্যমে inheritance হয়। Property না পেলে JavaScript prototype chain ধরে উপরের object থেকে খুঁজে নেয়—এটাই prototype chain।
+
+---
+
+# ✅ **7. `this` Keyword (Deep Explanation)**
+
+### 📌 এই ৪ ক্ষেত্রে `this` ভিন্ন হয়:
+
+### ✔ 1. Global Context
+
+```js
+console.log(this);  // window / global
+```
+
+### ✔ 2. Inside Object Method
+
+```js
+const user = {
+  name: "Mehedi",
+  show() {
+    console.log(this.name);
+  }
+};
+
+user.show(); // Mehedi
+```
+
+### ✔ 3. Constructor Function
+
+```js
+function User(name) {
+  this.name = name;
+}
+
+const u = new User("Mehedi");
+```
+
+### ✔ 4. Arrow Function → No this
+
+Arrow নিজস্ব this রাখে না, outer scope থেকে নেয়।
+
+```js
+const user = {
+  name: "Mehedi",
+  arrow: () => console.log(this.name)
+};
+
+user.arrow(); // undefined
+```
+
+---
+
+### 📌 Interview Answer (Short)
+
+`this` context-based: object method-এ object কে refer করে, constructor-এ instance কে refer করে, arrow function-এ lexical scope থেকে নেয়।
+
+---
+
+# ✅ **8. Shallow Copy vs Deep Copy**
+
+### ✔ Shallow Copy → শুধু ১ লেভেল copy
+
+```js
+const obj1 = { a: 1, b: { x: 5 } };
+const shallow = { ...obj1 };
+
+shallow.b.x = 10;
+console.log(obj1.b.x); // 10  ❌
+```
+
+### ✔ Deep Copy → সব লেভেল copy
+
+```js
+const obj1 = { a: 1, b: { x: 5 } };
+const deep = JSON.parse(JSON.stringify(obj1));
+
+deep.b.x = 10;
+console.log(obj1.b.x); // 5 ✔
+```
+
+### 📌 Interview Answer
+
+Shallow copy nested object reference copy করে, deep copy পুরো object নতুন memory-তে clone করে।
+
+---
+
+# 🎯 Want Module 5?
+
+Next Module: **Module 5 - Arrays & Data Handling (map, filter, reduce, spread, rest, cloning, sorting)**
+চাইলে এখনই বানিয়ে দিচ্ছি!
+
+
+------------------------------------------
+
+# ✅ **Module 4: Advanced Functions – Closures, Lexical Scope, Currying, Bind/Call/Apply**
+
+(বাংলায় সহজ ভাষায় + Interview answer + Coding examples)
+
+---
+
+# 🎯 **Module Overview**
+
+এই মডিউলটি JavaScript-এর সবচেয়ে গুরুত্বপূর্ণ (এবং সবচেয়ে বেশি জিজ্ঞাসা করা) concepts নিয়ে।
+যদি এগুলো ভালো বোঝেন — JS interview ৫০% জিতে যাবেন।
+
+---
+
+# ✅ **1. Lexical Scope (লেক্সিক্যাল স্কোপ)**
+
+### 📌 **Definition (Bangla)**
+
+যে স্কোপ থেকে একটি ফাংশন **create** হয়, ভবিষ্যতে ফাংশনটি সেই স্কোপ ব্যবহার করে ভ্যারিয়েবল access করে — এটাকেই lexical scope বলে।
+
+### 📌 **Simple Example**
+
+```js
+function outer() {
+  let name = "Mehedi";
+
+  function inner() {
+    console.log(name);  
+  }
+
+  inner();
+}
+
+outer();
+```
+
+### 📌 **Interview Answer (2 lines)**
+
+**Lexical scope মানে:** inner function সবসময় outer scope-এর variable access করতে পারে, কারণ function যেখানে তৈরি হয় সেখানকার scope সে মনে রাখে।
+
+---
+
+# ✅ **2. Closures (ক্লোজার)**
+
+### 📌 **Definition (Bangla)**
+
+একটি function তার outer function-এর variable retain করে যখন outer function execute শেষ হয়ে গেলেও — একে Closure বলে।
+
+### 📌 **Simple Coding Example**
+
+```js
+function counter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const inc = counter();
+inc(); //1
+inc(); //2
+```
+
+### 📌 **Why Use Closure?**
+
+✔ Data hiding
+✔ Private variable তৈরি
+✔ State ধরে রাখা
+
+### 📌 **Interview 2-line Answer**
+
+Closure হলো এমন একটি function যেটি outer scope-এর variable মনে রাখে—even outer function return হওয়ার পরেও।
+
+---
+
+# ✅ **3. Currying (কারিং)**
+
+### 📌 **Definition**
+
+যখন একটি function একাধিক parameter না নিয়ে **একটি parameter প্রতি function return** করে—এটাকে Currying বলে।
+
+### 📌 **Example**
+
+```js
+function add(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+
+console.log(add(1)(2)(3)); // 6
+```
+
+### 📌 **Why Use?**
+
+✔ reusable functions
+✔ easy partial application
+
+### 📌 **Interview Answer**
+
+Currying হলো multi-parameter function-কে single-parameter function-এর চেইনে ভেঙে ফেলা।
+
+---
+
+# ✅ **4. Callback Function**
+
+### 📌 **Definition**
+
+যে function-কে আরেকটা function parameter হিসেবে নেয়, এবং পরে execute করে তাকে callback বলে।
+
+### 📌 **Example**
+
+```js
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+function processUser(callback) {
+  let user = "Mehedi";
+  callback(user);
+}
+
+processUser(greet);
+```
+
+### 📌 **Interview 2-line Answer**
+
+Callback হলো function-as-a-parameter concept, যা asynchronous code handle করতে ব্যবহৃত হয়।
+
+---
+
+# ✅ **5. Higher Order Function (HOF)**
+
+### 📌 **Definition**
+
+যে function আরেকটি function-কে **parameter হিসেবে নেয়** বা **return করে**, সেটি Higher Order Function।
+
+### 📌 Example
+
+```js
+function multiplyBy(factor) {
+  return function (num) {
+    return num * factor;
+  };
+}
+
+const double = multiplyBy(2);
+console.log(double(5)); // 10
+```
+
+### 📌 Interview Answer
+
+Higher-order function মানে সেই function যেটি আরেকটা function-কে input বা output হিসেবে ব্যবহার করে।
+
+---
+
+# ✅ **6. call(), apply(), bind()**
+
+## 💠 **call()**
+
+Function instant execute হয় এবং arguments কমা দিয়ে পাঠাতে হয়।
+
+```js
+function greet(city) {
+  console.log(this.name, city);
+}
+
+greet.call({ name: "Mehedi" }, "Dhaka");
+```
+
+---
+
+## 💠 **apply()**
+
+call-এর মতোই, কিন্তু arguments array আকারে দিতে হয়।
+
+```js
+greet.apply({ name: "Mehedi" }, ["Dhaka"]);
+```
+
+---
+
+## 💠 **bind()**
+
+Function কো copy তৈরি করে — later use করা যায়।
+
+```js
+const fn = greet.bind({ name: "Mehedi" }, "Dhaka");
+fn(); 
+```
+
+---
+
+### 📌 **Interview Answer (2 lines)**
+
+* **call:** function immediately run করে, argument comma দিয়ে যায়
+* **apply:** function immediately run করে, argument array দিয়ে যায়
+* **bind:** নতুন function return করে, পরে run করা যায়
+
+---
+
+# 🎯 **7. this Binding (Arrow vs Normal Function)**
+
+## 🔹 Normal Function → নিজস্ব “this” আছে
+
+## 🔹 Arrow Function → “this” নেই, outer lexical scope ব্যবহার করে
+
+### Example
+
+```js
+const person = {
+  name: "Mehedi",
+  normal() {
+    console.log(this.name);
+  },
+  arrow: () => {
+    console.log(this.name);
+  }
+};
+
+person.normal();  // Mehedi
+person.arrow();   // undefined
+```
+
+### Interview Answer (2 lines)
+
+Arrow function নিজের “this” bind করে না, বরং outer lexical scope থেকে নেয়।
+
+---
+
+# 🎉 আপনার Module 4 সম্পূর্ণ!
+
+আপনি চাইলে এখন **Module 5: Array & Object Mastery (map, filter, reduce, destructuring, spread, rest)** শুরু করতে পারি।
+
+বলবেন?
+

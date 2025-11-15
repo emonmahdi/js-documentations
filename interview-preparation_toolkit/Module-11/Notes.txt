@@ -1,0 +1,319 @@
+Below is **Module 11: Advanced JavaScript (Must Know)** — interview-level, simple Bangla explanation, real-life examples, coding samples, and 2–3 lines professional answers.
+
+---
+
+# ✅ **MODULE 11: Advanced JavaScript (Most Asked in Interviews)**
+
+---
+
+# 🔹 1) **Closures**
+
+Closure হলো এমন একটি function যেটা তার parent function-এর variable access করতে পারে, even after parent function execution is finished.
+
+### ✔ Example
+
+```js
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+```
+
+---
+
+### 🎯 **Closure Real-Life Example (Interview Answer)**
+
+**Answer:**
+Browser-এ input search debounce, private variables, API caching — সব জায়গায় closure ব্যবহার হয়।
+Closure variable-কে encapsulated রাখে, অন্য জায়গা থেকে directly modify করা যায় না।
+
+---
+
+# 🔹 2) **Currying**
+
+একটি function বহু argument নেওয়ার বদলে একবারে একটি argument নেয় এবং nested function return করে।
+
+### ✔ Example
+
+```js
+function curry(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+
+console.log(curry(1)(2)(3)); // 6
+```
+
+---
+
+# 🔹 3) **Memoization**
+
+Expensive function-এর result cache করে পরের বার calculation না করে cache থেকে return করা।
+
+### ✔ Example
+
+```js
+function memoize(fn) {
+  let cache = {};
+  return function (num) {
+    if (cache[num]) return cache[num];
+    const result = fn(num);
+    cache[num] = result;
+    return result;
+  };
+}
+
+function slowSquare(n) {
+  for (let i = 0; i < 100000000; i++) {}
+  return n * n;
+}
+
+const fastSquare = memoize(slowSquare);
+
+console.log(fastSquare(5)); // Fast on second call
+console.log(fastSquare(5));
+```
+
+---
+
+# 🔹 4) **Debounce (Most Asked)**
+
+Debounce এমন একটি technique যেখানে function শুধুমাত্র শেষ action-এর পর delay পেরুলে run হয়।
+
+👉 Used in: search bar typing, resize event, input validation
+
+### ✔ Example
+
+```js
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+```
+
+---
+
+# 🔹 5) **Throttle**
+
+Throttle → নির্দিষ্ট সময় পরপর function execute হতে দেয়।
+
+👉 Used in: scroll event, window resize, mouse move tracking
+
+### ✔ Example
+
+```js
+function throttle(fn, delay) {
+  let flag = true;
+
+  return function (...args) {
+    if (!flag) return;
+    flag = false;
+    fn.apply(this, args);
+    setTimeout(() => (flag = true), delay);
+  };
+}
+```
+
+---
+
+### 🎯 **Debounce vs Throttle (Interview Answer)**
+
+| Feature   | Debounce                   | Throttle                 |
+| --------- | -------------------------- | ------------------------ |
+| Execution | শেষ action হওয়ার পর        | নিয়মিত fixed interval এ  |
+| Best for  | Search bar                 | Scroll, resize           |
+| Example   | typing finish হলে API call | প্রতি 200ms স্ক্রল event |
+
+**Answer (2-line):**
+Debounce শুধুমাত্র শেষ event-এর পর function run করে, আর throttle নির্দিষ্ট সময় পরপর run করে। Search input → debounce, scroll event → throttle ব্যবহার হয়।
+
+---
+
+# 🔹 6) **Module Pattern**
+
+Private variable + public method তৈরির জন্য IIFE ব্যবহার করে module তৈরি করা।
+
+### ✔ Example
+
+```js
+const CounterModule = (function () {
+  let count = 0;
+
+  return {
+    increment() {
+      return ++count;
+    },
+    get() {
+      return count;
+    }
+  };
+})();
+
+CounterModule.increment();
+console.log(CounterModule.get());
+```
+
+---
+
+# 🔹 7) **Factory Function**
+
+Factory Function হলো এমন function যেটা object তৈরি করে return করে।
+
+### ✔ Example
+
+```js
+function createUser(name, age) {
+  return {
+    name,
+    age,
+    greet() {
+      console.log("Hello " + name);
+    },
+  };
+}
+
+const user = createUser("Emon", 22);
+user.greet();
+```
+
+---
+
+# 🔹 8) **Generators**
+
+Generator function execution pause/resume করতে পারে।
+
+### ✔ Example
+
+```js
+function* generatorFunc() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generatorFunc();
+console.log(gen.next()); // {value:1}
+console.log(gen.next()); // {value:2}
+```
+
+---
+
+# 🔹 9) **Deep Clone Techniques**
+
+### ✔ Shallow Copy
+
+Reference copy হয়ে যায়।
+
+```js
+const obj = { a: 1, b: { c: 2 } };
+const copy = { ...obj };
+copy.b.c = 10;
+
+console.log(obj.b.c); // 10 (shallow!)
+```
+
+---
+
+### ✔ Deep Copy
+
+Nested object completely নতুনভাবে ক্লোন করে।
+
+#### Method 1: JSON method
+
+```js
+const deep = JSON.parse(JSON.stringify(obj));
+```
+
+#### Method 2: structuredClone()
+
+(Modern & recommended)
+
+```js
+const deep = structuredClone(obj);
+```
+
+---
+
+### 🎯 **Deep Copy vs Shallow Copy (Interview Answer)**
+
+**Answer:**
+Shallow copy শুধু outer level copy করে, nested object reference share করে।
+Deep copy nested সব object নতুন করে তৈরি করে, তাই one copy change করলে অন্যটা change হয় না।
+
+---
+
+# 🔹 10) **Immutable Data Patterns**
+
+State বা object directly modify না করে নতুন object তৈরি করা।
+
+### ✔ Example (React-friendly)
+
+```js
+const user = { name: "Emon", age: 22 };
+
+const updated = {
+  ...user,
+  age: 23,
+};
+
+console.log(updated);
+```
+
+---
+
+# 🎯 INTERVIEW FOCUS SUMMARY
+
+---
+
+## ✔ **1) Closure real-life example**
+
+**Answer:**
+Search bar debounce, private variable maintain করা, event handler optimization—এসব ক্ষেত্রে closure real-life কাজ করে। Closure outer function-এর variable ধরে রাখে।
+
+---
+
+## ✔ **2) Debounce vs Throttle**
+
+**Answer:**
+Debounce শুধুমাত্র শেষ event-এর পরে execute হয়, throttle নির্দিষ্ট সময় পরপর execute হয়। Search → debounce; scroll → throttle।
+
+---
+
+## ✔ **3) Deep copy vs Shallow copy**
+
+**Answer:**
+Shallow copy nested values reference করে, deep copy সম্পূর্ণ সেপারেট copy তৈরি করে। তাই deep copy পরিবর্তন করলে original data কখনো পরিবর্তন হয় না।
+
+---
+
+# 🧪 Practice Tasks
+
+### ✔ Task 1
+
+Create a closure that keeps a private counter.
+
+### ✔ Task 2
+
+Implement your own debounce() and throttle().
+
+### ✔ Task 3
+
+Write a deep clone function without JSON.stringify।
+
+---
+
+Would you like **Module 12: Node.js Core (Backend Interview Must-Have)** next?
