@@ -1,0 +1,13 @@
+ES6+ introduced numerous features that have transformed JavaScript programming, making code more readable, maintainable, and robust:
+
+let/const: Block-scoped variables with clearer semantics
+Arrow functions: Concise syntax and lexical this binding
+Template literals: String interpolation and multi-line strings
+Destructuring: Extract values from objects and arrays easily
+Spread/rest operators: Work with collections more efficiently
+Default parameters: Simpler function definitions
+Classes: Cleaner syntax for object-oriented programming
+Promises and async/await: Better asynchronous code management
+ES Modules: Standardized code organization
+Enhanced object literals: More concise object syntax
+Optional chaining & nullish coalescing: Safer property access and defaults
