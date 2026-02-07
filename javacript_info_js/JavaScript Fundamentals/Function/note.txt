@@ -1,0 +1,31 @@
+Function কী?
+
+Function হলো একটা reusable block of code
+যেটা কাজ করে, তারপর আবার ব্যবহার করা যায়।
+
+function sayHello() {
+  console.log("Hello World");
+}
+
+sayHello(); // call
+
+কেন Function দরকার?
+
+❌ Without function → code repeat
+✅ With function → clean, reusable, maintainable
+
+
+
+Function Syntax
+
+function functionName(parameters) {
+  return value;
+}
+
+
+4️⃣ Function Types (Important)
+
+1. Function Declaration
+2. Function Expression
+3. Arrow Function (🔥 Modern JS)
+4. Anonymous Function

@@ -1,0 +1,100 @@
+?? Operator কী?
+
+?? হলো JavaScript এর একটি logical operator
+যেটা null অথবা undefined হলে fallback value দেয়।
+
+👉 সহজ কথা:
+যদি value null/undefined হয় → অন্য value নাও
+
+## কেন ?? দরকার?
+
+আগে আমরা ব্যবহার করতাম:
+
+let name = userName || "Guest";
+
+
+কিন্তু এতে সমস্যা আছে 😕
+
+let count = 0;
+let result = count || 10; // 10 ❌ (ভুল)
+
+
+👉 এখানে 0 valid value, কিন্তু || এটাকে false ধরে নেয়
+
+3️⃣ Solution: ??
+let count = 0;
+let result = count ?? 10;
+console.log(result); // 0 ✅
+
+👉 শুধু null বা undefined হলে fallback নেয়
+
+# Example (Real Life)
+👤 Username
+let username = null;
+let displayName = username ?? "Guest";
+
+console.log(displayName); // Guest
+
+💰 Price
+let price = 0;
+let finalPrice = price ?? 100;
+
+console.log(finalPrice); // 0
+
+# Problem Solving
+🟢 Problem 1
+let score = 0;
+let finalScore = score ?? 50;
+console.log(finalScore);
+
+
+✅ Output: 0
+
+🟢 Problem 2
+let value = null ?? undefined ?? "Hello";
+console.log(value);
+
+
+✅ Output: "Hello"
+
+🟢 Problem 3
+let input = "";
+console.log(input ?? "Default");
+
+
+✅ Output: ""
+
+🟢 Problem 4 (API)
+function getName(user){
+  return user.name ?? "Guest";
+}
+
+
+Interview Q&A
+❓ Q1: ?? কেন introduce করা হয়েছে?
+
+Answer:
+|| falsy value (0, "", false) ignore করে — এটা fix করার জন্য
+
+❓ Q2: ?? কোন value check করে?
+
+Answer:
+শুধু null এবং undefined
+
+❓ Q3: ?? এবং || একসাথে ব্যবহার করা যাবে?
+
+❌ না (parenthesis ছাড়া)
+
+// Error
+a || b ?? c
+
+// Correct
+(a || b) ?? c
+
+❓ Q4: ?? কি short-circuit করে?
+
+✅ হ্যাঁ
+
+❓ Q5: React এ ?? কেন important?
+
+API data null হতে পারে → crash avoid হয়
