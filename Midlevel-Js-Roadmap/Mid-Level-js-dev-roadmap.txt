@@ -14,6 +14,9 @@
 
 * Execution Context
 * Call Stack
+* Hoisting
+* Closure
+* Event Loop
 * Memory (Stack vs Heap)
 * Hoisting (var, let, const difference)
 * Scope & Lexical Scope

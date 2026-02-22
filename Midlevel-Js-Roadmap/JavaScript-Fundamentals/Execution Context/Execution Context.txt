@@ -1,0 +1,156 @@
+📌 1️. Execution Context কী?
+
+👉 JavaScript যখন কোনো কোড run করে, তখন সেটা একটা environment তৈরি করে যেখানে:
+
+Variable store হয়
+Function store হয়
+this decide হয়
+Scope chain তৈরি হয়
+
+এই environment টাকেই বলে Execution Context
+
+সহজ ভাষায়:
+Execution Context = JS engine এর কাজ করার পরিবেশ
+
+-------------------------------
+
+📦 Execution Context কত ধরনের?
+
+1️. Global Execution Context (GEC)
+
+পুরো program শুরু হলে তৈরি হয়
+একটাই থাকে
+this → browser এ window
+
+2️. Function Execution Context (FEC)
+
+যখনই function call হয়
+নতুন context তৈরি হয়
+কাজ শেষ হলে destroy হয়
+
+--------------------------------
+⚙️ Execution Context কিভাবে তৈরি হয়?
+
+Execution Context 2 phase এ তৈরি হয়:
+
+1. Creation Phase
+2. Execution Phase
+
+
+🔵 Phase 1: Creation Phase
+
+এই phase এ JS:
+
+Memory allocate করে
+Variables কে undefined assign করে
+Function পুরোটা memory তে রাখে
+this binding set করে
+
+🟢 Phase 2: Execution Phase
+
+Line by line code run হয়
+Variable value assign হয়
+Function call হলে নতুন execution context তৈরি হয়
+
+------------------------------------------
+
+🎯 Example 1 (Step by Step Breakdown)
+
+var x = 10;
+
+function test() {
+  var y = 20;
+  console.log(x);
+}
+
+test();
+
+🔥 Step 1: Global Execution Context Creation Phase
+
+Memory:
+
+x → undefined
+test → function পুরোটা
+this → window
+
+🔥 Step 2: Global Execution Phase
+x = 10
+
+তারপর:
+test() call হয়
+
+🔥 Step 3: Function Execution Context তৈরি হয়
+
+Creation Phase:
+y → undefined
+
+Execution Phase:
+y = 20
+console.log(x) → 10
+
+👉 কেন 10?
+কারণ scope chain দিয়ে global থেকে x নেয়।
+
+----------------------
+
+🧱 Call Stack কিভাবে কাজ করে?
+
+Call Stack হলো plate stack এর মতো।
+
+Global()
+   ↓
+test()
+
+
+test শেষ হলে:
+Global()
+
+শেষে:
+(empty)
+
+
+)
+🎯 Interview Level Definition
+
+Execution Context is the environment in which JavaScript code is evaluated and executed. It contains variable environment, lexical environment and this binding. It is created in two phases: creation phase and execution phase.
+
+Execution Context হলো সেই পরিবেশ যেখানে JavaScript কোড execute হয়।
+অর্থাৎ, কোড চলার সময় JavaScript একটি বিশেষ environment তৈরি করে — এটিই Execution Context।
+
+এটির মধ্যে থাকে প্রধানত ৩টি জিনিস:
+
+Variable Environment → যেখানে var ভ্যারিয়েবল এবং function declaration সংরক্ষিত হয়
+Lexical Environment → যেখানে let, const এবং scope সম্পর্কিত তথ্য থাকে
+This Binding → this কী রেফার করবে তা নির্ধারণ করে
+
+
+🔄 Execution Context তৈরির ২টি ধাপ
+
+1️. Creation Phase (সৃষ্টি ধাপ)
+
+এই ধাপে:
+সব var ভ্যারিয়েবল memory তে undefined দিয়ে reserve করা হয়
+Function declaration পুরোপুরি memory তে রাখা হয়
+this bind করা হয়
+let ও const memory তে থাকে কিন্তু initialize হয় না (Temporal Dead Zone)
+
+👉 এই পর্যায়ে কোড execute হয় না, শুধু memory allocation হয়।
+
+2️. Execution Phase (কার্যকর ধাপ)
+
+এই ধাপে:
+লাইন বাই লাইন কোড execute হয়
+ভ্যারিয়েবলে আসল মান assign হয়
+function call হলে নতুন Execution Context তৈরি হয়
+
+--------------------------------------
+❓ What happens when JS file runs?
+
+Answer:
+
+Global Execution Context তৈরি হয়
+Creation Phase চলে
+Execution Phase চলে
+Function call হলে নতুন Execution Context তৈরি হয়
+Call Stack এ push হয়
+কাজ শেষ হলে pop হয়
