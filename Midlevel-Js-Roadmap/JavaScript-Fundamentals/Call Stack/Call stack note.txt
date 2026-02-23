@@ -1,0 +1,320 @@
+
+Call Stack কী?
+👉 Call Stack হলো একটি data structure (LIFO - Last In First Out)
+যেটা JavaScript ব্যবহার করে function execution manage করার জন্য।
+
+সহজ ভাষায়:
+> Call Stack = JavaScript কোন function এখন run করছে এবং পরেরটা কোনটা run করবে সেটা manage করার জায়গা।
+
+-------------------------------------
+
+Call Stack কেন দরকার?
+
+JavaScript হলো  single-threaded language
+মানে একসাথে একটাই কাজ করতে পারে।
+
+তাহলে multiple function call হলে কে আগে run করবে?
+
+👉 এই কাজটাই Call Stack করে।
+
+-----------------------------------------
+
+Call Stack কিভাবে কাজ করে?
+
+Call Stack হলো plate stack এর মতো:
+
+Push → function call হলে
+Pop → function শেষ হলে
+
+---
+
+# 🎯 Example 1 (Basic)
+
+
+function one() {
+  console.log("One");
+}
+
+function two() {
+  one();
+  console.log("Two");
+}
+
+two();
+
+--------------------------------
+
+Step by Step Execution
+
+### Step 1:
+
+Global Execution Context push হয়
+
+```
+| Global |
+```
+
+### Step 2:
+
+two() call হয় → push
+
+| two    |
+| Global |
+
+
+### Step 3:
+
+two এর ভিতরে one() call হয় → push
+
+| one    |
+| two    |
+| Global |
+
+### Step 4:
+
+one() শেষ → pop
+
+| two    |
+| Global |
+
+### Step 5:
+
+two() শেষ → pop
+
+| Global |
+
+
+শেষে:
+(empty)
+
+
+----------------------------------------
+
+📌 Important Rule
+
+👉 Call Stack সবসময়  Top function আগে run করে
+
+------------------------------------------
+
+# 🧠 Call Stack & Execution Context Relation
+
+* Function call হলে → নতুন Execution Context তৈরি হয়
+* সেই Execution Context → Call Stack এ push হয়
+* কাজ শেষ হলে → Call Stack থেকে pop হয়
+
+----------------------------------------------
+
+# 🎯 Example 2 (Nested Function)
+
+function a() {
+  b();
+}
+
+function b() {
+  c();
+}
+
+function c() {
+  console.log("Hello");
+}
+
+a();
+
+
+Stack Flow:
+
+| c |
+| b |
+| a |
+| G |
+
+Output: Hello
+
+---------------------------------
+
+# 🔥 Recursion Example
+
+function count(n) {
+  if (n === 0) return;
+  console.log(n);
+  count(n - 1);
+}
+
+count(3);
+
+
+Stack:
+
+count(3)
+count(2)
+count(1)
+count(0)
+
+যদি base case না থাকে → ❌ Stack Overflow
+
+-----------------------------------------
+
+🚨 Stack Overflow কী?
+
+যখন function infinite call হয়:
+
+function test() {
+  test();
+}
+
+test();
+
+Result:
+
+```
+RangeError: Maximum call stack size exceeded
+```
+
+👉 কারণ stack memory full হয়ে গেছে।
+
+-----------------------------------------
+
+# ⚡ Call Stack & Asynchronous
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+console.log("End");
+
+
+Output:
+
+Start
+End
+Timeout
+
+
+👉 কেন?
+
+কারণ:
+
+* setTimeout call stack এ যায়
+* Web API তে যায়
+* callback queue তে যায়
+* Call Stack empty হলে Event Loop push করে
+
+Call Stack async কাজ সরাসরি handle করে না।
+
+----------------------------------------------
+
+# 📊 Call Stack vs Memory Stack
+
+⚠️ Confusion হয়:
+
+* Memory Stack → variable store হয়
+* Call Stack → function execution manage হয়
+
+দুইটা আলাদা জিনিস।
+
+----------------------------------------
+
+# 🧠 Advanced Deep Concept
+
+Call Stack only synchronous code run করে।
+
+Async কাজ:
+
+* Web APIs
+* Callback Queue
+* Microtask Queue
+* Event Loop
+
+এর সাথে combined হয়ে কাজ করে।
+
+---
+
+🎯 Interview Level Definition
+
+> Call Stack is a data structure that keeps track of function execution in JavaScript. It follows the Last In First Out (LIFO) principle. When a function is called, its execution context is pushed onto the stack, and when it finishes execution, it is popped off.
+
+--------------------------------------
+
+# 🔥 Critical Interview Q&A
+
+---
+
+### ❓ 1. What is Call Stack?
+
+Answer:
+Call Stack is a LIFO data structure used by JavaScript engine to manage execution contexts of function calls.
+
+---
+
+### ❓ 2. How does Call Stack work?
+
+Answer:
+When a function is invoked, a new execution context is created and pushed to the stack. When the function completes, it is removed (popped) from the stack.
+
+---
+
+### ❓ 3. Why does Stack Overflow happen?
+
+Answer:
+Stack overflow happens when too many function calls are pushed into the call stack without being removed, usually due to infinite recursion.
+
+---
+
+### ❓ 4. Is Call Stack part of JS engine?
+
+Yes. It is part of the execution mechanism of the JS engine.
+
+---
+
+### ❓ 5. Difference between Call Stack and Heap?
+
+| Call Stack               | Heap              |
+| ------------------------ | ----------------- |
+| Stores execution context | Stores objects    |
+| LIFO structure           | Memory allocation |
+| Small & limited          | Larger memory     |
+
+---
+
+### ❓ 6. How does Call Stack handle async code?
+
+It does not directly handle async code. Async tasks are handled by Web APIs and Event Loop, which push callbacks to the Call Stack when it becomes empty.
+
+---
+
+# 🎯 Real Life Analogy
+
+Call Stack = Restaurant kitchen order list
+Last order taken → first prepared
+
+---
+
+# 🏆 Final Powerful Interview Summary (Impressive Answer)
+
+তুমি যদি impress করতে চাও, এইভাবে বলবে:
+
+> JavaScript is single-threaded, so it uses a Call Stack to manage function execution. Every time a function is called, its execution context is pushed onto the stack, and when it finishes, it gets popped off. The Call Stack follows the LIFO principle. It only handles synchronous code directly, while asynchronous tasks are managed through Web APIs and the Event Loop. Stack overflow occurs when too many function calls are added without being removed, such as in infinite recursion.
+
+JavaScript একটি single-threaded ভাষা, তাই এটি ফাংশনের এক্সিকিউশন পরিচালনার জন্য Call Stack ব্যবহার করে। যখনই কোনো ফাংশন কল করা হয়, তার execution context স্ট্যাকে push হয় এবং ফাংশনের কাজ শেষ হলে সেটি stack থেকে pop হয়ে যায়।
+
+Call Stack LIFO (Last In, First Out) নীতিতে কাজ করে, অর্থাৎ সর্বশেষ যে ফাংশনটি ঢুকেছে সেটিই প্রথমে বের হয়।
+
+Call Stack সরাসরি শুধুমাত্র synchronous কোড হ্যান্ডেল করে। আর asynchronous কাজগুলো (যেমন: setTimeout, API call ইত্যাদি) Web APIs এবং Event Loop এর মাধ্যমে পরিচালিত হয়।
+
+যখন খুব বেশি সংখ্যক ফাংশন কল stack-এ যোগ হয় কিন্তু সেগুলো সরানো হয় না (যেমন: infinite recursion এর ক্ষেত্রে), তখন Stack Overflow সমস্যা দেখা দেয়।
+
+---
+
+# 💪 Mentor Advice
+
+যদি তুমি:
+
+* Stack diagram আঁকতে পারো
+* Recursion explain করতে পারো
+* Async flow explain করতে পারো
+* Stack overflow explain করতে পারো
+
+👉 তুমি solid mid-level।
+ 

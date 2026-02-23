@@ -13,8 +13,7 @@
 ### 1️⃣ JavaScript Fundamentals (Advanced Level Understanding)
 
 * Execution Context
-* Call Stack
-* Hoisting
+* Call Stack 
 * Closure
 * Event Loop
 * Memory (Stack vs Heap)
