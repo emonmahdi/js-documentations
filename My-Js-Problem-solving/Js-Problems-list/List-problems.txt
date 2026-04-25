@@ -1,0 +1,227 @@
+🟢 BEGINNER (1–50)
+Basics & Syntax
+
+1. Print "Hello, World!" to the console
+2. Declare variables using var, let, and const
+3. Swap two variables without a third variable
+4. Check if a number is even or odd
+5. Find the largest of three numbers
+6. Calculate the factorial of a number
+7. Reverse a string
+8. Check if a string is a palindrome
+9. Count vowels in a string
+10. Convert Celsius to Fahrenheit
+
+Arrays
+11. Find the sum of all elements in an array
+12. Find the maximum and minimum in an array
+13. Remove duplicates from an array
+14. Flatten a nested array (one level deep)
+15. Find the second largest element
+16. Rotate an array by k positions
+17. Check if two arrays are equal
+18. Merge two sorted arrays
+19. Find the intersection of two arrays
+20. Find the union of two arrays
+Strings
+21. Count occurrences of a character in a string
+22. Capitalize the first letter of each word
+23. Truncate a string to N characters
+24. Check if a string contains only digits
+25. Remove whitespace from both ends (without trim())
+26. Repeat a string N times (without repeat())
+27. Find the longest word in a sentence
+28. Convert a string to camelCase
+29. Check if two strings are anagrams
+30. Replace all spaces in a string with %20
+Numbers & Math
+31. Check if a number is prime
+32. Generate Fibonacci sequence up to N
+33. Find GCD of two numbers
+34. Find LCM of two numbers
+35. Check if a number is a perfect square
+36. Sum of digits of a number
+37. Reverse the digits of a number
+38. Count the number of digits in a number
+39. Check Armstrong number
+40. Generate multiplication table for a number
+Objects
+41. Access and update object properties
+42. Iterate over object keys and values
+43. Merge two objects
+44. Check if a key exists in an object
+45. Count properties in an object
+46. Clone an object (shallow copy)
+47. Convert an object to an array of key-value pairs
+48. Delete a property from an object
+49. Freeze an object and test immutability
+50. Convert an array of pairs into an object
+
+🟡 INTERMEDIATE (51–120)
+Array Methods
+51. Use map() to double array values
+52. Use filter() to get even numbers
+53. Use reduce() to sum an array
+54. Use find() and findIndex()
+55. Use every() and some()
+56. Sort an array of objects by a property
+57. Group array elements by a property using reduce()
+58. Chunk an array into groups of size N
+59. Zip two arrays into an array of pairs
+60. Flatten a deeply nested array
+Functions
+61. Write a pure function
+62. Write a higher-order function
+63. Implement memoization
+64. Implement curry function
+65. Write a function that returns another function (closure)
+66. Implement once() — function that runs only once
+67. Implement debounce()
+68. Implement throttle()
+69. Write a recursive function to traverse a tree
+70. Implement pipe() and compose()
+DOM & Events (conceptual/coding)
+71. Toggle a CSS class on click
+72. Build a simple counter (increment/decrement)
+73. Validate a form (name, email, password)
+74. Dynamically create and append DOM elements
+75. Implement event delegation
+76. Build a simple to-do list (add/remove)
+77. Debounce an input search field
+78. Drag and drop an element
+79. Implement infinite scroll
+80. Create a modal open/close toggle
+Async JavaScript
+81. Write a Promise from scratch
+82. Chain multiple Promises
+83. Use Promise.all() for parallel requests
+84. Use Promise.race()
+85. Convert a callback to a Promise
+86. Fetch data from a public API using fetch()
+87. Handle errors in async/await
+88. Retry a failed API call N times
+89. Build a simple async queue
+90. Implement Promise.allSettled() behavior manually
+ES6+ Features
+91. Destructure arrays and objects
+92. Use spread and rest operators
+93. Write a tagged template literal
+94. Use Symbol as a unique object key
+95. Implement a generator function
+96. Use Map and Set effectively
+97. Use WeakMap and WeakSet
+98. Write optional chaining and nullish coalescing
+99. Use for...of vs for...in
+100. Implement Object.assign() manually
+String & RegEx
+101. Validate an email using RegEx
+102. Validate a phone number using RegEx
+103. Extract all numbers from a string
+104. Find and replace using RegEx groups
+105. Check if a string matches a pattern
+106. Slugify a string (URL-friendly format)
+107. Count words in a paragraph
+108. Parse a query string into an object
+109. Mask a credit card number (show last 4 digits)
+110. Extract hashtags from a tweet
+OOP
+111. Create a Person class with methods
+112. Implement inheritance with extends
+113. Override a parent class method
+114. Implement a Stack class
+115. Implement a Queue class
+116. Implement a LinkedList class
+117. Use getters and setters in a class
+118. Implement a Singleton pattern
+119. Implement the Observer pattern
+120. Use mixins to extend class functionality
+
+🔴 ADVANCED (121–200)
+Data Structures
+121. Implement a Binary Search Tree (insert, search, delete)
+122. Implement BFS on a graph
+123. Implement DFS on a graph
+124. Implement a MinHeap
+125. Implement a MaxHeap
+126. Implement a Trie (prefix tree)
+127. Implement a LRU Cache
+128. Implement a Graph using adjacency list
+129. Detect a cycle in a linked list
+130. Find the middle of a linked list
+Algorithms
+131. Binary search (iterative & recursive)
+132. Bubble sort implementation
+133. Merge sort implementation
+134. Quick sort implementation
+135. Counting sort
+136. Two-pointer technique — pair with target sum
+137. Sliding window — max sum subarray of size K
+138. Kadane's algorithm (max subarray sum)
+139. Longest common subsequence
+140. Longest increasing subsequence
+Recursion & Backtracking
+141. Generate all permutations of an array
+142. Generate all subsets of a set
+143. Solve N-Queens problem
+144. Solve Sudoku (backtracking)
+145. Word search in a grid
+146. Generate all valid parentheses combinations
+147. Flatten deeply nested object recursively
+148. Deep clone an object (with circular reference handling)
+149. Calculate power(x, n) recursively
+150. Tower of Hanoi
+Dynamic Programming
+151. Fibonacci with memoization (top-down)
+152. Fibonacci with tabulation (bottom-up)
+153. Coin change problem
+154. 0/1 Knapsack problem
+155. Climbing stairs (N steps)
+156. Minimum path sum in a grid
+157. Longest palindromic substring
+158. Edit distance (Levenshtein)
+159. Word break problem
+160. Decode ways (number → letter)
+JavaScript Internals
+161. Implement bind() from scratch
+162. Implement call() from scratch
+163. Implement apply() from scratch
+164. Implement new keyword from scratch
+165. Implement instanceof from scratch
+166. Implement Object.create() from scratch
+167. Implement Array.prototype.map() from scratch
+168. Implement Array.prototype.filter() from scratch
+169. Implement Array.prototype.reduce() from scratch
+170. Implement Promise from scratch
+Design Patterns
+171. Factory pattern
+172. Builder pattern
+173. Strategy pattern
+174. Decorator pattern
+175. Proxy pattern (using ES6 Proxy)
+176. Command pattern
+177. Iterator pattern (custom iterator)
+178. Module pattern (IIFE-based)
+179. Pub/Sub pattern
+180. Middleware pattern (like Express)
+Performance & Optimization
+181. Memoize an expensive function
+182. Implement lazy evaluation
+183. Use requestAnimationFrame for smooth animation
+184. Implement virtual DOM diffing (simplified)
+185. Optimize a deeply nested loop
+186. Implement event pooling
+187. Use Web Workers for heavy computation
+188. Implement object pooling
+189. Measure function execution time
+190. Implement a rate limiter
+Real-World Challenges
+191. Build a EventEmitter class (like Node.js)
+192. Implement a simple router (hash-based SPA)
+193. Build a state manager (like Redux mini-clone)
+194. Implement deep equality check between two objects
+195. Parse and stringify JSON manually
+196. Implement flat() polyfill
+197. Implement Array.from() polyfill
+198. Build a simple template engine
+199. Implement async/await using generators
+200. Build a reactive system (like Vue's reactivity)
